@@ -278,7 +278,7 @@ label.darkmode-button-container::after {
     width: 13px;
     height: 13px;
     position: absolute;
-    background-image: url("/icons/theme-mode-icon.svg");
+    background-image: url("/assets/icons/theme-mode-icon.svg");
     background-size: cover;
     background-position: center;
     transform: rotate(180deg);
@@ -292,7 +292,7 @@ label.darkmode-button-container::before {
     width: 13px;
     height: 13px;
     position: absolute;
-    background-image: url("/icons/theme-mode-icon.svg");
+    background-image: url("/assets/icons/theme-mode-icon.svg");
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -315,7 +315,7 @@ div.logo-container {
     display: none;
     width: 40px;
     height: 40px;
-    background-image: url("/icons/logo-small.svg");
+    background-image: url("/assets/icons/logo-small.svg");
     background-size: cover;
     background-position: center;
     opacity: 1;
@@ -387,7 +387,7 @@ div.main-logo {
     display: inline-block;
     width: 185px;
     height: 185px;
-    background-image: url("/icons/logo-small.svg");
+    background-image: url("/assets/icons/logo-small.svg");
     background-size: cover;
     background-position: center;
 }
@@ -417,7 +417,7 @@ div.hr-arrow {
     content: "";
     width: 15px;
     height: 350px;
-    background-image: url("/icons/arrow-deco.svg");
+    background-image: url("/assets/icons/arrow-deco.svg");
     background-size: cover;
     background-position: center;
     animation: hrArrowIn 1s ease forwards running;
@@ -434,7 +434,7 @@ div.hr-arrow {
 }
 
 section.dark-theme div.hr-arrow {
-    background-image: url("/icons/arrow-deco-light-color.svg");
+    background-image: url("/assets/icons/arrow-deco-light-color.svg");
 }
 
 h1 {
@@ -492,7 +492,7 @@ div.section-changer.home div {
 }
 
 div.section-changer-dark div {
-    background-image: url("/icons/keyboard-arrow-down-brown.svg");
+    background-image: url("/assets/icons/keyboard-arrow-down-brown.svg");
 }
 
 @media screen and (min-width: 360px) {
@@ -529,7 +529,7 @@ section#projects div.section-changer {
 }
 
 div.section-changer-light div {
-    background-image: url("/icons/keyboard-arrow-down-light-color.svg");
+    background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
 }
 
 div.project-card {
@@ -731,47 +731,47 @@ a.icon {
 }
 
 div.js {
-    background-image: url("/icons/js-icon.svg");
+    background-image: url("/assets/icons/js-icon.svg");
 }
 
 div.react {
-    background-image: url("/icons/react-icon.svg");
+    background-image: url("/assets/icons/react-icon.svg");
 }
 
 div.r {
-    background-image: url("/icons/r-icon.svg");
+    background-image: url("/assets/icons/r-icon.svg");
 }
 
 div.c {
-    background-image: url("/icons/c-icon.svg");
+    background-image: url("/assets/icons/c-icon.svg");
 }
 
 div.python {
-    background-image: url("/icons/python-icon.svg");
+    background-image: url("/assets/icons/python-icon.svg");
 }
 
 div.cpp {
-    background-image: url("/icons/cpp-icon.svg");
+    background-image: url("/assets/icons/cpp-icon.svg");
 }
 
 div.java {
-    background-image: url("/icons/java-icon.svg");
+    background-image: url("/assets/icons/java-icon.svg");
 }
 
 div.scss {
-    background-image: url("/icons/scss-icon.svg");
+    background-image: url("/assets/icons/scss-icon.svg");
 }
 
 div.css {
-    background-image: url("/icons/css-icon.svg");
+    background-image: url("/assets/icons/css-icon.svg");
 }
 
 div.html {
-    background-image: url("/icons/html-icon.svg");
+    background-image: url("/assets/icons/html-icon.svg");
 }
 
 div.figma {
-    background-image: url("/icons/figma-icon.svg");
+    background-image: url("/assets/icons/figma-icon.svg");
 }
 
 /* last-part section --------------------------------------------------------------------------*/
@@ -827,19 +827,19 @@ section#contact p:first-child {
 }
 
 a.wa {
-    background-image: url("/icons/whatsapp-icon.svg");
+    background-image: url("/assets/icons/whatsapp-icon.svg");
 }
 
 a.mail {
-    background-image: url("/icons/mail-icon.svg");
+    background-image: url("/assets/icons/mail-icon.svg");
 }
 
 a.instagram {
-    background-image: url("/icons/instagram-icon.svg");
+    background-image: url("/assets/icons/instagram-icon.svg");
 }
 
 a.github {
-    background-image: url("/icons/github-icon.svg");
+    background-image: url("/assets/icons/github-icon.svg");
 }
 
 span.copy-right {
@@ -917,22 +917,22 @@ button.arrow {
 }
 
 button.left-arrow {
-    background-image: url("/icons/keyboard-arrow-down-brown.svg");
+    background-image: url("/assets/icons/keyboard-arrow-down-brown.svg");
     transform: rotate(90deg);
 }
 
 section.dark-theme button.left-arrow {
-    background-image: url("/icons/keyboard-arrow-down-light-color.svg");
+    background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
     transform: rotate(90deg);
 }
 
 button.right-arrow {
-    background-image: url("/icons/keyboard-arrow-down-brown.svg");
+    background-image: url("/assets/icons/keyboard-arrow-down-brown.svg");
     transform: rotate(-90deg);
 }
 
 section.dark-theme button.right-arrow {
-    background-image: url("/icons/keyboard-arrow-down-light-color.svg");
+    background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
     transform: rotate(-90deg);
 }
 
@@ -1034,7 +1034,7 @@ section.project-info div.video-container div.controls {
     left: calc(50% - 32px);
     width: 64px;
     height: 64px;
-    background-image: url("/icons/play-circle-icon.svg");
+    background-image: url("/assets/icons/play-circle-icon.svg");
     background-size: cover;
     opacity: 0.5;
     cursor: pointer;
@@ -1043,12 +1043,12 @@ section.project-info div.video-container div.controls {
 }
 
 section.project-info div.video-container div.controls.playing {
-    background-image: url("/icons/pause-circle-icon.svg");
+    background-image: url("/assets/icons/pause-circle-icon.svg");
     opacity: 0;
 }
 
 section.project-info div.video-container div.controls.paused {
-    background-image: url("/icons/play-circle-icon.svg");
+    background-image: url("/assets/icons/play-circle-icon.svg");
     opacity: 0.5;
 }
 
@@ -1090,7 +1090,7 @@ section.project-info div.video-container div.screen-control-container.show {
 }
 
 section.project-info div.video-container div.screen-control-container.maximize div.screen-control {
-    background-image: url("/icons/maximize-icon.svg");
+    background-image: url("/assets/icons/maximize-icon.svg");
 }
 
 section.project-info div.video-container div.screen-control-container.maximize {
@@ -1098,7 +1098,7 @@ section.project-info div.video-container div.screen-control-container.maximize {
 }
 
 section.project-info div.video-container div.screen-control-container.max-width div.screen-control {
-    background-image: url("/icons/max-width-icon.svg");
+    background-image: url("/assets/icons/max-width-icon.svg");
 }
 
 section.project-info div.video-container div.screen-control-container.max-width {
@@ -1106,7 +1106,7 @@ section.project-info div.video-container div.screen-control-container.max-width 
 }
 
 section.project-info div.video-container div.screen-control-container.min-width div.screen-control {
-    background-image: url("/icons/less-width.svg");
+    background-image: url("/assets/icons/less-width.svg");
 }
 
 section.project-info div.video-container div.screen-control-container.min-width {
@@ -1151,26 +1151,26 @@ section.project-info div.video-bottom div.smallerControls {
     content: "";
     width: 16px;
     height: 16px;
-    background-image: url("/icons/play-icon.svg");
+    background-image: url("/assets/icons/play-icon.svg");
     background-size: cover;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
 
 section.project-info div.video-bottom div.smallerControls.playing {
-    background-image: url("/icons/pause-icon.svg");
+    background-image: url("/assets/icons/pause-icon.svg");
 }
 
 section.project-info div.video-bottom div.smallerControls.paused {
-    background-image: url("/icons/play-icon.svg");
+    background-image: url("/assets/icons/play-icon.svg");
 }
 
 section.dark-theme div.video-container div.video-bottom div.smallerControls.playing {
-    background-image: url("/icons/pause-icon-gray.svg");
+    background-image: url("/assets/icons/pause-icon-gray.svg");
 }
 
 section.dark-theme div.video-container div.video-bottom div.smallerControls.paused {
-    background-image: url("/icons/play-icon-gray.svg");
+    background-image: url("/assets/icons/play-icon-gray.svg");
 }
 
 section.project-info div.video-bottom div.time {

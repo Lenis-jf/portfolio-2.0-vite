@@ -17,11 +17,11 @@ function Batatabit() {
                 <h2>Batatabit</h2>
                 <CustomImageSlider
                     images={[
-                        `${process.env.PUBLIC_URL}/assets/imgs/batatabit-assets/batatabit-img-1.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/batatabit-assets/batatabit-img-2.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/batatabit-assets/batatabit-img-3.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/batatabit-assets/batatabit-img-4.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/batatabit-assets/batatabit-img-5.png`
+                        `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-1.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-2.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-3.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-4.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-5.png`
                     ]}
                 />
                 <p>My first moment of satisfaction in web development! 🌱 Followed a Platzi course to create this crypto platform—my first proper landing page. Learned a lot of design and web development princips i still following nowadays</p>

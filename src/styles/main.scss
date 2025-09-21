@@ -1,0 +1,36 @@
+// main.scss - imports all partials
+@use './partials/variables';
+@use './partials/reset';
+@use './partials/components';
+@use './partials/header';
+@use './partials/home';
+@use './partials/projects';
+@use './partials/abilities';
+@use './partials/project-info';
+@use './partials/contact';
+@use './partials/animations';
+
+/* Extra small responsive tweaks that were in media queries */
+@media screen and (min-width: 360px) {
+    header {
+        justify-content: space-between;
+    }
+
+    div.logo-container {
+        display: inline-block;
+    }
+
+    section#home {
+        height: 100vh;
+    }
+
+    div.hr {
+        top: 270px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    button.arrow {
+        display: inline-block;
+    }
+}

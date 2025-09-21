@@ -336,9 +336,9 @@ function CustomVideoPlayer(props) {
 				playsInline
 				webkit-playsinline="true"
 				className={`video-container ${screenMode}-video`}
-				src={`/assets/videos/${props.video}`}
+				src={`${import.meta.env.BASE_URL}/assets/videos/${props.video}`}
 				preload="metadata"
-				poster={`/assets/imgs/${props.poster}`}
+				poster={`${import.meta.env.BASE_URL}/assets/imgs/${props.poster}`}
 			/>
 			<div
 				className="screen-control-container maximize paused"

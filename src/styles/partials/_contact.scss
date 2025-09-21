@@ -1,0 +1,70 @@
+// _contact.scss
+section#contact {
+    position: relative;
+    justify-content: center;
+    background-color: var(--light2-color);
+    color: var(--light-color);
+    max-height: 100vh;
+
+    &.dark-theme {
+
+        p,
+        span {
+            color: var(--foreground-color);
+        }
+    }
+
+    .icons-container {
+        gap: 20px;
+    }
+
+    p:first-child {
+        line-height: 50px;
+    }
+
+    a.wa {
+        background-image: url("/assets/icons/whatsapp-icon.svg");
+    }
+
+    a.mail {
+        background-image: url("/assets/icons/mail-icon.svg");
+    }
+
+    a.instagram {
+        background-image: url("/assets/icons/instagram-icon.svg");
+    }
+
+    a.github {
+        background-image: url("/assets/icons/github-icon.svg");
+    }
+
+    span.copy-right {
+        position: absolute;
+        bottom: 50px;
+        font-size: 10px;
+        color: var(--light-color);
+        opacity: 0.6;
+    }
+}
+
+section#last-part {
+    position: relative;
+    background-color: var(--light2-color);
+    color: var(--light-color);
+    padding: 100px 0;
+
+    a.button {
+        margin-top: 20px;
+        color: var(--light-color);
+        border-color: var(--light-color);
+    }
+
+    span.copy-right {
+        position: absolute;
+        bottom: 40px;
+    }
+
+    div.section-changer.section-changer-light.home {
+        div { transform: rotate(180deg); }
+    }
+}

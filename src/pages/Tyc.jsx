@@ -17,10 +17,10 @@ function Tyc() {
                 <h2>TYC</h2>
                 <CustomImageSlider
                     images={[
-                        `${process.env.PUBLIC_URL}/assets/imgs/tyc-assets/tyc-img-1.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/tyc-assets/tyc-img-2.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/tyc-assets/tyc-img-3.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/tyc-assets/tyc-img-4.png`
+                        `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-1.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-2.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-3.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-4.png`
                     ]}
                 />
                 <p>My "let’s-get-back-into-coding" passion project! 💡 I experimented with CSS animations and Figma prototyping for the first time</p>

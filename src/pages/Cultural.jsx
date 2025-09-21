@@ -17,13 +17,13 @@ function Cultural() {
                 <h2>Cultural-Fitness</h2>
                 <CustomImageSlider
                     images={[
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-1.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-2.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-3.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-4.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-5.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-6.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-7.png`
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-1.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-2.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-3.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-4.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-5.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-6.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-7.png`
                     ]}
                 />
                 <p>Where fitness meets code! 💪 Collaborated with design students to create this gym-inspired site. Our mission? To create a beautiful landing page with different function like a BMI calculator or even a dark mode button!</p>
@@ -34,9 +34,9 @@ function Cultural() {
                 <p>Though the business plan fizzled, the code survived! Check out our Figma-to-CSS journey below—it’s like watching a baby bird learn to fly!</p>
                 <CustomImageSlider
                     images={[
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-1.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-2.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-3.png`
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-1.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-2.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-3.png`
                     ]}
                 />
                 <p>Biggest takeaway? Teamwork makes the code work! (And always version control your designs)</p>

@@ -17,9 +17,9 @@ function Dronesim() {
         <h2>Drones Simulation</h2>
         <CustomImageSlider
           images={[
-            `${process.env.PUBLIC_URL}/assets/imgs/dronesim-assets/dronesim-img-1.png`,
-            `${process.env.PUBLIC_URL}/assets/imgs/dronesim-assets/dronesim-img-2.png`,
-            `${process.env.PUBLIC_URL}/assets/imgs/dronesim-assets/dronesim-img-3.png`
+            `${import.meta.env.BASE_URL}/assets/imgs/dronesim-assets/dronesim-img-1.png`,
+            `${import.meta.env.BASE_URL}/assets/imgs/dronesim-assets/dronesim-img-2.png`,
+            `${import.meta.env.BASE_URL}/assets/imgs/dronesim-assets/dronesim-img-3.png`
           ]}
         />
         <p>My first big Java project! 🚀 Developed for our OOP class, this GUI app taught me the magic of APIs and teamwork. We created different sections to display live drone data from a website provided by our university with search filters and calculated metrics like current battery consumption (yes, we did math for fun!).</p>

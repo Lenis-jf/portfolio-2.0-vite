@@ -1,0 +1,48 @@
+// _variables.scss
+// Colors, fonts and basic sizes extracted from your CSS
+
+// SCSS helper vars (for dev)
+$light-color: #FEFAE0;
+$light2-color: #344e41;
+$foreground-color: #504B38;
+
+// Fonts & typography
+$font-primary: "Ubuntu Sans", sans-serif;
+
+// Sizes
+$bar-width: 30px;
+$bar-height: 4px;
+$bars-gap: 5px;
+$menu-height: calc(#{$bar-height} * 3 + #{$bars-gap} * 2);
+
+// Transitions
+$transition-timing: 200ms ease-in-out;
+$transition-fast: 200ms;
+$transition-medium: 350ms;
+
+// Font sizes
+$fs-h1: 2rem;
+$fs-h2: 1.5rem;
+$fs-base: 1rem;
+$fs-small: 0.8rem;
+$fs-xsmall: 0.75rem;
+
+// Export as CSS custom properties so JS (runtime) can toggle :root.dark-theme easily
+:root {
+    --light-color: #{$light-color};
+    --light2-color: #{$light2-color};
+    --foreground-color: #{$foreground-color};
+    --bars-gap: #{$bars-gap};
+    --bar-width: #{$bar-width};
+    --bar-height: #{$bar-height};
+    --transition-timing: #{$transition-timing};
+    --menu-height: #{$menu-height};
+    --font-primary: #{$font-primary};
+}
+
+// dark theme overrides via class on :root
+:root.dark-theme {
+    --light-color: #3C3D37;
+    --light2-color: #1E201E;
+    --foreground-color: #ECDFCC;
+}

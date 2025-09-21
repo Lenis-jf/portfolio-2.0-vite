@@ -17,8 +17,8 @@ function Svq() {
                 <h2>SVQ</h2>
                 <CustomImageSlider
                     images={[
-                        `${process.env.PUBLIC_URL}/assets/imgs/svq-assets/svq-img-1.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/svq-assets/svq-img-2.png`
+                        `${import.meta.env.BASE_URL}/assets/imgs/svq-assets/svq-img-1.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/svq-assets/svq-img-2.png`
                     ]}
                 />
                 <p>My "almost-real-client" experience! Partnered with a designer friend to create a cleaning service site based in New York City. Learned to make disinfection look chic!</p>

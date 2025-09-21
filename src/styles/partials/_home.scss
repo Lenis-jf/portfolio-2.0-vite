@@ -1,0 +1,116 @@
+// _home.scss
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    padding: 40px 20px 80px 20px;
+    scroll-snap-align: start;
+    color: var(--foreground-color);
+    transition: background-color 500ms ease-in-out;
+
+    h1,
+    h2,
+    p,
+    div {
+        transition: opacity 350ms ease-in-out;
+    }
+
+    &.hidden {
+
+        h1,
+        h2,
+        p,
+        div {
+            opacity: 0;
+        }
+    }
+
+    &.visible {
+
+        h1,
+        h2,
+        p,
+        div {
+            opacity: 1;
+        }
+    }
+}
+
+section#home {
+    justify-content: center;
+    background-color: var(--light-color);
+    height: 100vh;
+    color: var(--foreground-color);
+
+    &.dark-theme span {
+        color: var(--foreground-color);
+    }
+}
+
+div.main-logo {
+    display: inline-block;
+    width: 185px;
+    height: 185px;
+    background-image: url("/assets/icons/logo-small.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+div.hr {
+    width: 90%;
+    height: 2.5px;
+    background-color: var(--foreground-color);
+    animation: hrIn 1s ease forwards running;
+}
+
+@keyframes hrIn {
+    0% {
+        transform: translateX(calc(-100% - 90%));
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+div.hr-arrow {
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 175px);
+    left: calc(5% + 7.5px);
+    width: 15px;
+    height: 350px;
+    background-image: url("/assets/icons/arrow-deco.svg");
+    background-size: cover;
+    background-position: center;
+    animation: hrArrowIn 1s ease forwards running;
+}
+
+@keyframes hrArrowIn {
+    0% {
+        transform: translateY(calc(-100% - 350px));
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+section.dark-theme div.hr-arrow {
+    background-image: url("/assets/icons/arrow-deco-light-color.svg");
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+}
+
+div.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: max-content;
+}

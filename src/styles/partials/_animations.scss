@@ -1,0 +1,17 @@
+// _animations.scss
+@keyframes cardOut {
+    0% {
+        transform: translate(0px, 0px) scale(1, 1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate3d(0px, 25px, 200px) scale(1.1, 0.6);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translate3d(calc(100% + 220px), 25px, 200px) scale(1.1, 0.6);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,74 @@
+// _components.scss
+// Generic components: buttons, section-changer, logo container, darkmode toggle basics
+
+a.button {
+    display: flex;
+    width: 90px;
+    height: 30px;
+    color: var(--foreground-color);
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: solid 1.5px var(--foreground-color);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+div.section-changer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+    color: var(--light-color);
+    cursor: pointer;
+    margin-top: 50px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.section-changer-dark {
+    color: var(--foreground-color);
+    margin-top: 100px;
+}
+
+.section-changer div {
+    width: 31px;
+    height: 17px;
+    background-size: cover;
+    background-position: bottom;
+}
+
+div.logo-container {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-image: url("/assets/icons/logo-small.svg");
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    transition: opacity var(--transition-timing);
+}
+
+div.logo-container.hidden {
+    opacity: 0;
+}
+
+/* Radio buttons small reusable */
+button.radio-button {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 50%;
+    background: var(--foreground-color);
+    cursor: pointer;
+    opacity: 0.3;
+    border: none;
+    padding: 0;
+    transition: opacity 0.3s ease;
+}
+
+button.radio-button.active {
+    opacity: 1;
+}

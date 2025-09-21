@@ -1,15 +1,16 @@
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import '../i18n.js'
-// import { HelmetProvider } from 'react-helmet-async';
 import React from 'react';
-import './main-styles.css'
-import App from './App.jsx'
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
+import './styles/main.scss';
+import App from './App.jsx';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const container = document.getElementById('root');
+
+if (!container) {
+  console.error('Root element not found: <div id="root"></div> missing in index.html');
+} else {
+  createRoot(container).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}

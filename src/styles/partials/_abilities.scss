@@ -1,0 +1,80 @@
+// _abilities.scss
+section#abilities {
+    background-color: var(--light-color);
+    color: var(--foreground-color);
+    text-align: center;
+    padding-top: 80px;
+
+    span {
+        color: var(--foreground-color);
+    }
+
+    p {
+        max-width: 480px;
+    }
+
+    p:last-child {
+        text-align: left;
+    }
+}
+
+div.icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+div.icon,
+a.icon {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* icon classes - kept as separate classes */
+div.js {
+    background-image: url("/assets/icons/js-icon.svg");
+}
+
+div.react {
+    background-image: url("/assets/icons/react-icon.svg");
+}
+
+div.r {
+    background-image: url("/assets/icons/r-icon.svg");
+}
+
+div.c {
+    background-image: url("/assets/icons/c-icon.svg");
+}
+
+div.python {
+    background-image: url("/assets/icons/python-icon.svg");
+}
+
+div.cpp {
+    background-image: url("/assets/icons/cpp-icon.svg");
+}
+
+div.java {
+    background-image: url("/assets/icons/java-icon.svg");
+}
+
+div.scss {
+    background-image: url("/assets/icons/scss-icon.svg");
+}
+
+div.css {
+    background-image: url("/assets/icons/css-icon.svg");
+}
+
+div.html {
+    background-image: url("/assets/icons/html-icon.svg");
+}
+
+div.figma {
+    background-image: url("/assets/icons/figma-icon.svg");
+}

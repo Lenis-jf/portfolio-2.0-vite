@@ -17,12 +17,12 @@ function OceanoRosa() {
                 <h2>Océano Rosa</h2>
                 <CustomImageSlider
                     images={[
-                        `${process.env.PUBLIC_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-1.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-2.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-3.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-4.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-5.png`,
-                        `${process.env.PUBLIC_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-6.png`
+                        `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-1.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-2.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-3.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-4.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-5.png`,
+                        `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-6.png`
                     ]}
                 />
                 <p>My first attempt at "real" web design! Created for a small business i started some years ago, this project was my playground for learning image optimization and taht color theory wasn’t that easy :(. I probably spent more time picking pink shades than coding!</p>

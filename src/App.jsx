@@ -35,7 +35,7 @@ function RouterComponent() {
       const targetClasses = ["projects", "abilities", "home", "last-part"];
       const target = event.target.closest('.section-changer');
 
-      console.log("Section to go: ", target)
+      console.log("Section to go: ", target);
       
       var matchedClass = null;
 

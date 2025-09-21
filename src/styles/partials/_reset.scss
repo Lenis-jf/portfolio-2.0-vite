@@ -1,0 +1,57 @@
+// _reset.scss
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+html {
+    overflow-x: hidden;
+    background-color: var(--light-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 500ms ease-in-out;
+}
+
+body.no-vertical-scroll {
+    overflow-y: hidden;
+    overscroll-behavior-y: contain;
+}
+
+body.disable-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    touch-action: none;
+}
+
+body a {
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
