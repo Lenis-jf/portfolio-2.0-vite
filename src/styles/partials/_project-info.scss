@@ -62,27 +62,11 @@ section.project-info {
         background-position: center;
         background-size: contain;
         -webkit-tap-highlight-color: transparent;
-    }
-
-    .left-arrow {
-        transform: rotate(90deg);
         background-image: url("/assets/icons/keyboard-arrow-down-brown.svg");
     }
 
-    section.dark-theme .left-arrow {
-        transform: rotate(90deg);
-        background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
-    }
-
-    .right-arrow {
-        transform: rotate(-90deg);
-        background-image: url("/assets/icons/keyboard-arrow-down-brown.svg");
-    }
-
-    section.dark-theme .right-arrow {
-        transform: rotate(-90deg);
-        background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
-    }
+    button.left-arrow { transform: rotate(90deg); }
+    button.right-arrow { transform: rotate(-90deg); }
 
     .images-wrapper {
         display: flex;
@@ -316,7 +300,11 @@ section.project-info {
 
 /* media queries preserved from original */
 @media screen and (min-width: 400px) {
-    button.arrow {
-        display: inline-block;
+    section.project-info {
+        button.arrow { display: inline-block; }
+        button.arrow.disabled { opacity: 0.3; pointer-events: none; }
+        &.dark-theme {
+            button.arrow { background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg"); }
+        }
     }
 }

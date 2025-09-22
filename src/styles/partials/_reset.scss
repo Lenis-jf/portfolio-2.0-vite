@@ -55,3 +55,11 @@ body a {
     -webkit-tap-highlight-color: transparent;
     text-decoration: none;
 }
+
+span.copy-right {
+    position: absolute;
+    bottom: 50px;
+    font-size: 10px;
+    color: var(--light-color);
+    opacity: 0.6;
+}

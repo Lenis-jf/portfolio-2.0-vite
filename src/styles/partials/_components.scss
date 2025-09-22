@@ -25,18 +25,20 @@ div.section-changer {
     cursor: pointer;
     margin-top: 50px;
     -webkit-tap-highlight-color: transparent;
-}
+    
+    & div {
+        width: 31px;
+        height: 17px;
+        background-size: cover;
+        background-position: bottom;
+        background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
+    }
 
-.section-changer-dark {
-    color: var(--foreground-color);
-    margin-top: 100px;
-}
-
-.section-changer div {
-    width: 31px;
-    height: 17px;
-    background-size: cover;
-    background-position: bottom;
+    &.section-changer-dark {
+        margin-top: 100px;
+        span { color: var(--foreground-color); }
+        div { background-image: url("/assets/icons/keyboard-arrow-down-brown.svg"); }
+    }
 }
 
 div.logo-container {

@@ -1,0 +1,30 @@
+# dependencies
+/node_modules
+
+# production build
+/dist
+
+# vite cache
+/.vite
+
+# log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# system files
+.DS_Store
+Thumbs.db
+
+# gh-pages temporary cache
+node_modules/.cache/

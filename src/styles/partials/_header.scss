@@ -4,11 +4,22 @@ header {
     width: 95%;
     top: 2%;
     left: calc(50% - 47.5%);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+
+    /* Fondo translúcido brillante con efecto vidrio */
+    background: rgba(255, 255, 255, 0.18);
     border-radius: 15px;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    /* Sombras más reflectivas */
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 6px rgba(255, 255, 255, 0.4);
+
+    /* Borde sutil para dar brillo */
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
     z-index: 1000;
     display: flex;
     justify-content: left;
@@ -16,6 +27,23 @@ header {
     padding: 10px 20px;
     opacity: 1;
     transition: opacity 350ms ease-out, background-color 350ms ease-in-out;
+
+    /* Efecto de destello superior */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.9),
+            transparent
+        );
+        border-radius: 50%;
+    }
 
     &.hidden {
         opacity: 0;
@@ -87,6 +115,16 @@ header {
             a.menu-button { pointer-events: all; }
 
             label.darkmode-button-container { pointer-events: all; }
+        }
+    }
+
+    &.dark-theme {
+        label.menu {
+            &::before,
+            &::after,
+            & input {
+                background-color: var(--foreground-color);
+            }
         }
     }
 

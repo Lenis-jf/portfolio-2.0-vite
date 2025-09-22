@@ -37,14 +37,6 @@ section#contact {
     a.github {
         background-image: url("/assets/icons/github-icon.svg");
     }
-
-    span.copy-right {
-        position: absolute;
-        bottom: 50px;
-        font-size: 10px;
-        color: var(--light-color);
-        opacity: 0.6;
-    }
 }
 
 section#last-part {
@@ -66,5 +58,20 @@ section#last-part {
 
     div.section-changer.section-changer-light.home {
         div { transform: rotate(180deg); }
+    }
+
+    &.dark-theme {
+        color: var(--foreground-color);
+
+        a.button {
+            color: var(--foreground-color);
+            border-color: var(--foreground-color);
+        }
+
+        div.section-changer.section-changer-light.home {
+            span { color: var(--foreground-color); }
+        }
+
+        span.copy-right { color: var(--foreground-color); }
     }
 }
