@@ -9,6 +9,8 @@ import Tyc from "./pages/Tyc";
 import OceanoRosa from "./pages/OceanoRosa";
 import Home from "./pages/Home";
 import Header from "./components/Header";
+import Leonti from "./pages/Leonti";
+
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 // import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
@@ -102,6 +104,7 @@ function RouterComponent() {
         <Route path="/about" element={<About />} />
         <Route path="/dronesim" element={<Dronesim />} />
         <Route path="/cultural-fitness" element={<Cultural />} />
+        <Route path="/leonti" element={<Leonti />} />
         <Route path="/batatabit" element={<Batatabit />} />
         <Route path="/svq" element={<Svq />} />
         <Route path="/tyc" element={<Tyc />} />

@@ -17,6 +17,8 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.3.0",
+    "react-router-hash-link": "^2.4.3",
+    "sharp": "^0.34.4",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -31,6 +33,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "test": "echo \"No tests configured\""
+    "test": "echo \"No tests configured\"",
+    "optimize-images": "node scripts/optimize-images.js",
+    "compress-videos": "node scripts/compress-videos.js"
   }
 }

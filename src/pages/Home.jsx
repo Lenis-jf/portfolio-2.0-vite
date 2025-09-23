@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import ProjectCard from "../components/ProjectCard";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 function Home() {
   return (
@@ -36,19 +37,19 @@ function Home() {
           projectTitle="Cultural Fitness"
           tools="JavaScript, HTML, SCSS"
         />
-        <ProjectCard 
+        <ProjectCard
+          frontImage="leonti-assets/leonti-project.png"
+          repoURL="https://github.com/Lenis-jf/leonti-aesthetic"
+          path="/leonti"
+          projectTitle="Leonti Aesthetic"
+          tools="React in Vite, SCSS"
+        />
+        {/* <ProjectCard 
           frontImage="batatabit-assets/batata-bit-project.png"
           repoURL="https://github.com/Lenis-jf/batatabit"
           path="/batatabit"
           projectTitle="Cultural Fitness"
           tools="JavaScript, HTML, CSS"
-        />
-        <ProjectCard 
-          frontImage="svq-assets/svq-project.png"
-          repoURL="https://github.com/Lenis-jf/SVQ"
-          path="/svq"
-          projectTitle="SVQ"
-          tools="JavaScript, HTML, SCSS"
         />
         <ProjectCard 
           frontImage="tyc-assets/tyc-project.png"
@@ -63,7 +64,7 @@ function Home() {
           path="/oceano-rosa"
           projectTitle="Océano Rosa"
           tools="JavaScript, HTML, CSS"
-        />
+        /> */}
         <div className="section-changer section-changer-light abilities">
           <span>Not finished yet :)</span>
           <div></div>
