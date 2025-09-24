@@ -107,10 +107,14 @@ function RouterComponent() {
 		});
 
 		const lastSection = localStorage.getItem('lastSection');
-		if (lastSection && document.getElementById(lastSection)) {
-			document.getElementById(lastSection).scrollIntoView();
-		} else if (document.getElementById('home')) {
-			document.getElementById('home').scrollIntoView();
+		const initialSection = lastSection || 'home';
+		
+		if (logoContainerRef.current) {
+			if (initialSection === "home" || initialSection === "last-part") {
+				logoContainerRef.current.classList.add("hidden");
+			} else {
+				logoContainerRef.current.classList.remove("hidden");
+			}
 		}
 
 		return () => {
