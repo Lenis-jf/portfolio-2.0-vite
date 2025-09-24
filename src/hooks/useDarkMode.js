@@ -1,12 +1,23 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+const getInitialDarkMode = () => {
+    const storedValue = localStorage.getItem('isDarkMode');
+    if (storedValue !== null) {
+        return JSON.parse(storedValue);
+    }
+
+    if (window.matchMedia) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    return false; 
+};
+
 export function useDarkMode(sectionRefs = [], headerRef) {
     const location = useLocation();
 
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        return localStorage.getItem("dark-theme") === "true";
-    });
+    const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode());
 
     const toggleDarkMode = () => {
         setIsDarkMode(prev => !prev);
@@ -25,7 +36,22 @@ export function useDarkMode(sectionRefs = [], headerRef) {
     }, [isDarkMode]);
 
     useEffect(() => {
-        // Obtenemos las secciones válidas de las referencias
+        if(!window.matchMedia) return;
+
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const handleChange = (e) => {
+            setIsDarkMode(e.matches);
+        };
+
+        mediaQuery.addEventListener("change", handleChange);
+
+        return() => {
+            mediaQuery.removeEventListener("change", handleChange);
+        };
+    }, []);
+
+    useEffect(() => {
         const sections = sectionRefs.filter(ref => ref.current);
 
         const applyThemeToSections = (darkMode) => {
@@ -38,7 +64,6 @@ export function useDarkMode(sectionRefs = [], headerRef) {
             });
         };
 
-        // Aplicamos el tema a las secciones cuando cambia el modo oscuro o la ubicación
         applyThemeToSections(isDarkMode);
 
     }, [isDarkMode, location, sectionRefs]);
