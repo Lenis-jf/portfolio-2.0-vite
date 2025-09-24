@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -33,15 +33,22 @@ function RouterComponent() {
 	
 	const projectPageRef = useRef(null);
 
-	const [isDarkMode, toggleDarkMode] = useDarkMode([
+	const sectionRefsArray = useMemo(() => [
 		homeSectionRef,
 		projectsSectionRef,
 		abilitiesSectionRef,
 		lastPartSectionRef,
 		projectPageRef
-	], headerRef);
+	], [
+		homeSectionRef,
+		projectsSectionRef,
+		abilitiesSectionRef,
+		lastPartSectionRef,
+		projectPageRef
+	]);
 
-	// ¡Corregido! Ahora pasamos un array de referencias.
+	const [isDarkMode, toggleDarkMode] = useDarkMode(sectionRefsArray, headerRef);
+
 	const menuColor = useMenuColor([
 		homeSectionRef,
 		projectsSectionRef,
@@ -50,14 +57,6 @@ function RouterComponent() {
 	], isDarkMode);
 
 	useEffect(() => {
-		// ... Tu lógica de IntersectionObserver para visibilidad y scroll
-		const sections = [
-			homeSectionRef.current,
-			projectsSectionRef.current,
-			abilitiesSectionRef.current,
-			lastPartSectionRef.current
-		].filter(ref => ref);
-
 		const sectionChangers = document.querySelectorAll('div.section-changer');
 
 		function goToSection(event) {
@@ -72,6 +71,8 @@ function RouterComponent() {
 
 		sectionChangers.forEach(sectionChanger => { sectionChanger.addEventListener('click', goToSection); });
 
+		const sections = sectionRefsArray.map(ref => ref.current).filter(ref => ref !== null);
+
 		const observerOptions = {
 			root: null,
 			threshold: 0.3
@@ -82,8 +83,15 @@ function RouterComponent() {
 				if (entry.isIntersecting) {
 					const id = entry.target.id;
 					localStorage.setItem('lastSection', id);
+
 					entry.target.classList.remove('hidden');
 					entry.target.classList.add('visible');
+
+					const color = window.getComputedStyle(entry.target).getPropertyValue("background-color");
+					document.body.style.backgroundColor = color;
+
+					console.log("Current color: ", color);
+					console.log("Current body color: ", window.getComputedStyle(document.body).getPropertyValue("background-color"));
 				}
 			});
 		}, observerOptions);
@@ -107,7 +115,7 @@ function RouterComponent() {
 				});
 			}
 		}
-	}, [location]);
+	}, [location, sectionRefsArray]);
 
 	return (
 		<>

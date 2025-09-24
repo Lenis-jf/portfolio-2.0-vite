@@ -71,8 +71,9 @@ section.project-info {
 
     .images-wrapper {
         display: flex;
-        width: 50vw;
-        height: 25vw;
+        aspect-ratio: 16 / 9;
+        // width: 50vw;
+        height: auto;
         min-width: 280px;
         max-width: 600px;
         min-height: 160px;
@@ -120,8 +121,9 @@ section.project-info {
         transition: width 300ms ease-out, height 300ms ease-out;
         
         &.small {
-            width: 65vw;
-            height: 30vw;
+            // width: 65vw;
+            aspect-ratio: 16 / 9;
+            height: auto;
             max-width: 680px;
             max-height: 340px;
             min-width: 280px;
