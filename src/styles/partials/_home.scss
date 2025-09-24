@@ -1,5 +1,5 @@
 // _home.scss
-section {
+section.light-section, section.dark-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,6 @@ section {
     text-align: center;
     padding: 40px 20px 80px 20px;
     scroll-snap-align: start;
-    color: var(--foreground-color);
     transition: background-color 500ms ease-in-out;
 
     h1,
@@ -43,7 +42,7 @@ section#home {
     justify-content: center;
     background-color: var(--light-color);
     height: 100vh;
-    color: var(--foreground-color);
+    // color: var(--foreground-color);
 
     &.dark-theme span {
         color: var(--foreground-color);

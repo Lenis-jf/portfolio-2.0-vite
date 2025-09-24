@@ -63,3 +63,13 @@ span.copy-right {
     color: var(--light-color);
     opacity: 0.6;
 }
+
+section.light-section {
+    background-color: var(--light-color);
+    color: var(--foreground-color);
+}
+
+section.dark-section {
+    background-color: var(--light2-color);
+    color: var(--light-color);
+}

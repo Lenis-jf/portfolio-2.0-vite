@@ -1,8 +1,6 @@
 // _projects.scss
 section#projects {
     height: auto;
-    background-color: var(--light2-color);
-    color: var(--light-color);
     text-align: center;
     padding: 90px 20px 100px 20px;
 
@@ -190,7 +188,6 @@ section#projects {
 
         div.project-card {
             div.small-info-card {
-
                 p,
                 h4,
                 h6 {

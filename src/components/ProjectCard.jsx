@@ -64,9 +64,12 @@ function ProjectCard(props) {
         />
       </div>
       <div className="face back">
-        <img src={`${import.meta.env.BASE_URL}/assets/icons/github-logo.svg`} alt="Github Logo" />
+        <img 
+          src={props.isDarkMode ? `${import.meta.env.BASE_URL}/assets/icons/github-logo-light.svg` : `${import.meta.env.BASE_URL}/assets/icons/github-logo.svg`} 
+          alt="Github Logo" 
+        />
         <a href={props.repoURL} className="button card-button">Show Repository</a>
-        <Link to={props.path} className="button card-button">See more about it</Link>
+        <Link to={`/projects${props.path}`} className="button card-button">See more about it</Link>
       </div>
       <div className="small-info-card" ref={smallCardRef}>
         <h4>{props.projectTitle}</h4>
