@@ -71,7 +71,7 @@ section.project-info {
 
     .images-wrapper {
         display: flex;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 16 / 10;
         // width: 50vw;
         height: auto;
         min-width: 280px;
@@ -122,7 +122,7 @@ section.project-info {
         
         &.small {
             // width: 65vw;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 16 / 10;
             height: auto;
             max-width: 680px;
             max-height: 340px;
@@ -313,7 +313,7 @@ section.project-info {
 }
 
 /* media queries preserved from original */
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 440px) {
     section.project-info {
         button.arrow { display: inline-block; }
         button.arrow.disabled { opacity: 0.3; pointer-events: none; }
