@@ -3,7 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef }) {
+function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
     return (
         <div>
             <header className="light-section" ref={headerRef}>
@@ -32,7 +32,7 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef }) {
                         />
                     </label>
                 </div>
-                <div className="logo-container"></div>
+                <div className="logo-container" ref={logoContainerRef}></div>
             </header>
         </div>
     );

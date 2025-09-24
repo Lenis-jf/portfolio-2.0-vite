@@ -14,10 +14,9 @@ section#projects {
 
     div.project-card {
         position: relative;
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 16 / 9;
         width: 85%;
-        height: auto;
-        // width: 85%;
+        height: 100%;
         max-width: 280px;
         margin-top: 60px;
         cursor: pointer;
@@ -51,7 +50,6 @@ section#projects {
                 inset 0 -2px 6px rgba(255, 255, 255, 0.4);
 
             transition: opacity 0.3s ease;
-            position: relative;
             overflow: hidden;
 
             &::before {

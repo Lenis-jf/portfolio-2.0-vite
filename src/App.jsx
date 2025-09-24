@@ -25,6 +25,7 @@ function RouterComponent() {
 	const location = useLocation();
 
 	const headerRef = useRef(null);
+	const logoContainerRef = useRef(null);
 
 	const homeSectionRef = useRef(null);
 	const projectsSectionRef = useRef(null);
@@ -87,6 +88,11 @@ function RouterComponent() {
 					entry.target.classList.remove('hidden');
 					entry.target.classList.add('visible');
 
+					if((id === "home" || id === "last-part") && logoContainerRef.current)
+						logoContainerRef.current.classList.add("hidden");
+					else if(logoContainerRef.current)
+						logoContainerRef.current.classList.remove("hidden");
+
 					const color = window.getComputedStyle(entry.target).getPropertyValue("background-color");
 					document.body.style.backgroundColor = color;
 
@@ -115,11 +121,11 @@ function RouterComponent() {
 				});
 			}
 		}
-	}, [location, sectionRefsArray]);
+	}, [location, sectionRefsArray, logoContainerRef]);
 
 	return (
 		<>
-			<Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} menuColor={menuColor} headerRef={headerRef} />
+			<Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} menuColor={menuColor} headerRef={headerRef} logoContainerRef={logoContainerRef} />
 			<Routes>
 				<Route path="/" element={
 					<Home
