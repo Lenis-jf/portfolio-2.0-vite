@@ -4,14 +4,14 @@
 section#contact {
     position: relative;
     justify-content: center;
-    background-color: $light-color;
+    background-color: var(--light-color-2);
     color: $light-color;
     max-height: 100vh;
 
     &.dark-section {
         p,
         span {
-            color: var(--foreground-color);
+            color: $light-color;
         }
     }
 
