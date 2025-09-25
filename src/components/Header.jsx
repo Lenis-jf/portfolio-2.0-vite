@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // import ContactCardLight from "../../public/assets/icons/contact-card-lightmode.svg";
 // import ContactCardDark from "../../assets/icons/contact-card-darkmode.svg";
 
-function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
+function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef, contactCardRef, currentSrc }) {
     return (
         <div>
             <header id="header" className="light-section" ref={headerRef}>
@@ -26,11 +26,10 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                         return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
                     }}>
                         <img
-                            // 🌟 SOLUCIÓN: Usar la base URL, forzando un string vacío si es undefined
-                            // y usando una ruta relativa a la base SIN la barra inicial.
-                            src={(import.meta.BASE_URL || "") + (isDarkMode
+                            ref={contactCardRef}
+                            src={(import.meta.env.BASE_URL || "") + (isDarkMode
                                 ? "assets/icons/contact-card-darkmode.svg"
-                                : "assets/icons/contact-card-lightmode.svg"
+                                : currentSrc
                             )}
                             alt="contact-card icon"
                         />
