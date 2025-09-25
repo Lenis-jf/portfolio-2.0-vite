@@ -1,6 +1,8 @@
 // _components.scss
 // Generic components: buttons, section-changer, logo container, darkmode toggle basics
 
+@use "./variables" as *;
+
 a.button {
     display: flex;
     width: 90px;
@@ -13,6 +15,13 @@ a.button {
     border-radius: 5px;
     cursor: pointer;
     outline: none;
+
+    &.highlight {
+        border-color: $blue-logo;
+        background-color: $blue-logo;
+        color: var(--light-color);
+        transition: all 300ms ease-in-out;
+    }
 }
 
 div.section-changer {

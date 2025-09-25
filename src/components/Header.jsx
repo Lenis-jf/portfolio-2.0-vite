@@ -1,28 +1,44 @@
-// src/components/Header.jsx
-
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+// import ContactCardLight from "../../public/assets/icons/contact-card-lightmode.svg";
+// import ContactCardDark from "../../assets/icons/contact-card-darkmode.svg";
 
 function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
     return (
         <div>
-            <header className="light-section" ref={headerRef}>
+            <header id="header" className="light-section" ref={headerRef}>
                 <label className={`menu ${menuColor}`}>
                     <input type="checkbox" />
                 </label>
                 <div className={`menu-buttons-container ${menuColor}`}>
-                    <Link to="/" className={`menu-button ${isDarkMode ? 'dark-theme' : ''}`}>
+                    <NavLink to="/" className={({ isActive }) => {
+                        return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
+                    }}>
                         <span>Home</span>
-                    </Link>
-                    <a href="/" className={`menu-button ${isDarkMode ? 'dark-theme' : ''}`}>
+                    </NavLink>
+                    <NavLink to="/work" className={({ isActive }) => {
+                        return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
+                    }}>
                         <span>Work</span>
-                    </a>
-                    <Link to="/contact" className={`menu-button ${isDarkMode ? 'dark-theme' : ''}`}>
-                        <span>Me</span>
-                    </Link>
-                    <Link to="/about" className={`menu-button ${isDarkMode ? 'dark-theme' : ''}`}>
+                    </NavLink>
+                    <NavLink to="/contact" className={({ isActive }) => {
+                        return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
+                    }}>
+                        <img
+                            // Usar BASE_URL, asegurándose de que la ruta del archivo NO empiece con /
+                            src={isDarkMode
+                                ? `${import.meta.BASE_URL}assets/icons/contact-card-darkmode.svg`
+                                : `${import.meta.BASE_URL}assets/icons/contact-card-lightmode.svg`
+                            }
+                            alt="contact-card icon"
+                        />
+                    </NavLink>
+                    <NavLink to="/about" className={({ isActive }) => {
+                        return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
+                    }}>
                         <span>About</span>
-                    </Link>
+                    </NavLink>
 
                     <label className="darkmode-button-container brown-color light-theme">
                         <input

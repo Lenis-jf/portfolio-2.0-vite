@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import ProjectCard from "../components/ProjectCard";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
 function Home({
@@ -21,7 +21,7 @@ function Home({
 				<div className="hr"></div>
 				<h1>Software Engineer<br />Web Developer<br />UI & UX Designer</h1>
 				<div className="buttons-container">
-					<Link to="/contact" className="button">Find Me</Link>
+					<Link to="/contact" className="button highlight">Find Me</Link>
 					<Link to="#" className="button">Know Me</Link>
 				</div>
 				<div className="section-changer section-changer-dark projects">
@@ -56,6 +56,7 @@ function Home({
 					tools="React in Vite, SCSS"
 					isDarkMode={isDarkMode}
 				/>
+				<Link to="/work" className="button work">Show all projects</Link>
 				<div className="section-changer section-changer-light abilities">
 					<span>Not finished yet :)</span>
 					<div></div>
@@ -92,7 +93,7 @@ function Home({
 				<div className="main-logo"></div>
 				<p>I am Juan Fernando and Im here to bring your ideas to reality</p>
 				<div className="buttons-container light-color"></div>
-				<Link to="/contact" className="button">Find Me</Link>
+				<Link to="/contact" className="button highlight">Find Me</Link>
 				<div className="section-changer section-changer-light home">
 					<div></div>
 					<span>Go back to start</span>

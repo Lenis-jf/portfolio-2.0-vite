@@ -1,4 +1,6 @@
-// _contact.scss
+@use "./variables" as *;
+@use "./mixins" as *;
+
 section#contact {
     position: relative;
     justify-content: center;
@@ -6,8 +8,7 @@ section#contact {
     color: var(--light-color);
     max-height: 100vh;
 
-    &.dark-theme {
-
+    &.dark-section {
         p,
         span {
             color: var(--foreground-color);
@@ -45,11 +46,7 @@ section#last-part {
     color: var(--light-color);
     padding: 100px 0;
 
-    a.button {
-        margin-top: 20px;
-        color: var(--light-color);
-        border-color: var(--light-color);
-    }
+    a.button { color: $light-color; @include glass-button(); margin-top: 40px; }
 
     span.copy-right {
         position: absolute;
@@ -63,10 +60,7 @@ section#last-part {
     &.dark-theme {
         color: var(--foreground-color);
 
-        a.button {
-            color: var(--foreground-color);
-            border-color: var(--foreground-color);
-        }
+        // a.button { color: var(--foreground-color); }
 
         div.section-changer.section-changer-light.home {
             span { color: var(--foreground-color); }

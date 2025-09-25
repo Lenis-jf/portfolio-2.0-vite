@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 // _reset.scss
 *,
 *::after,
@@ -26,6 +28,9 @@ html {
     overflow-x: hidden;
     background-color: var(--light-color);
     scroll-behavior: smooth;
+
+    &.dark-theme { a.active { color: $light-color; background-color: $blue-logo; }
+}
 }
 
 body {
@@ -63,6 +68,8 @@ span.copy-right {
     color: var(--light-color);
     opacity: 0.6;
 }
+
+section.section { min-height: 100dvh; }
 
 section.light-section {
     background-color: var(--light-color);

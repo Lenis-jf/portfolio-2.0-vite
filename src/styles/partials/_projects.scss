@@ -1,4 +1,6 @@
-// _projects.scss
+@use "./variables" as *;
+@use "./mixins" as *;
+
 section#projects {
     height: auto;
     text-align: center;
@@ -178,6 +180,18 @@ section#projects {
                 transform: perspective(800px) rotateY(360deg);
             }
         }
+    }
+
+    a.button.work {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        max-width: 200px;
+        padding: 20px 10px;
+        color: $light-color;
+        margin-top: 180px;
+        @include glass-button();
     }
 
     &.dark-theme {

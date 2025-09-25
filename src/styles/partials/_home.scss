@@ -1,3 +1,6 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
 // _home.scss
 section.light-section, section.dark-section {
     display: flex;
@@ -41,12 +44,12 @@ section.light-section, section.dark-section {
 section#home {
     justify-content: center;
     background-color: var(--light-color);
-    height: 100vh;
-    // color: var(--foreground-color);
 
-    &.dark-theme span {
-        color: var(--foreground-color);
+    &.dark-theme {
+        span {color: var(--foreground-color); }
     }
+
+    a.button.highlight { color: $light-color; @include glass-button(); }
 }
 
 div.main-logo {
