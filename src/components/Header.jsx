@@ -26,11 +26,12 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                         return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
                     }}>
                         <img
-                            // Usar BASE_URL, asegurándose de que la ruta del archivo NO empiece con /
-                            src={isDarkMode
-                                ? `${import.meta.BASE_URL}assets/icons/contact-card-darkmode.svg`
-                                : `${import.meta.BASE_URL}assets/icons/contact-card-lightmode.svg`
-                            }
+                            // 🌟 SOLUCIÓN: Usar la base URL, forzando un string vacío si es undefined
+                            // y usando una ruta relativa a la base SIN la barra inicial.
+                            src={(import.meta.BASE_URL || "") + (isDarkMode
+                                ? "assets/icons/contact-card-darkmode.svg"
+                                : "assets/icons/contact-card-lightmode.svg"
+                            )}
                             alt="contact-card icon"
                         />
                     </NavLink>

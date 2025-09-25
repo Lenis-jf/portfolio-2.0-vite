@@ -5,7 +5,7 @@ section#contact {
     position: relative;
     justify-content: center;
     background-color: var(--light2-color);
-    color: var(--light-color);
+    color: $light-color;
     max-height: 100vh;
 
     &.dark-section {
