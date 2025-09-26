@@ -2,19 +2,19 @@
 // Generic components: buttons, section-changer, logo container, darkmode toggle basics
 
 @use "./variables" as *;
+@use "./mixins" as *;
 
 a.button {
     display: flex;
     width: 90px;
     height: 30px;
-    color: var(--foreground-color);
+    color: $light-color;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    border: solid 1.5px var(--foreground-color);
     border-radius: 5px;
     cursor: pointer;
     outline: none;
+    @include glass-button($light-gray);
 
     &.highlight {
         border-color: $blue-logo;

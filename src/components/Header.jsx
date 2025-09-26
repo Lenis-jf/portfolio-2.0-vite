@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 // import ContactCardLight from "../../public/assets/icons/contact-card-lightmode.svg";
 // import ContactCardDark from "../../assets/icons/contact-card-darkmode.svg";
 
-function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef, contactCardRef, currentSrc }) {
+function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
     return (
         <div>
             <header id="header" className="light-section" ref={headerRef}>
@@ -26,11 +26,7 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                         return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
                     }}>
                         <img
-                            ref={contactCardRef}
-                            src={(import.meta.env.BASE_URL || "") + (isDarkMode
-                                ? "assets/icons/contact-card-darkmode.svg"
-                                : currentSrc
-                            )}
+                            src={`${import.meta.env.BASE_URL}assets/icons/contact-card-darkmode.svg`}
                             alt="contact-card icon"
                         />
                     </NavLink>

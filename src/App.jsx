@@ -25,7 +25,6 @@ function RouterComponent() {
 	const location = useLocation();
 
 	const headerRef = useRef(null);
-	const contactCardRef = useRef(null);
 	const logoContainerRef = useRef(null);
 
 	const homeSectionRef = useRef(null);
@@ -51,12 +50,12 @@ function RouterComponent() {
 
 	const [isDarkMode, toggleDarkMode] = useDarkMode(sectionRefsArray, headerRef);
 
-	const { menuColor, currentSrc } = useMenuColor([
+	const menuColor = useMenuColor([
 		homeSectionRef,
 		projectsSectionRef,
 		abilitiesSectionRef,
 		lastPartSectionRef
-	], isDarkMode, contactCardRef);
+	], isDarkMode);
 
 	useEffect(() => {
 		const sectionChangers = document.querySelectorAll('div.section-changer');
@@ -136,8 +135,6 @@ function RouterComponent() {
 				menuColor={menuColor} 
 				headerRef={headerRef} 
 				logoContainerRef={logoContainerRef} 
-				contactCardRef={contactCardRef}
-				currentSrc={currentSrc}
 			/>
 			<Routes>
 				<Route path="/" element={

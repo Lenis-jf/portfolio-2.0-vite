@@ -154,8 +154,8 @@ header {
             width: 40px;
             height: 20px;
             pointer-events: none;
-            color: var(--foreground-color);
-            border: solid 1px var(--foreground-color);
+            color: $light-color;
+            @include glass-button($light-gray);
 
             img {
                 width: 40px;
