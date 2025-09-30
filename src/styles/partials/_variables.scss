@@ -1,11 +1,10 @@
 // _variables.scss
-// Colors, fonts and basic sizes extracted from your CSS
 
 // SCSS helper vars (for dev)
-$light-color: #FEFAE0;
-$light2-color: #344e41;
-$foreground-color: #504B38;
-$blue-logo: #69A2FF;
+$light-color: #DDF2FD;
+$light2-color: #021526;
+$foreground-color: #2c2c2c;
+$blue-logo: #4F75FF;
 $light-gray: #3c3d37;
 $dark-gray: #1e201e;
 
@@ -37,7 +36,9 @@ $fs-xsmall: 0.75rem;
 // Export as CSS custom properties so JS (runtime) can toggle :root.dark-theme easily
 :root {
     --light-color: #{$light-color};
+    --light-color-rgb: 221, 242, 253;
     --light2-color: #{$light2-color};
+    --light2-color-rgb: 2, 21, 38;
     --foreground-color: #{$foreground-color};
     --bars-gap: #{$bars-gap};
     --bar-width: #{$bar-width};
@@ -49,7 +50,9 @@ $fs-xsmall: 0.75rem;
 
 // dark theme overrides via class on :root
 :root.dark-theme {
-    --light-color: #3C3D37;
-    --light2-color: #1E201E;
-    --foreground-color: #ECDFCC;
+    --light-color: #3c3d37;
+    --light-color-rgb: 60, 61, 55;
+    --light2-color: #1e201e;
+    --light2-color-rgb: 30, 32, 30;
+    --foreground-color: #DDF2FD;
 }

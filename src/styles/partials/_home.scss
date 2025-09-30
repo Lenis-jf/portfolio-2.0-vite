@@ -43,8 +43,15 @@ section.light-section, section.dark-section {
 
 section#home {
     justify-content: center;
-    background-color: var(--light-color);
-
+    background: linear-gradient(
+        to bottom,
+        var(--light-color) 75%,
+        rgba(var(--light2-color-rgb), 0.1) 80%,
+        rgba(var(--light2-color-rgb), 0.3)85%,
+        rgba(var(--light2-color-rgb), 0.6) 90%,
+        var(--light2-color) 100%
+    );
+    
     &.dark-theme {
         span {color: var(--foreground-color); }
     }

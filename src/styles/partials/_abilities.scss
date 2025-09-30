@@ -1,6 +1,11 @@
 // _abilities.scss
 section#abilities {
-    background-color: var(--light-color);
+    background: linear-gradient(
+        to bottom,
+        var(--light-color) 80%,
+        rgba(var(--light2-color-rgb), 0.1) 95%,
+        var(--light2-color) 100%
+    );
     color: var(--foreground-color);
     text-align: center;
     padding-top: 80px;
