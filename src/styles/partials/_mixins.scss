@@ -16,3 +16,19 @@
         border-color: rgba(255, 255, 255, 0.5);
     }
 }
+
+@mixin p-responsive-font-size {
+    font-size: clamp($fs-base, 1rem + 0.8vw, 1.5rem);
+}
+
+@mixin h1-responsive-font-size {
+    font-size: clamp($fs-h1, 1rem + 0.8vw, 4rem);
+}
+
+@mixin h2-responsive-font-size {
+    font-size: clamp($fs-h2, 1rem + 0.8vw, 3rem);
+}
+
+@mixin button-responsive-font-size {
+    font-size: clamp($fs-base, 1rem + 0.8vw, 1.8rem);
+}

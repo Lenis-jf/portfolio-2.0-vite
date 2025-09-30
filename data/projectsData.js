@@ -25,38 +25,37 @@ const projectsData = [
         content: [
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-1.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-2.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-3.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-4.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-5.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-6.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-7.png`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-1.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-2.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-3.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-4.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-5.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-6.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-7.webp`,
                 ]
             },
             {
                 type: "paragraph", text: "Where fitness meets code! 💪 Collaborated with design students to create this gym-inspired site. Our mission? To create a beautiful landing page with different function like a BMI calculator or even a dark mode button!"
             },
             {
-                type: "button", text: "Show Repository", url: "https://github.com/Lenis-jf/leonti-aesthetic"
+                type: "button", text: "Show Repository", url: "https://github.com/Lenis-jf/Cultural-Fitness"
             },
             {
                 type: "paragraph", text: "Learned to work with designers’ mockups (turns out \"pixel perfect\" is harder than it sounds!). It is pretty easy to navigate through the different sections and im still proud of the design and amount of usefull information the website has"
             },
             {
-                type: "video", video: "cultural-fitness-project.mp4", poster: "/cultural-fitness-assets/cultural-fitness-project.png"
+                type: "video", video: "cultural-fitness-project.mp4", poster: "/cultural-fitness-assets/cultural-fitness-project.webp"
             },
             {
-                type: "button", text: "Visit Website", url: "https://lenis-jf.github.io/cultural-fitness/"
+                type: "button", text: "Visit Website", url: "https://lenis-jf.github.io/Cultural-Fitness/"
             },
             {
                 type: "paragraph", text: "Though the business plan fizzled, the code survived! Check out our Figma-to-CSS journey below—it’s like watching a baby bird learn to fly!"
             },
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-1.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-2.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-3.png`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-1.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-2.webp`,
                 ]
             },
             {

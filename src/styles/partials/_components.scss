@@ -30,6 +30,7 @@ div.section-changer {
     text-align: center;
     align-items: center;
     gap: 15px;
+    @include p-responsive-font-size;
     color: var(--light-color);
     cursor: pointer;
     margin-top: 50px;

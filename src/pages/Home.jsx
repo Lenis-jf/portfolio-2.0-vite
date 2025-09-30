@@ -41,7 +41,7 @@ function Home({
 					isDarkMode={isDarkMode}
 				/>
 				<ProjectCard
-					frontImage="cultural-fitness-assets/cultural-fitness-project.png"
+					frontImage="cultural-fitness-assets/cultural-fitness-img-1.webp"
 					repoURL="https://github.com/Lenis-jf/Cultural-Fitness"
 					path="/cultural-fitness"
 					projectTitle="Cultural Fitness"
