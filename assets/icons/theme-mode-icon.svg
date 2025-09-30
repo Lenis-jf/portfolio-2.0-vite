@@ -1,7 +1,11 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z" fill="#F8F3D9"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="#F8F3D9"/> </g>
-</svg>
+<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_27_53)">
+<path d="M4 5.33335C4.73637 5.33335 5.33333 4.73639 5.33333 4.00002C5.33333 3.26364 4.73637 2.66669 4 2.66669V5.33335Z" fill="#F5F5F0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.00002 0.666687C2.15907 0.666687 0.666687 2.15907 0.666687 4.00002C0.666687 5.84095 2.15907 7.33335 4.00002 7.33335C5.84095 7.33335 7.33335 5.84095 7.33335 4.00002C7.33335 2.15907 5.84095 0.666687 4.00002 0.666687ZM4.00002 1.33335V2.66669C3.26364 2.66669 2.66669 3.26364 2.66669 4.00002C2.66669 4.73639 3.26364 5.33335 4.00002 5.33335V6.66669C5.47279 6.66669 6.66669 5.47279 6.66669 4.00002C6.66669 2.52726 5.47279 1.33335 4.00002 1.33335Z" fill="#F5F5F0"/>
+</g>
+<defs>
+<clipPath id="clip0_27_53">
+<rect width="8" height="8" fill="white"/>
+</clipPath>
+</defs>
+</svg>
