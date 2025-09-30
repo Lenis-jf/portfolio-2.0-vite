@@ -69,14 +69,10 @@ span.copy-right {
     opacity: 0.6;
 }
 
-section.section { min-height: 100dvh; }
-
 section.light-section {
-    background-color: var(--light-color);
     color: var(--foreground-color);
 }
 
 section.dark-section {
-    background-color: var(--light2-color);
     color: var(--light-color);
 }

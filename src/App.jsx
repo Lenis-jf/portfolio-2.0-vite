@@ -93,11 +93,11 @@ function RouterComponent() {
 					else if(logoContainerRef.current)
 						logoContainerRef.current.classList.remove("hidden");
 
-					const color = window.getComputedStyle(entry.target).getPropertyValue("background-color");
-					document.body.style.backgroundColor = color;
+					// const color = window.getComputedStyle(entry.target).getPropertyValue("background-color");
+					// document.body.style.backgroundColor = color;
 
-					console.log("Current color: ", color);
-					console.log("Current body color: ", window.getComputedStyle(document.body).getPropertyValue("background-color"));
+					// console.log("Current color: ", color);
+					// console.log("Current body color: ", window.getComputedStyle(document.body).getPropertyValue("background-color"));
 				}
 			});
 		}, observerOptions);

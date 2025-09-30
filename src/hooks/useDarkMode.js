@@ -87,7 +87,6 @@ export function useDarkMode(sectionRefs = [], headerRef) {
 				if (sectionChanger.classList.contains("section-changer-dark")) {
 					sectionChanger.classList.remove('section-changer-dark');
 					sectionChanger.classList.add('section-changer-light');
-					sectionChanger.style.marginTop = "100px";
 				}
 			});
         } else {
