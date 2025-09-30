@@ -43,7 +43,7 @@ section#contact {
 section#last-part {
     position: relative;
     background-color: var(--light2-color);
-    color: var(--light-color);
+    color: $foreground-color-light;
     padding: 100px 20px 80px 20px;
 
     a.button { color: $light-color; @include glass-button(); margin-top: 40px; }
