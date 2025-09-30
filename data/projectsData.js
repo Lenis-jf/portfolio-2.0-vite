@@ -72,17 +72,14 @@ const projectsData = [
                 type: "image", src: [
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-1.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-3.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-4.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-5.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-6.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-7.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-9.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-10.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-11.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-12.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-13.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-14.webp`,
                     `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-15.webp`
                 ]
             },
