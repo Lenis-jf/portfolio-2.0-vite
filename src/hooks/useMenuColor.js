@@ -1,5 +1,3 @@
-// src/hooks/useMenuColor.js
-
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -10,7 +8,7 @@ export function useMenuColor(sectionRefs, isDarkMode) {
     useEffect(() => {
         if(isDarkMode) { setMenuColor("brown-color"); return;x }
 
-        if (location.pathname.startsWith('/projects/')) {
+        if (location.pathname.startsWith('/projects/') || location.pathname.startsWith("/about")) {
             setMenuColor('brown-color');
         } else {
             setMenuColor('light-color');
@@ -31,10 +29,8 @@ export function useMenuColor(sectionRefs, isDarkMode) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     if (entry.target.classList.contains('light-section')) {
-                        // console.log("light-section");
                         setMenuColor('brown-color');
                     } else if (entry.target.classList.contains('dark-section')) {
-                        // console.log("dark-section");
                         setMenuColor('light-color');
                     }
                 }

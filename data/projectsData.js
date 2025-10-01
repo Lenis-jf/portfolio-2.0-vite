@@ -65,7 +65,7 @@ const projectsData = [
     },
     {
         id: "leonti",
-        title: "Leonti Aesthetic — Cosmetic Studio Landing",
+        title: "Leonti Aesthetic — Cosmetic Studio",
         sectionClass: "light-section",
         content: [
             {

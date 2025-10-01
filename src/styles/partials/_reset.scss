@@ -67,9 +67,11 @@ span.copy-right {
     position: absolute;
     bottom: 50px;
     font-size: 1rem;
-    color: var(--light-color);
+    color: var(--foreground-color);
     opacity: 0.6;
 }
+
+section.section { transition: background-color 500ms ease-in-out; }
 
 section.light-section {
     color: var(--foreground-color);
@@ -80,7 +82,7 @@ section.dark-section {
 }
 
 
-a.button { @include button-responsive-font-size; }
+a.button { @include button-responsive-font-size; color: $foreground-color-light; }
 p { @include p-responsive-font-size; }
 h1 { @include h1-responsive-font-size; }
 h2 { @include h2-responsive-font-size; }

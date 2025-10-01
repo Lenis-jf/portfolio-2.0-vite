@@ -16,7 +16,7 @@ section.light-section, section.dark-section {
     h2,
     p,
     div {
-        transition: opacity 350ms ease-in-out;
+        transition: opacity 600ms ease-in-out;
     }
 
     &.hidden {
@@ -50,7 +50,7 @@ section#home {
         rgba(var(--light2-color-rgb), 0.6) 90%,
         var(--light2-color) 100%
     );
-    
+        
     &.dark-theme {
         span {color: var(--foreground-color); }
     }

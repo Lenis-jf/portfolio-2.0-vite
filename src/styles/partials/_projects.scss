@@ -198,7 +198,7 @@ section#projects {
         width: 60%;
         max-width: 200px;
         padding: 20px 10px;
-        color: $light-color;
+        color: $foreground-color-light;
         margin-top: 180px;
         @include glass-button();
     }

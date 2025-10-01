@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useMemo } from 'react';
 import Home from './pages/Home';
+import Work from './pages/Work';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ProjectPage from './pages/ProjectPage';
@@ -31,31 +32,26 @@ function RouterComponent() {
 	const projectsSectionRef = useRef(null);
 	const abilitiesSectionRef = useRef(null);
 	const lastPartSectionRef = useRef(null);
+
+	const aboutPageRef = useRef(null);
 	
 	const projectPageRef = useRef(null);
 
-	const sectionRefsArray = useMemo(() => [
-		homeSectionRef,
-		projectsSectionRef,
-		abilitiesSectionRef,
-		lastPartSectionRef,
-		projectPageRef
-	], [
-		homeSectionRef,
-		projectsSectionRef,
-		abilitiesSectionRef,
-		lastPartSectionRef,
-		projectPageRef
-	]);
-
-	const [isDarkMode, toggleDarkMode] = useDarkMode(sectionRefsArray, headerRef);
-
-	const menuColor = useMenuColor([
+	const sectionRefsObject = useMemo(() => ({
+		homeSectionRef: homeSectionRef,
+		projectsSectionRef: projectsSectionRef,
+		abilitiesSectionRef: abilitiesSectionRef,
+		lastPartSectionRef: lastPartSectionRef
+	}), [
 		homeSectionRef,
 		projectsSectionRef,
 		abilitiesSectionRef,
 		lastPartSectionRef
-	], isDarkMode);
+	]);
+
+	const [isDarkMode, toggleDarkMode] = useDarkMode(Object.values(sectionRefsObject), headerRef);
+
+	const menuColor = useMenuColor(Object.values(sectionRefsObject), isDarkMode);
 
 	useEffect(() => {
 		const sectionChangers = document.querySelectorAll('div.section-changer');
@@ -72,11 +68,13 @@ function RouterComponent() {
 
 		sectionChangers.forEach(sectionChanger => { sectionChanger.addEventListener('click', goToSection); });
 
-		const sections = sectionRefsArray.map(ref => ref.current).filter(ref => ref !== null);
+		const sectionsRefsArray = Object.values(sectionRefsObject);
+		const allSectionRefs = [...sectionsRefsArray, projectPageRef, aboutPageRef];
+		const sections = allSectionRefs.map(ref => ref.current).filter(ref => ref !== null);
 
 		const observerOptions = {
 			root: null,
-			threshold: 0.3
+			threshold: 0.2
 		};
 
 		const sectionObserver = new IntersectionObserver(entries => {
@@ -92,12 +90,6 @@ function RouterComponent() {
 						logoContainerRef.current.classList.add("hidden");
 					else if(logoContainerRef.current)
 						logoContainerRef.current.classList.remove("hidden");
-
-					// const color = window.getComputedStyle(entry.target).getPropertyValue("background-color");
-					// document.body.style.backgroundColor = color;
-
-					// console.log("Current color: ", color);
-					// console.log("Current body color: ", window.getComputedStyle(document.body).getPropertyValue("background-color"));
 				}
 			});
 		}, observerOptions);
@@ -125,7 +117,7 @@ function RouterComponent() {
 				});
 			}
 		}
-	}, [location, sectionRefsArray, logoContainerRef]);
+	}, [location, sectionRefsObject, logoContainerRef, projectPageRef, aboutPageRef]);
 
 	return (
 		<>
@@ -139,15 +131,17 @@ function RouterComponent() {
 			<Routes>
 				<Route path="/" element={
 					<Home
-						homeSectionRef={homeSectionRef}
-						projectsSectionRef={projectsSectionRef}
-						abilitiesSectionRef={abilitiesSectionRef}
-						lastPartSectionRef={lastPartSectionRef}
+					    sectionRefs={sectionRefsObject}
 						isDarkMode={isDarkMode}
 					/>
 				} />
+				<Route path="/work" element={<Work />} />
 				<Route path="/contact" element={<Contact />} />
-				<Route path="/about" element={<About />} />
+				<Route path="/about" element={
+					<About 
+						aboutPageRef={aboutPageRef}
+					/>
+				} />
 				<Route path="/projects/:projectId" element={
 					<ProjectPage 
 						projectPageRef={projectPageRef}

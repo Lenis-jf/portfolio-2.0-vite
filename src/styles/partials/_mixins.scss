@@ -17,6 +17,10 @@
     }
 }
 
+@mixin xs-responsive-font-size {
+    font-size: clamp($fs-xsmall, 1rem + 1.2vw, 1.3rem);
+}
+
 @mixin p-responsive-font-size {
     font-size: clamp($fs-base, 1rem + 0.8vw, 1.6rem);
 }
@@ -27,6 +31,10 @@
 
 @mixin h2-responsive-font-size {
     font-size: clamp($fs-h2, 1rem + 0.8vw, 3rem);
+}
+
+@mixin h3-responsive-font-size {
+    font-size: clamp($fs-h3, 1rem + 0.8vw, 2.5rem);
 }
 
 @mixin button-responsive-font-size {

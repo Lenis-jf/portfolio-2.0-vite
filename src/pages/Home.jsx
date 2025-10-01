@@ -6,30 +6,27 @@ import { Link, useLocation, NavLink } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
 function Home({
-	homeSectionRef,
-	projectsSectionRef,
-	abilitiesSectionRef,
-	lastPartSectionRef,
+	sectionRefs,
 	isDarkMode
 }) {
 
 	return (
 		<div>
-			<section id="home" className="section light-section hidden" ref={homeSectionRef}>
+			<section id="home" className="section light-section hidden" ref={sectionRefs.homeSectionRef}>
 				<div className="main-logo"></div>
 				<div className="hr-arrow"></div>
 				<div className="hr"></div>
 				<h1>Software Engineer<br />Web Developer<br />UI & UX Designer</h1>
 				<div className="buttons-container">
 					<Link to="/contact" className="button highlight">Find Me</Link>
-					<Link to="#" className="button">Know Me</Link>
+					<Link to="/about" className="button">Know Me</Link>
 				</div>
 				<div className="section-changer section-changer-dark projects">
 					<span>See more</span>
 					<div></div>
 				</div>
 			</section>
-			<section id="projects" className="section dark-section hidden" ref={projectsSectionRef}>
+			<section id="projects" className="section dark-section hidden" ref={sectionRefs.projectsSectionRef}>
 				<p>Here are some of the projects I have worked on</p>
 				<p>Just touch or put your mouse on the cards to turn them and go see the GitHub repository of the project</p>
 				<ProjectCard
@@ -56,13 +53,21 @@ function Home({
 					tools="React in Vite, SCSS"
 					isDarkMode={isDarkMode}
 				/>
+				{/* <ProjectCard
+					frontImage=""
+					repoURL="https://github.com/Lenis-jf/leonti-aesthetic"
+					path="/tyc"
+					projectTitle="404 Page"
+					tools="React in Vite, SCSS"
+					isDarkMode={isDarkMode}
+				/> */}
 				<Link to="/work" className="button work">Show all projects</Link>
 				<div className="section-changer section-changer-light abilities">
 					<span>Not finished yet :)</span>
 					<div></div>
 				</div>
 			</section>
-			<section id="abilities" className="section light-section hidden" ref={abilitiesSectionRef}>
+			<section id="abilities" className="section light-section hidden" ref={sectionRefs.abilitiesSectionRef}>
 				<h2>Development Abilities</h2>
 				<p>These are the programming languages I master until now</p>
 				<div className="icons-container">
@@ -88,7 +93,7 @@ function Home({
 					<div></div>
 				</div>
 			</section>
-			<section id="last-part" className="section dark-section hidden" ref={lastPartSectionRef}>
+			<section id="last-part" className="section dark-section hidden" ref={sectionRefs.lastPartSectionRef}>
 				<p>Do not forget my name!</p>
 				<div className="main-logo"></div>
 				<p>I am Juan Fernando and Im here to bring your ideas to reality</p>

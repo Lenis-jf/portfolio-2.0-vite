@@ -16,14 +16,12 @@ function ProjectPage({ projectPageRef }) {
             behavior: "instant"
         });
 
-        // Este efecto revisa si el proyecto existe; si no, navega a una página 404
         if (!project) {
             navigate("/404");
         }
     }, [projectId, project, navigate]);
 
     if (!project) {
-        // Muestra un mensaje de carga o de "no encontrado" mientras redirige
         return <div className="loading-container">
             <p>Project not found. Redirecting...</p>
         </div>;
