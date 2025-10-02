@@ -15,3 +15,21 @@
         opacity: 0;
     }
 }
+
+@keyframes loading {
+    0% {
+        transform: translate(0px, 0px) scale(1, 1) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(0px, 1vw) scale(1.5) rotate(180deg);
+    }
+
+    66% {
+        transform: translate(0px, 0px) scale(1) rotate(360deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) scale(1) rotate(360deg);
+    }
+}

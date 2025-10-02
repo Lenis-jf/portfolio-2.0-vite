@@ -33,16 +33,16 @@ function CustomVideoPlayer(props) {
 	function toggleFullscreenMode() {
 		try {
 			const video = videoRef.current;
-	
+
 			if (getFullscreenElement()) {
 				document.exitFullscreen();
 				video?.webkitExitFullscreen?.();
 			} else {
 				if (video.requestFullscreen) {
 					video.requestFullscreen();
-				} else if (video.webkitRequestFullscreen) { 
-					video.webkitRequestFullscreen(); 
-				} else if (video.webkitEnterFullscreen) { 
+				} else if (video.webkitRequestFullscreen) {
+					video.webkitRequestFullscreen();
+				} else if (video.webkitEnterFullscreen) {
 					video.webkitEnterFullscreen();
 				}
 			}
@@ -50,7 +50,7 @@ function CustomVideoPlayer(props) {
 			console.error("Error activating Fullscreen mode:", error);
 		}
 	}
-	
+
 
 	useEffect(() => {
 		const video = videoRef.current
@@ -72,7 +72,7 @@ function CustomVideoPlayer(props) {
 			videoPlayControlRef.current?.classList.add('paused');
 			videoPlayControlSmallRef.current?.classList.remove('playing');
 			videoPlayControlSmallRef.current?.classList.add('paused');
-	
+
 			videoScreenControlContainers.forEach(container => {
 				container.classList.remove('playing');
 				container.classList.add('paused');
@@ -90,7 +90,7 @@ function CustomVideoPlayer(props) {
 				}
 			}, 200);
 		};
-	
+
 		fullscreenChangeEvents.forEach(event =>
 			document.addEventListener(event, handleFullscreenChange)
 		);
@@ -209,19 +209,19 @@ function CustomVideoPlayer(props) {
 			videoPlayControl.classList.add('playing');
 			videoPlayControlSmall.classList.remove('paused');
 			videoPlayControlSmall.classList.add('playing');
-	
+
 			videoScreenControlContainers.forEach(container => {
 				container.classList.remove('paused');
 				container.classList.add('playing');
 			});
 		};
-	
+
 		const updateControlsToPaused = () => {
 			videoPlayControl.classList.remove('playing');
 			videoPlayControl.classList.add('paused');
 			videoPlayControlSmall.classList.remove('playing');
 			videoPlayControlSmall.classList.add('paused');
-	
+
 			videoScreenControlContainers.forEach(container => {
 				container.classList.remove('playing');
 				container.classList.add('paused');
@@ -256,30 +256,30 @@ function CustomVideoPlayer(props) {
 		const progressBar = progressBarRef.current;
 
 		const preventDefault = (e) => e.preventDefault();
-	
+
 		function seek(event) {
 			if (!video || !progressBar) return;
-	
+
 			const rect = progressBar.getBoundingClientRect();
 			const offsetX = event.type.includes("touch") ? event.touches[0].clientX - rect.left : event.clientX - rect.left;
 			const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
 			video.currentTime = percentage * video.duration;
 		}
-	
+
 		function startSeek(event) {
 			document.body.classList.add("no-vertical-scroll");
-			
+
 			let scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
 			// 1. Bloquear scroll
 			document.documentElement.style.overflow = 'hidden';
 			document.body.classList.add('disable-scroll');
 			document.body.style.top = `-${scrollPosition}px`;
-		
+
 			// 2. Bloquear gestos táctiles en toda la página
 			document.addEventListener('touchmove', preventDefault, { passive: false });
 			document.addEventListener('wheel', preventDefault, { passive: false });
-		
+
 
 			seek(event);
 
@@ -290,7 +290,7 @@ function CustomVideoPlayer(props) {
 
 			stopSeek.scrollPosition = scrollPosition;
 		}
-	
+
 		function stopSeek() {
 			document.body.classList.remove("no-vertical-scroll");
 
@@ -304,19 +304,19 @@ function CustomVideoPlayer(props) {
 				top: stopSeek.scrollPosition || 0,
 				behavior: "instant"
 			});
-			  
+
 
 			document.removeEventListener("mousemove", seek);
 			document.removeEventListener("touchmove", seek);
 			document.removeEventListener("mouseup", stopSeek);
 			document.removeEventListener("touchend", stopSeek);
 		}
-		
+
 		if (!progressBar) return;
 
 		progressBar.addEventListener("mousedown", startSeek);
 		progressBar.addEventListener("touchstart", startSeek);
-	
+
 		return () => {
 			if (progressBar) {
 				progressBar.removeEventListener("mousedown", startSeek);
@@ -324,6 +324,18 @@ function CustomVideoPlayer(props) {
 			}
 		};
 	}, []);
+
+	// cuando esté montado notificamos al padre
+	useEffect(() => {
+		const t = setTimeout(() => {
+			if (typeof onRefsReady === "function") {
+				// enviamos un array con el elemento video (si existe)
+				props.onRefsReady(videoRef.current ? [videoRef.current] : []);
+			}
+		}, 0);
+
+		return () => clearTimeout(t);
+	}, [props.video, props.poster, props.onRefsReady]);
 
 	return (
 		<div id="fullscreen" className={`video-container ${screenMode}`}

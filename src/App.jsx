@@ -7,6 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ProjectPage from './pages/ProjectPage';
 import Header from './components/Header';
+import Loader from './components/Loader';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import { useDarkMode } from './hooks/useDarkMode';
@@ -119,6 +120,11 @@ function RouterComponent() {
 		}
 	}, [location, sectionRefsObject, logoContainerRef, projectPageRef, aboutPageRef]);
 
+	useEffect(() => {
+		if(location.pathname.startsWith("/loader") && headerRef.current)
+			headerRef.current.style.opacity = 0;
+	}, [location, headerRef]);
+
 	return (
 		<>
 			<Header 
@@ -145,8 +151,10 @@ function RouterComponent() {
 				<Route path="/projects/:projectId" element={
 					<ProjectPage 
 						projectPageRef={projectPageRef}
+						headerRef={headerRef}
 					/>
 				} />
+				<Route path="/loader" element={<Loader />} />
 			</Routes>
 		</>
 	);

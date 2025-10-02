@@ -11,7 +11,7 @@ function CustomImageSlider(props) {
     const isProgrammaticScroll = useRef(null);
 
     const goToPrevImage = () => {
-        isProgrammaticScroll.current = true;    
+        isProgrammaticScroll.current = true;
         setCurrentIndex(prev => (prev === 0 ? prev : prev - 1));
         setTimeout(() => {
             isProgrammaticScroll.current = false;
@@ -45,7 +45,7 @@ function CustomImageSlider(props) {
     }
 
     useEffect(() => {
-        if(!isProgrammaticScroll.current) return;
+        if (!isProgrammaticScroll.current) return;
 
         if (imagesWrapperRef.current && imgRefs.current[currentIndex]) {
             imagesWrapperRef.current.scrollTo({
@@ -64,7 +64,7 @@ function CustomImageSlider(props) {
         );
 
         radioButtonRefs.current.forEach((button, index) => {
-            if(button) button.classList.toggle("active", index === currentIndex);
+            if (button) button.classList.toggle("active", index === currentIndex);
         });
     }, [currentIndex, props.images.length]);
 
@@ -76,7 +76,7 @@ function CustomImageSlider(props) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const newIndex = imgRefs.current?.findIndex(img => img === entry.target);
-                        
+
                         console.log("new-index: ", newIndex);
 
                         updateVisibleIndex(newIndex);
@@ -90,15 +90,29 @@ function CustomImageSlider(props) {
         );
 
         imgRefs.current.forEach(img => {
-            if(img) observer.observe(img);
+            if (img) observer.observe(img);
         });
 
         return () => {
             imgRefs.current.forEach(img => {
                 if (img) observer.unobserve(img);
             });
+
+            imgRefs.current = [];
         };
     }, []);
+
+    useEffect(() => {
+        const nodes = imgRefs.current.filter(Boolean);
+        // Defer un tick para asegurarnos que el DOM haya pintado
+        const t = setTimeout(() => {
+            if (typeof onRefsReady === "function") {
+                props.onRefsReady(nodes);
+            }
+        }, 0);
+
+        return () => clearTimeout(t);
+    }, [props.images, props.onRefsReady]);
 
     return (
         <>

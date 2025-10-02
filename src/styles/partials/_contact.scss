@@ -5,13 +5,12 @@ section#contact {
     position: relative;
     justify-content: center;
     background-color: var(--light2-color);
-    color: $light-color;
     min-height: 100vh;
 
     &.dark-section {
         p,
         span {
-            color: $light-color;
+            color: $foreground-color-light;
         }
     }
 

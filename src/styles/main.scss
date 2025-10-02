@@ -10,6 +10,7 @@
 @use './partials/contact';
 @use './partials/animations';
 @use './partials/about-page';
+@use './partials/loader';
 
 /* Extra small responsive tweaks that were in media queries */
 @media screen and (min-width: 360px) {
