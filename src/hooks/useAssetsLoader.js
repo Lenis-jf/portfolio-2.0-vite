@@ -1,94 +1,104 @@
-    import { useState, useEffect } from "react";
+// src/hooks/useAssetsLoader.js
+import { useState, useLayoutEffect, useRef } from "react";
 
-    export function useAssetsLoader({refsArray = [], timeout = 8000} = {}) {
-        const [isReady, setReady] = useState(false);
+export function useAssetsLoader({ refsArray = [], timeout = 8000 } = {}) {
+    const [isReady, setReady] = useState(false);
+    const timerRef = useRef(null);
 
-        useEffect(() => {
+    useLayoutEffect(() => {
+        let pending = 0;
+        const cleanUps = [];
 
-            let pending = 0;
-            const cleanUpFunctions = [];
-            let timer = null;
+        setReady(false);
 
-            function markLoaded() {
-                pending = Math.max(0, pending - 1);
+        if (timerRef.current) {
+            clearTimeout(timerRef.current);
+            timerRef.current = null;
+        }
 
-                if(pending === 0) {
-                    if(timer) clearTimeout(timer);
-                    setReady(true)
+        const elements = (refsArray || [])
+            .map(item => {
+                if (!item) return null;
+
+                if (typeof item === "object" && "current" in item) return item.current;
+
+                return item;
+            })
+            .filter(Boolean);
+
+        function markLoaded() {
+            pending = Math.max(0, pending - 1);
+            if (pending === 0) {
+                if (timerRef.current) {
+                    clearTimeout(timerRef.current);
+                    timerRef.current = null;
                 }
-            }
-
-            refsArray.forEach(ref => {
-                const element = ref && ref.current;
-
-                if(!element) return;
-
-                const elementTag = element.tagName.toLowerCase();
-
-                if(elementTag === "img") {
-                    if(element.complete && element.naturalWidth !== 0) return;
-
-                    pending++;
-
-                    const onLoadEvent = () => markLoaded();
-                    const onErrorEvent = () => markLoaded();
-
-                    element.addEventListener("load", onLoadEvent, {once: true});
-                    element.addEventListener("error", onErrorEvent, {once: true});
-
-                    cleanUpFunctions.push(
-                        () => {
-                            try {
-                                if(element) {
-                                    element.removeEventListener("load", onLoadEvent);
-                                    element.removeEventListener("error", onErrorEvent);
-                                }
-                            } catch(e) {}
-                        }
-                    );
-                }
-
-                if(elementTag === "video") {
-                    if(element.readyState >= 1 && !isNaN(element.duration)) return;
-
-                    pending++;
-
-                    const onLoadMetaEvent = () => markLoaded();
-                    const onErrorMetaEvent = () => markLoaded();
-
-                    element.addEventListener("loadedmetadata", onLoadMetaEvent, {once: true});
-                    element.addEventListener("error", onErrorMetaEvent, {once: true});
-
-                    cleanUpFunctions.push(
-                        () => {
-                            try {
-                                if(element) {
-                                    element.removeEventListener("loadedmetadata", onLoadMetaEvent);
-                                    element.removeEventListener("error", onErrorMetaEvent);
-                                }
-                            } catch(e) {}
-                        }
-                    );
-                }
-            });
-
-            timer = setTimeout(() => {
-                setReady(true);
-            }, timeout);
-
-            if(pending === 0) {
-                if(timer) clearTimeout(timer);
                 setReady(true);
             }
+        }
 
-            return () => {
-                if(timer) clearTimeout(timer);
+        elements.forEach(el => {
+            const tag = (el.tagName || "").toLowerCase();
 
-                cleanUpFunctions.forEach((fn) => {
-                    fn();
+            if (tag === "img") {
+                if (el.complete && el.naturalWidth !== 0) {
+                    return;
+                }
+
+                pending++;
+                const onLoad = () => markLoaded();
+                const onError = () => markLoaded();
+
+                el.addEventListener("load", onLoad, { once: true });
+                el.addEventListener("error", onError, { once: true });
+
+                cleanUps.push(() => {
+                    try {
+                        el.removeEventListener("load", onLoad);
+                        el.removeEventListener("error", onError);
+                    } catch (e) { }
+                });
+            } else if (tag === "video") {
+                if (el.readyState >= 1 && !isNaN(el.duration)) {
+                    return;
+                }
+
+                pending++;
+                const onLoadedMeta = () => markLoaded();
+                const onError = () => markLoaded();
+
+                el.addEventListener("loadedmetadata", onLoadedMeta, { once: true });
+                el.addEventListener("error", onError, { once: true });
+
+                cleanUps.push(() => {
+                    try {
+                        el.removeEventListener("loadedmetadata", onLoadedMeta);
+                        el.removeEventListener("error", onError);
+                    } catch (e) { }
                 });
             }
-        }, [refsArray, timeout]);
+        });
 
-        return { isReady };
-    }
+        if (pending === 0) {
+            setReady(true);
+            return () => {
+                cleanUps.forEach(fn => fn());
+            };
+        }
+
+        timerRef.current = setTimeout(() => {
+            timerRef.current = null;
+            setReady(true);
+        }, timeout);
+
+        return () => {
+            if (timerRef.current) {
+                clearTimeout(timerRef.current);
+                timerRef.current = null;
+            }
+            cleanUps.forEach(fn => fn());
+        };
+    }, [refsArray, timeout]);
+
+    return { isReady };
+}

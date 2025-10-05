@@ -21,7 +21,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 
 	const { isReady } = useAssetsLoader({
 		refsArray: collectedRefs,
-		timeout: 10000,
+		timeout: 3000,
 	});
 
 	useEffect(() => {
