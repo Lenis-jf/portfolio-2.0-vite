@@ -1,11 +1,14 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { Link } from "react-router-dom";
 import { useAssetsLoader } from "../hooks/useAssetsLoader";
 import Loader from "../components/Loader";
+import { getIcon } from '../utils/assetsUtils.js';
 
 function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 	const [collectedRefs, setCollectedRefs] = useState([]);
+	const mainLogoRef = useRef(null);
+	const arrowDecoRef = useRef(null);
 
 	const handleRefsReady = useCallback((ref) => {
 		setCollectedRefs((prev) => {
@@ -26,6 +29,17 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 			onHomeReady(isReady);
 	}, [isReady, onHomeReady]);
 
+	useEffect(() => {
+		setCollectedRefs((prev) => {
+			const newRefs = [mainLogoRef.current, arrowDecoRef.current].filter(
+				(ref) => ref && !prev.includes(ref)
+			);
+
+			if(newRefs.length > 0) return [...prev, ...newRefs];
+			return prev;
+		});
+	}, [mainLogoRef.current, arrowDecoRef.current]);
+
 	if (!isReady) return <Loader />;
 
 	return (
@@ -37,8 +51,8 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						className="section light-section hidden"
 						ref={sectionRefs.homeSectionRef}
 					>
-						<div className="main-logo"></div>
-						<div className="hr-arrow"></div>
+						<img className="main-logo" src={ getIcon("logo-small", isDarkMode) } ref={ mainLogoRef } />
+						<img className="hr-arrow" src={ getIcon("arrow-deco", isDarkMode) } ref={ arrowDecoRef } />
 						<div className="hr"></div>
 						<h1>
 							Software Engineer

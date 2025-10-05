@@ -58,11 +58,10 @@ section#home {
     a.button.highlight { color: $foreground-color-light; @include glass-button(); }
 }
 
-div.main-logo {
+img.main-logo {
     display: inline-block;
     width: 185px;
     height: 185px;
-    background-image: url("/assets/icons/logo-small.svg");
     background-size: cover;
     background-position: center;
 }
@@ -84,14 +83,13 @@ div.hr {
     }
 }
 
-div.hr-arrow {
+img.hr-arrow {
     display: inline-block;
     position: absolute;
     top: calc(50% - 175px);
     left: calc(5% + 7.5px);
     width: 15px;
     height: 350px;
-    background-image: url("/assets/icons/arrow-deco.svg");
     background-size: cover;
     background-position: center;
     animation: hrArrowIn 1s ease forwards running;

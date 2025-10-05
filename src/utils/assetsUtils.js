@@ -13,3 +13,12 @@ export const getGithubIconUrl = (isDarkMode) => {
     const iconName = isDarkMode ? "github-logo-light.svg" : "github-logo.svg";
     return `${BASE}assets/icons/${iconName}`;
 };
+
+export const getIcon = (icon, isDarkMode) => {
+    let iconMode = "";
+
+    if(!icon.includes("logo"))
+        iconMode = isDarkMode ? "-light" : "-dark";
+
+    return `${BASE}assets/icons/${icon}${iconMode}.svg` 
+}
