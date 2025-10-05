@@ -6,6 +6,12 @@ export default function About({ aboutPageRef }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "About | Juanfelenis-dev";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+
     return () => (document.title = prevTitle);
   }, []);
 

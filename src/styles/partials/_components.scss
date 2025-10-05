@@ -36,7 +36,7 @@ div.section-changer {
     margin-top: 50px;
     -webkit-tap-highlight-color: transparent;
     
-    & div {
+    div {
         width: 31px;
         height: 17px;
         background-size: cover;
@@ -48,6 +48,12 @@ div.section-changer {
         margin-top: 100px;
         span { color: var(--foreground-color); }
         div { background-image: url("/assets/icons/keyboard-arrow-down-brown.svg"); }
+    }
+}
+
+section.dark-theme {
+    div.section-changer {
+        div { background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg"); }
     }
 }
 

@@ -1,10 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { getProjectAssetUrl, getGithubIconUrl } from '../utils/assetsUtils.js';
 
 function ProjectCard(props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef(null);
   const smallCardRef = useRef(null);
+  const imageRef = useRef();
+
+  useEffect(() => {
+    if (props.onRefsReady && imageRef.current) {
+      props.onRefsReady(imageRef);
+    }
+  }, []);
 
   useEffect(() => {
     const handleDocumentClick = (event) => {
@@ -60,13 +68,14 @@ function ProjectCard(props) {
       <div className="face front">
         <img
           loading="lazy"
-          src={`${import.meta.env.BASE_URL}/assets/imgs/${props.frontImage}`} alt="Project interactive preview card"
+          src={getProjectAssetUrl(props.frontImage)} alt="Project interactive preview card"
+          ref={imageRef}
         />
       </div>
       <div className="face back">
-        <img 
-          src={props.isDarkMode ? `${import.meta.env.BASE_URL}/assets/icons/github-logo-light.svg` : `${import.meta.env.BASE_URL}/assets/icons/github-logo.svg`} 
-          alt="Github Logo" 
+        <img
+          src={getGithubIconUrl(props.isDarkMode)}
+          alt="Github Logo"
         />
         <a href={props.repoURL} className="button card-button">Show Repository</a>
         <Link to={`/projects${props.path}`} className="button card-button">See more about it</Link>

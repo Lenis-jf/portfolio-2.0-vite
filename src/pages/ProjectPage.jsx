@@ -36,6 +36,8 @@ function ProjectPage({ projectPageRef, headerRef }) {
             : 0;
         setChildrenToReportCount(count);
 
+        console.log("Children to report: ", childrenToReportCount);
+
     }, [projectId, project, navigate]);
 
     // callback que pasan los hijos para "reportar" sus nodos DOM
@@ -46,6 +48,8 @@ function ProjectPage({ projectPageRef, headerRef }) {
         });
 
         reportedCountRef.current += 1;
+
+        console.log("Reported count: ", reportedCountRef);
 
         // Si todos los hijos reportaron, guardamos el array final (filtrado y deduplicado)
         if (reportedCountRef.current >= childrenToReportCount) {

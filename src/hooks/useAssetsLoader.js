@@ -12,7 +12,10 @@
             function markLoaded() {
                 pending = Math.max(0, pending - 1);
 
-                if(pending === 0) setReady(true);
+                if(pending === 0) {
+                    if(timer) clearTimeout(timer);
+                    setReady(true)
+                }
             }
 
             refsArray.forEach(ref => {
@@ -73,6 +76,11 @@
                 setReady(true);
             }, timeout);
 
+            if(pending === 0) {
+                if(timer) clearTimeout(timer);
+                setReady(true);
+            }
+
             return () => {
                 if(timer) clearTimeout(timer);
 
@@ -80,7 +88,7 @@
                     fn();
                 });
             }
-        }, [refsArray]);
+        }, [refsArray, timeout]);
 
         return { isReady };
     }

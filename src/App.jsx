@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useMemo, useLayoutEffect, useState } from 'react';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import About from './pages/About';
@@ -25,6 +25,7 @@ function App() {
 
 function RouterComponent() {
 	const location = useLocation();
+	const [homeReady, setHomeReady] = useState(false);
 
 	const headerRef = useRef(null);
 	const logoContainerRef = useRef(null);
@@ -54,24 +55,29 @@ function RouterComponent() {
 
 	const menuColor = useMenuColor(Object.values(sectionRefsObject), isDarkMode);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
+		if(!homeReady) return;
+
 		const sectionChangers = document.querySelectorAll('div.section-changer');
 
 		function goToSection(event) {
 			const targetClasses = ["projects", "abilities", "home", "last-part"];
 			const target = event.target.closest('.section-changer');
-			var matchedClass = null;
+			let matchedClass = null;
 			if (target)
 				matchedClass = targetClasses.find(targetClass => target.classList.contains(targetClass));
 			if (matchedClass)
 				document.getElementById(matchedClass).scrollIntoView();
 		}
 
-		sectionChangers.forEach(sectionChanger => { sectionChanger.addEventListener('click', goToSection); });
+		sectionChangers.forEach(sectionChanger => {
+			sectionChanger.addEventListener('click', goToSection);
+		});
 
+		// Juntamos todos los refs
 		const sectionsRefsArray = Object.values(sectionRefsObject);
 		const allSectionRefs = [...sectionsRefsArray, projectPageRef, aboutPageRef];
-		const sections = allSectionRefs.map(ref => ref.current).filter(ref => ref !== null);
+		const sections = allSectionRefs.map(ref => ref.current).filter(Boolean);
 
 		const observerOptions = {
 			root: null,
@@ -87,10 +93,11 @@ function RouterComponent() {
 					entry.target.classList.remove('hidden');
 					entry.target.classList.add('visible');
 
-					if((id === "home" || id === "last-part") && logoContainerRef.current)
+					if ((id === "home" || id === "last-part") && logoContainerRef.current) {
 						logoContainerRef.current.classList.add("hidden");
-					else if(logoContainerRef.current)
+					} else if (logoContainerRef.current) {
 						logoContainerRef.current.classList.remove("hidden");
+					}
 				}
 			});
 		}, observerOptions);
@@ -101,7 +108,7 @@ function RouterComponent() {
 
 		const lastSection = localStorage.getItem('lastSection');
 		const initialSection = lastSection || 'home';
-		
+
 		if (logoContainerRef.current) {
 			if (initialSection === "home" || initialSection === "last-part") {
 				logoContainerRef.current.classList.add("hidden");
@@ -117,8 +124,8 @@ function RouterComponent() {
 					sectionChanger.removeEventListener('click', goToSection);
 				});
 			}
-		}
-	}, [location, sectionRefsObject, logoContainerRef, projectPageRef, aboutPageRef]);
+		};
+	}, [location.pathname, sectionRefsObject, projectPageRef, aboutPageRef, homeReady]);
 
 	useEffect(() => {
 		if(location.pathname.startsWith("/loader") && headerRef.current)
@@ -139,6 +146,7 @@ function RouterComponent() {
 					<Home
 					    sectionRefs={sectionRefsObject}
 						isDarkMode={isDarkMode}
+						onHomeReady={setHomeReady}
 					/>
 				} />
 				<Route path="/work" element={<Work />} />
