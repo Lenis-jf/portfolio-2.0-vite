@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import ProjectCard from "../components/ProjectCard";
+import TransitionButton from "../components/TransitionButton";
 import { Link } from "react-router-dom";
 import { useAssetsLoader } from "../hooks/useAssetsLoader";
 import Loader from "../components/Loader";
@@ -116,9 +117,10 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							isDarkMode={isDarkMode}
 						/>
 
-						<Link to="/work" className="button work">
+						{/* <Link to="/work" className="button work">
 							Show all projects
-						</Link>
+						</Link> */}
+						<TransitionButton to="/work" label="See all projects" />
 						<div className="section-changer section-changer-light abilities">
 							<span>Not finished yet :)</span>
 							<div></div>
