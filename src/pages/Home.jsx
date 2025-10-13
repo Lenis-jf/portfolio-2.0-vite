@@ -167,7 +167,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						ref={sectionRefs.lastPartSectionRef}
 					>
 						<p>Do not forget my name!</p>
-						<div className="main-logo"></div>
+						<img className="main-logo" src={ getIcon("logo-small", isDarkMode) } />
 						<p>I am Juan Fernando and Im here to bring your ideas to reality</p>
 						<div className="buttons-container light-color"></div>
 						<Link to="/contact" className="button highlight">
