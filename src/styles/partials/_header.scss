@@ -1,7 +1,20 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-// _header.scss
+html.dark-theme {
+    header {
+        label.menu {
+
+            &::before,
+            &::after,
+            input {
+                content: "";
+                background-color: $foreground-color-light;
+            }
+        }
+    }
+}
+
 header {
     position: fixed;
     width: 95%;
@@ -35,12 +48,10 @@ header {
         left: 10%;
         right: 10%;
         height: 2px;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.9),
-            transparent
-        );
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.9),
+                transparent);
         border-radius: 50%;
     }
 
@@ -71,18 +82,7 @@ header {
             border-radius: 10px;
             transform-origin: left center;
             transition: opacity var(--transition-timing), width var(--transition-timing), transform var(--transition-timing), background-color var(--transition-timing);
-        }
-
-        &.brown-color::before,
-        &.brown-color::after,
-        &.brown-color input {
-            background-color: var(--foreground-color);
-        }
-
-        &.light-color::before,
-        &.light-color::after,
-        &.light-color input {
-            background-color: $foreground-color-light;
+            background-color: $foreground-color;
         }
 
         input {
@@ -111,14 +111,19 @@ header {
         &:has(input:checked)~div.menu-buttons-container {
             opacity: 1;
 
-            a.menu-button { pointer-events: all; }
+            a.menu-button {
+                pointer-events: all;
+            }
 
-            label.darkmode-button-container { pointer-events: all; }
+            label.darkmode-button-container {
+                pointer-events: all;
+            }
         }
     }
 
     &.dark-theme {
         label.menu {
+
             &::before,
             &::after,
             & input {
@@ -152,11 +157,14 @@ header {
 
             img {
                 width: 40px;
-                height: 20px;                
+                height: 20px;
             }
         }
 
-        a.menu-button.active { color: $foreground-color-light; @include glass-button(); }
+        a.menu-button.active {
+            color: $foreground-color-light;
+            @include glass-button();
+        }
 
         /* darkmode-switcher button basics */
         label.darkmode-button-container {

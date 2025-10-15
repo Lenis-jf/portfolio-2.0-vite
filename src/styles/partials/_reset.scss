@@ -79,11 +79,6 @@ section.light-section {
     color: var(--foreground-color);
 }
 
-section.dark-section {
-    color: $foreground-color-light;
-}
-
-
 a.button { @include button-responsive-font-size; color: $foreground-color-light; }
 p { @include p-responsive-font-size; }
 h1 { @include h1-responsive-font-size; }

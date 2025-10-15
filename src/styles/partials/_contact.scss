@@ -1,16 +1,42 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+html.dark-theme {
+    section#contact {
+        p,
+        span {
+            color: $foreground-color-light;
+        }
+
+        a.wa {
+            background-image: url("/assets/icons/whatsapp-icon-light.svg");
+        }
+
+        a.mail {
+            background-image: url("/assets/icons/mail-icon-light.svg");
+        }
+
+        a.instagram {
+            background-image: url("/assets/icons/instagram-icon-light.svg");
+        }
+
+        a.github {
+            background-image: url("/assets/icons/github-icon-light.svg");
+        }
+    }
+}
+
 section#contact {
     position: relative;
     justify-content: center;
     background-color: var(--light2-color);
     min-height: 100vh;
+    color: $foreground-color;
 
     &.dark-section {
         p,
         span {
-            color: $foreground-color-light;
+            color: $foreground-color;
         }
     }
 
@@ -42,24 +68,30 @@ section#contact {
 section#last-part {
     position: relative;
     background-color: var(--light2-color);
-    color: $foreground-color-light;
+    color: $foreground-color;
     padding: 100px 20px 80px 20px;
 
-    span.copy-right {
-        color: var(--light-color);
+    span {
+        color: $foreground-color;
     }
 
     div.section-changer.section-changer-light.home {
-        div { transform: rotate(180deg); }
+        div {
+            transform: rotate(180deg);
+        }
     }
 
     &.dark-theme {
         color: var(--foreground-color);
 
-        div.section-changer.section-changer-light.home {
-            span { color: var(--foreground-color); }
+        div.section-changer.section-changer-dark.home {
+            span {
+                color: var(--foreground-color);
+            }
         }
 
-        span.copy-right { color: var(--foreground-color); }
+        span {
+            color: $foreground-color-light;
+        }
     }
 }

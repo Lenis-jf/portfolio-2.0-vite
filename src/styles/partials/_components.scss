@@ -34,7 +34,7 @@ div.section-changer {
     align-items: center;
     gap: 15px;
     @include p-responsive-font-size;
-    color: var(--light-color);
+    color: $foreground-color;
     cursor: pointer;
     margin-top: 50px;
     -webkit-tap-highlight-color: transparent;
@@ -44,7 +44,8 @@ div.section-changer {
         height: 17px;
         background-size: cover;
         background-position: bottom;
-        background-image: url("/assets/icons/keyboard-arrow-down-light.svg");
+        background-image: url("/assets/icons/keyboard-arrow-down-dark.svg");
+
     }
 
     &.section-changer-dark {

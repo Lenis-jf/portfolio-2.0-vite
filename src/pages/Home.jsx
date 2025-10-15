@@ -116,7 +116,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						</div>
 
 						<TransitionButton to="/work" label="See all projects" />
-						<div className="section-changer section-changer-light abilities">
+						<div className="section-changer section-changer-dark abilities">
 							<span>Not finished yet :)</span>
 							<div></div>
 						</div>
@@ -168,7 +168,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						<p>I am Juan Fernando and Im here to bring your ideas to reality</p>
 						<div className="buttons-container light-color"></div>
 						<TransitionButton to="/contact" label="Find me" extraClass="last-part" />
-						<div className="section-changer section-changer-light home">
+						<div className="section-changer section-changer-dark home">
 							<div></div>
 							<span>Go back to start</span>
 						</div>
