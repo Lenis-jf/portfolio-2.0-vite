@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-function Contact() {
+function Contact({ contactRef, onContactReady }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    const prevTitle = document.title;
+    document.title = "Contact | Juanfelenis-dev";
+
+    if(typeof onContactReady === "function") {
+    	onContactReady(true);
+		console.log("Component ready in Component.jsx");
+    }
+
+    return () => (document.title = prevTitle);
+  }, []);
+
   return (
     <div>
-      <section id="contact" className="section dark-section">
+      <section id="contact" className="section dark-section hidden" ref={contactRef}>
         <p>Hey!, nice to see you again :)<br />Interested?</p>
         <p>Let’s get in touch</p>
         <div className="contact card">
@@ -17,7 +31,7 @@ function Contact() {
           <a href="https://www.instagram.com/juanfelenis/" className="icon instagram"></a>
           <a href="https://github.com/Lenis-jf" className="icon github"></a>
         </div>
-        <span className="copy-right">©juanfelenis 2025 </span>
+        <span className="copy-right">©juanfelenis 2025</span>
       </section>
     </div>
   );

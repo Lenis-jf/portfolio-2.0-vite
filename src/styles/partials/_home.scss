@@ -50,6 +50,7 @@ section#home {
         rgba(var(--light2-color-rgb), 0.6) 90%,
         var(--light2-color) 100%
     );
+
         
     &.dark-theme {
         span {color: var(--foreground-color); }

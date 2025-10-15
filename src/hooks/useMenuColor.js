@@ -4,11 +4,13 @@ import { useLocation } from 'react-router-dom';
 export function useMenuColor(sectionRefs, isDarkMode) {
     const location = useLocation();
     const [menuColor, setMenuColor] = useState('brown-color');
+    
+    const padStart = location.pathname.padStart();
 
     useEffect(() => {
         if(isDarkMode) { setMenuColor("brown-color"); return;x }
-
-        if (location.pathname.startsWith('/projects/') || location.pathname.startsWith("/about")) {
+        
+        if (padStart.match('/projects/') || padStart.match("/about") || padStart.match('/work')) {
             setMenuColor('brown-color');
         } else {
             setMenuColor('light-color');
@@ -22,7 +24,7 @@ export function useMenuColor(sectionRefs, isDarkMode) {
         const sections = sectionRefs.filter(ref => ref.current);
         const observerOptions = {
             root: null,
-            threshold: 0.4
+            threshold: 0.5
         };
 
         const sectionObserver = new IntersectionObserver(entries => {
@@ -44,8 +46,7 @@ export function useMenuColor(sectionRefs, isDarkMode) {
         return () => {
             sectionObserver.disconnect();
         };
-
     }, [sectionRefs, isDarkMode]);
-
+    
     return menuColor;
 }

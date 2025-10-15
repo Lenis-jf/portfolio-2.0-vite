@@ -45,11 +45,8 @@ section#last-part {
     color: $foreground-color-light;
     padding: 100px 20px 80px 20px;
 
-    a.button { color: $light-color; @include glass-button(); margin-top: 40px; }
-
     span.copy-right {
-        position: absolute;
-        bottom: 40px;
+        color: var(--light-color);
     }
 
     div.section-changer.section-changer-light.home {

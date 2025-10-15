@@ -8,25 +8,41 @@ button.transition-button.work {
     width: 60%;
     max-width: 200px;
     cursor: pointer;
-    // height: 25%;
-    // max-height: 100px;
     border-radius: 5px;
     padding: 10px 20px;
     color: $foreground-color-light;
-    margin-top: 180px;
-    transition: transform 600ms ease-in-out;
+    transform-origin: center center;
+    @include button-responsive-font-size;
     @include glass-button();
+    transition: opacity 0.3s ease;
+    user-select: none;
+
+    &:hover {
+        opacity: 0.4;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &.home {
+        width: 100%;
+        max-width: none;
+    }
+
+    &.last-part {
+        max-width: 120px;
+        margin-top: 30px;
+    }
+
+    &.projectCard {
+        padding: 10px 0px;
+    }    
 }
 
 button.transition-button.expand {
     position: fixed;
-    // top: 50%;
-    // left: 50%;
-    // width: 100vw;
-    // height: 100vh;
-    transform: scale(100);
+    top: 50%;
+    left: 50%;
     border-radius: 0;
     color: transparent;
-    /* oculta el texto */
+    animation: fadeOut 0.8s ease-in-out forwards;
     z-index: 9999;
 }

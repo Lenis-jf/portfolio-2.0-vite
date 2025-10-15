@@ -7,7 +7,9 @@ section.project-info {
     padding-bottom: 180px;
     transition: background-color 500ms ease-in-out;
 
-    p { @include p-responsive-font-size; }
+    p {
+        @include p-responsive-font-size;
+    }
 
     &#svq {
         padding-bottom: 120px;
@@ -24,15 +26,16 @@ section.project-info {
     }
 
     p {
-        max-width: 480px;
+        max-width: 680px;
         margin: 30px 0;
         text-align: justify;
     }
 
     a.button {
-        width: 160px;
-        height: 40px;
+        width: 60%;
+        max-width: 200px;
         margin: 30px 0;
+        transition: all $transition-medium ease-in-out;
     }
 
     a.button:nth-of-type(2) {
@@ -67,8 +70,13 @@ section.project-info {
         background-image: url("/assets/icons/keyboard-arrow-down-brown.svg");
     }
 
-    button.left-arrow { transform: rotate(90deg); }
-    button.right-arrow { transform: rotate(-90deg); }
+    button.left-arrow {
+        transform: rotate(90deg);
+    }
+
+    button.right-arrow {
+        transform: rotate(-90deg);
+    }
 
     .images-wrapper {
         display: flex;
@@ -111,7 +119,9 @@ section.project-info {
     }
 
     /* ------------------ VIDEO CONTAINER ------------------ */
-    div#fullscreen { margin: 30px 0; }
+    div#fullscreen {
+        margin: 30px 0;
+    }
 
     .video-container {
         position: relative;
@@ -119,7 +129,7 @@ section.project-info {
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         z-index: 1;
         transition: width 300ms ease-out, height 300ms ease-out;
-        
+
         &.small {
             // width: 65vw;
             aspect-ratio: 16 / 9;
@@ -290,6 +300,10 @@ section.project-info {
 
     /* DARK THEME OVERRIDES (when section has dark-theme class) */
     &.dark-theme {
+        button.arrow {
+            background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
+        }
+
         .video-container {
             .video-bottom {
                 .video-duration-bar {
@@ -315,10 +329,13 @@ section.project-info {
 /* media queries preserved from original */
 @media screen and (min-width: 440px) {
     section.project-info {
-        button.arrow { display: inline-block; }
-        button.arrow.disabled { opacity: 0.3; pointer-events: none; }
-        &.dark-theme {
-            button.arrow { background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg"); }
+        button.arrow {
+            display: inline-block;
+        }
+
+        button.arrow.disabled {
+            opacity: 0.3;
+            pointer-events: none;
         }
     }
 }

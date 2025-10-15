@@ -26,6 +26,10 @@ function App() {
 function RouterComponent() {
 	const location = useLocation();
 	const [homeReady, setHomeReady] = useState(false);
+	const [workReady, setWorkReady] = useState(false);
+	const [contactReady, setContactReady] = useState(false);
+	const [aboutReady, setAboutReady] = useState(false);
+	const [projectPageReady, setProjectPageReady] = useState(false);
 
 	const headerRef = useRef(null);
 	const logoContainerRef = useRef(null);
@@ -35,131 +39,196 @@ function RouterComponent() {
 	const abilitiesSectionRef = useRef(null);
 	const lastPartSectionRef = useRef(null);
 
+	const contactRef = useRef(null);
+
+	const workRef = useRef(null);
+
 	const aboutPageRef = useRef(null);
-	
+
 	const projectPageRef = useRef(null);
+
+	const homeObserverRef = useRef(null);
+	const genericObserverRef = useRef(null);
 
 	const sectionRefsObject = useMemo(() => ({
 		homeSectionRef: homeSectionRef,
 		projectsSectionRef: projectsSectionRef,
 		abilitiesSectionRef: abilitiesSectionRef,
-		lastPartSectionRef: lastPartSectionRef
+		lastPartSectionRef: lastPartSectionRef,
+		workRef: workRef
 	}), [
 		homeSectionRef,
 		projectsSectionRef,
 		abilitiesSectionRef,
-		lastPartSectionRef
+		lastPartSectionRef,
+		workRef
 	]);
 
 	const [isDarkMode, toggleDarkMode] = useDarkMode(Object.values(sectionRefsObject), headerRef);
 
 	const menuColor = useMenuColor(Object.values(sectionRefsObject), isDarkMode);
 
-	useLayoutEffect(() => {
-		if(!homeReady) return;
-
-		const sectionChangers = document.querySelectorAll('div.section-changer');
-
-		function goToSection(event) {
-			const targetClasses = ["projects", "abilities", "home", "last-part"];
-			const target = event.target.closest('.section-changer');
-			let matchedClass = null;
-			if (target)
-				matchedClass = targetClasses.find(targetClass => target.classList.contains(targetClass));
-			if (matchedClass)
-				document.getElementById(matchedClass).scrollIntoView();
-		}
-
-		sectionChangers.forEach(sectionChanger => {
-			sectionChanger.addEventListener('click', goToSection);
-		});
-
-		// Juntamos todos los refs
-		const sectionsRefsArray = Object.values(sectionRefsObject);
-		const allSectionRefs = [...sectionsRefsArray, projectPageRef, aboutPageRef];
-		const sections = allSectionRefs.map(ref => ref.current).filter(Boolean);
-
-		const observerOptions = {
-			root: null,
-			threshold: 0.2
-		};
+	function createHomeObserver({ logoContainerRef }) {
+		const observerOptions = { root: null, threshold: 0.2 };
 
 		const sectionObserver = new IntersectionObserver(entries => {
 			entries.forEach(entry => {
-				if (entry.isIntersecting) {
+				if(entry.isIntersecting) {
 					const id = entry.target.id;
-					localStorage.setItem('lastSection', id);
+					localStorage.setItem("lastSection", id);
 
-					entry.target.classList.remove('hidden');
-					entry.target.classList.add('visible');
+					entry.target.classList.remove("hidden");
+					entry.target.classList.add("visible");
 
-					if ((id === "home" || id === "last-part") && logoContainerRef.current) {
+					if((id === "home" || id === "last-part" && logoContainerRef.current)) {
 						logoContainerRef.current.classList.add("hidden");
-					} else if (logoContainerRef.current) {
+					} else if(logoContainerRef.current) {
 						logoContainerRef.current.classList.remove("hidden");
 					}
 				}
 			});
 		}, observerOptions);
 
-		sections.forEach(section => {
-			sectionObserver.observe(section);
-		});
+		return sectionObserver;
+	}
 
-		const lastSection = localStorage.getItem('lastSection');
-		const initialSection = lastSection || 'home';
+	function createGenericObserver() {
+		const observerOptions = { root: null, threshold: 0 };
+		
+		const sectionObserver = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if(entry.isIntersecting) {
+					entry.target.classList.remove("hidden");
+					entry.target.classList.add("visible");
+				}
+			});
+		}, observerOptions);
 
-		if (logoContainerRef.current) {
-			if (initialSection === "home" || initialSection === "last-part") {
-				logoContainerRef.current.classList.add("hidden");
-			} else {
-				logoContainerRef.current.classList.remove("hidden");
+		return sectionObserver;
+	}
+
+	function initializeObserver(observer, refsArray) {
+		const sections = refsArray.map(ref => ref.current).filter(Boolean);
+		sections.forEach(section => observer.observe(section));
+	}
+
+	function disconnectObserver(observer) {
+		if(observer)
+			observer.disconnect();		
+	}
+
+	useEffect(() => {
+		if(location.pathname === "/") {
+			if(homeReady) {	
+				disconnectObserver(homeObserverRef.current);
+
+				const sectionChangers = document.querySelectorAll('div.section-changer');
+
+				function goToSection(event) {
+					const targetClasses = ["projects", "abilities", "home", "last-part"];
+					const target = event.target.closest('.section-changer');
+					let matchedClass = null;
+					if (target)
+						matchedClass = targetClasses.find(targetClass => target.classList.contains(targetClass));
+					if (matchedClass)
+						document.getElementById(matchedClass).scrollIntoView();
+				}
+
+				sectionChangers.forEach(sectionChanger => {
+					sectionChanger.addEventListener('click', goToSection);
+				});
+
+				const observer = createHomeObserver({ logoContainerRef });
+				homeObserverRef.current = observer;
+
+				const sectionsRefsArray = Object.values(sectionRefsObject);
+				initializeObserver(observer, sectionsRefsArray);
+
+				return () => {
+					disconnectObserver(observer);
+		
+					if (sectionChangers) {
+						sectionChangers.forEach(sectionChanger => {
+							sectionChanger.removeEventListener('click', goToSection);
+						});
+					}
+				};
 			}
 		}
 
-		return () => {
-			sectionObserver.disconnect();
-			if (sectionChangers) {
-				sectionChangers.forEach(sectionChanger => {
-					sectionChanger.removeEventListener('click', goToSection);
-				});
-			}
-		};
-	}, [location.pathname, sectionRefsObject, projectPageRef, aboutPageRef, homeReady]);
+		// const lastSection = localStorage.getItem('lastSection');
+		// const initialSection = lastSection || 'home';
+	}, [location.pathname, homeReady]);
 
 	useEffect(() => {
-		if(location.pathname.startsWith("/loader") && headerRef.current)
+		if(location.pathname !== "/") {
+			const pageIsReady = workReady || contactReady || aboutReady || projectPageReady;
+
+			if(pageIsReady) {
+				disconnectObserver(genericObserverRef.current);
+
+				const observer = createGenericObserver();
+				genericObserverRef.current = observer;
+
+				const refs = [workRef, contactRef, aboutPageRef, projectPageRef];
+				initializeObserver(observer, refs);
+
+				return () => disconnectObserver(observer);
+			}
+		}
+	}, [location.pathname, 
+		workReady, 
+		contactReady, 
+		aboutReady, 
+		projectPageReady]);
+
+	useEffect(() => {
+		if (location.pathname.startsWith("/loader") && headerRef.current)
 			headerRef.current.style.opacity = 0;
 	}, [location, headerRef]);
 
 	return (
 		<>
-			<Header 
-				isDarkMode={isDarkMode} 
-				toggleDarkMode={toggleDarkMode} 
-				menuColor={menuColor} 
-				headerRef={headerRef} 
-				logoContainerRef={logoContainerRef} 
+			<Header
+				isDarkMode={isDarkMode}
+				toggleDarkMode={toggleDarkMode}
+				menuColor={menuColor}
+				headerRef={headerRef}
+				logoContainerRef={logoContainerRef}
 			/>
 			<Routes>
 				<Route path="/" element={
 					<Home
-					    sectionRefs={sectionRefsObject}
+						sectionRefs={sectionRefsObject}
 						isDarkMode={isDarkMode}
 						onHomeReady={setHomeReady}
 					/>
 				} />
-				<Route path="/work" element={<Work />} />
-				<Route path="/contact" element={<Contact />} />
+				<Route path="/work" element={
+					<Work
+						workRef={workRef}
+						onWorkReady={setWorkReady}
+						isDarkMode={isDarkMode}
+					/>
+				} />
+				<Route path="/contact" element={
+					<Contact
+						contactRef={contactRef}
+						onContactReady={setContactReady}
+					/>
+				} />
 				<Route path="/about" element={
-					<About 
+					<About
 						aboutPageRef={aboutPageRef}
+						onAboutReady={setAboutReady}
 					/>
 				} />
 				<Route path="/projects/:projectId" element={
-					<ProjectPage 
+					<ProjectPage
 						projectPageRef={projectPageRef}
 						headerRef={headerRef}
+						isDarkMode={isDarkMode}
+						onProjectPageReady={setProjectPageReady}
 					/>
 				} />
 				<Route path="/loader" element={<Loader />} />

@@ -4,10 +4,13 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+section, button, a.button { transition: all $transition-medium ease-in-out; }
+
 a.button {
     display: flex;
-    width: 90px;
-    height: 30px;
+    width: 60%;
+    max-width: 200px;
+    padding: 10px 20px;
     color: $foreground-color-light;
     justify-content: center;
     align-items: center;
@@ -15,12 +18,12 @@ a.button {
     cursor: pointer;
     outline: none;
     @include glass-button($light-gray);
+    transition: all $transition-medium ease-in-out;
 
     &.highlight {
         border-color: $blue-logo;
         background-color: $blue-logo;
         color: var(--light-color);
-        transition: all 300ms ease-in-out;
     }
 }
 
@@ -41,19 +44,19 @@ div.section-changer {
         height: 17px;
         background-size: cover;
         background-position: bottom;
-        background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
+        background-image: url("/assets/icons/keyboard-arrow-down-light.svg");
     }
 
     &.section-changer-dark {
         margin-top: 100px;
         span { color: var(--foreground-color); }
-        div { background-image: url("/assets/icons/keyboard-arrow-down-brown.svg"); }
+        div { background-image: url("/assets/icons/keyboard-arrow-down-dark.svg"); }
     }
 }
 
 section.dark-theme {
     div.section-changer {
-        div { background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg"); }
+        div { background-image: url("/assets/icons/keyboard-arrow-down-light.svg"); }
     }
 }
 

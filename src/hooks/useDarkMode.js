@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const getInitialDarkMode = () => {
     const storedValue = localStorage.getItem('isDarkMode');
+
     if (storedValue !== null) {
         return JSON.parse(storedValue);
     }
@@ -26,7 +27,7 @@ export function useDarkMode(sectionRefs = [], headerRef) {
     useEffect(() => {
         const root = document.documentElement;
 
-        localStorage.setItem("dark-theme", isDarkMode.toString());
+        localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
 
         if (isDarkMode) {
             root.classList.add("dark-theme");
@@ -53,7 +54,7 @@ export function useDarkMode(sectionRefs = [], headerRef) {
 
     useEffect(() => {
         const sections = sectionRefs.filter(ref => ref.current);
-
+        
         const applyThemeToSections = (darkMode) => {
             sections.forEach(ref => {
                 if (darkMode) {
@@ -65,12 +66,11 @@ export function useDarkMode(sectionRefs = [], headerRef) {
         };
 
         applyThemeToSections(isDarkMode);
-
     }, [isDarkMode, location, sectionRefs]);
 
     useEffect(() => {
         if(isDarkMode) {
-            headerRef.current?.classList.remove("ligt-section");
+            headerRef.current?.classList.remove("light-section");
             headerRef.current?.classList.add("dark-theme");
         } else {
             headerRef.current?.classList.remove("dark-theme");

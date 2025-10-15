@@ -14,11 +14,22 @@ section#projects {
     p { @include p-responsive-font-size; }
 
     p:nth-child(2) {
-        margin: 30px 0 40px 0;
+        margin-top: 30px;
     }
 
     .section-changer {
         margin-top: 150px;
+    }
+
+    div.project-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px 40px;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 140px;
     }
 
     div.project-card {
@@ -26,16 +37,13 @@ section#projects {
         aspect-ratio: 16 / 10;
         width: 85%;
         max-width: 280px;
+        min-width: 280px;
         min-height: 180px;
         margin-top: 60px;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
         perspective: 800px;
         transform-style: preserve-3d;
-
-        &:first-of-type {
-            margin-top: 45px;
-        }
 
         .small-info-card {
             position: absolute;
@@ -171,8 +179,10 @@ section#projects {
             }
 
             .card-button {
-                width: 140px;
-                height: 35px;
+                width: 60%;
+                max-width: 200px;
+                padding: 10px 0;
+                @include button-responsive-font-size;
 
                 &:first-of-type {
                     margin-bottom: 5px;
@@ -189,18 +199,6 @@ section#projects {
                 transform: rotateY(360deg);
             }
         }
-    }
-
-    a.button.work {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60%;
-        max-width: 200px;
-        padding: 20px 10px;
-        color: $foreground-color-light;
-        margin-top: 180px;
-        @include glass-button();
     }
 
     &.dark-theme {

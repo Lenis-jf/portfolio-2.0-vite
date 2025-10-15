@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { getProjectAssetUrl, getGithubIconUrl } from '../utils/assetsUtils.js';
+import TransitionButton from "./TransitionButton.jsx";
 
 function ProjectCard(props) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -77,7 +78,7 @@ function ProjectCard(props) {
           alt="Github Logo"
         />
         <a href={props.repoURL} className="button card-button">Show Repository</a>
-        <Link to={`/projects${props.path}`} className="button card-button">See more about it</Link>
+        <TransitionButton to={`/projects${props.path}`} extraClass="projectCard" label="See more about it" color="#3c3d37" />
       </div>
       <div className="small-info-card" ref={smallCardRef}>
         <h4>{props.projectTitle}</h4>

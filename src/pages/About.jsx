@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function About({ aboutPageRef }) {
+export default function About({ aboutPageRef, onAboutReady }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "About | Juanfelenis-dev";
@@ -11,6 +11,9 @@ export default function About({ aboutPageRef }) {
       top: 0,
       behavior: "instant"
     });
+
+    if(typeof onAboutReady === "function")
+      onAboutReady(true);
 
     return () => (document.title = prevTitle);
   }, []);

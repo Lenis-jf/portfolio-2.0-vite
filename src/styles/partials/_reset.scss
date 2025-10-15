@@ -65,7 +65,9 @@ body a {
 
 span.copy-right {
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 1rem;
     color: var(--foreground-color);
     opacity: 0.6;

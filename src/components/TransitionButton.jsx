@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const TransitionButton = ({ to, label, color = "#4F75FF" }) => {
+const TransitionButton = ({ to, label, color = "#4F75FF", extraClass="" }) => {
     const [isExpanding, setIsExpanding] = useState(false);
     const navigate =  useNavigate();
 
@@ -11,14 +11,18 @@ const TransitionButton = ({ to, label, color = "#4F75FF" }) => {
         setTimeout(() => {
             navigate(to);
             setIsExpanding(false);
-        }, 600);
+        }, 750);
     };
 
     return(
         <>
             <button 
-                className={`work transition-button ${isExpanding ? "expand" : ""}`}
-                onClick={handleExpantion}>
+                className={`work transition-button ${isExpanding ? "expand" : ""} ${extraClass}`}
+                onClick={handleExpantion}
+                style={{
+                    backgroundColor: color,
+                }}
+            >
                 {label}
             </button>
         </>

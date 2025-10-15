@@ -26,7 +26,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 	});
 
 	useEffect(() => {
-		if(typeof onHomeReady === "function")
+		if (typeof onHomeReady === "function")
 			onHomeReady(isReady);
 	}, [isReady, onHomeReady]);
 
@@ -36,7 +36,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 				(ref) => ref && !prev.includes(ref)
 			);
 
-			if(newRefs.length > 0) return [...prev, ...newRefs];
+			if (newRefs.length > 0) return [...prev, ...newRefs];
 			return prev;
 		});
 	}, [mainLogoRef.current, arrowDecoRef.current]);
@@ -52,8 +52,8 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						className="section light-section hidden"
 						ref={sectionRefs.homeSectionRef}
 					>
-						<img className="main-logo" src={ getIcon("logo-small", isDarkMode) } ref={ mainLogoRef } />
-						<img className="hr-arrow" src={ getIcon("arrow-deco", isDarkMode) } ref={ arrowDecoRef } />
+						<img className="main-logo" src={getIcon("logo-small", isDarkMode)} ref={mainLogoRef} />
+						<img className="hr-arrow" src={getIcon("arrow-deco", isDarkMode)} ref={arrowDecoRef} />
 						<div className="hr"></div>
 						<h1>
 							Software Engineer
@@ -63,12 +63,8 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							UI & UX Designer
 						</h1>
 						<div className="buttons-container">
-							<Link to="/contact" className="button highlight">
-								Find Me
-							</Link>
-							<Link to="/about" className="button">
-								Know Me
-							</Link>
+							<TransitionButton to="/contact" label="Find me" extraClass="home" />
+							<TransitionButton to="/about" label="Know me" color="#3c3d37" extraClass="home" />
 						</div>
 						<div className="section-changer section-changer-dark projects">
 							<span>See more</span>
@@ -87,39 +83,38 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							the GitHub repository of the project
 						</p>
 
-						<ProjectCard
-							onRefsReady={handleRefsReady}
-							frontImage="dronesim-assets/drones-project.png"
-							repoURL="https://github.com/Lenis-jf/Drone-Project"
-							path="/dronesim"
-							projectTitle="Drones Simulation"
-							tools="Java, Swing"
-							isDarkMode={isDarkMode}
-						/>
+						<div className="project-cards-container">
+							<ProjectCard
+								onRefsReady={handleRefsReady}
+								frontImage="dronesim-assets/drones-project.png"
+								repoURL="https://github.com/Lenis-jf/Drone-Project"
+								path="/dronesim"
+								projectTitle="Drones Simulation"
+								tools="Java, Swing"
+								isDarkMode={isDarkMode}
+							/>
 
-						<ProjectCard
-							onRefsReady={handleRefsReady}
-							frontImage="cultural-fitness-assets/cultural-fitness-img-1.webp"
-							repoURL="https://github.com/Lenis-jf/Cultural-Fitness"
-							path="/cultural-fitness"
-							projectTitle="Cultural Fitness"
-							tools="JavaScript, HTML, SCSS"
-							isDarkMode={isDarkMode}
-						/>
+							<ProjectCard
+								onRefsReady={handleRefsReady}
+								frontImage="cultural-fitness-assets/cultural-fitness-img-1.webp"
+								repoURL="https://github.com/Lenis-jf/Cultural-Fitness"
+								path="/cultural-fitness"
+								projectTitle="Cultural Fitness"
+								tools="JavaScript, HTML, SCSS"
+								isDarkMode={isDarkMode}
+							/>
 
-						<ProjectCard
-							onRefsReady={handleRefsReady}
-							frontImage="leonti-assets/leonti-project.png"
-							repoURL="https://github.com/Lenis-jf/leonti-aesthetic"
-							path="/leonti"
-							projectTitle="Leonti Aesthetic"
-							tools="React in Vite, SCSS"
-							isDarkMode={isDarkMode}
-						/>
+							<ProjectCard
+								onRefsReady={handleRefsReady}
+								frontImage="leonti-assets/leonti-project.png"
+								repoURL="https://github.com/Lenis-jf/leonti-aesthetic"
+								path="/leonti"
+								projectTitle="Leonti Aesthetic"
+								tools="React in Vite, SCSS"
+								isDarkMode={isDarkMode}
+							/>
+						</div>
 
-						{/* <Link to="/work" className="button work">
-							Show all projects
-						</Link> */}
 						<TransitionButton to="/work" label="See all projects" />
 						<div className="section-changer section-changer-light abilities">
 							<span>Not finished yet :)</span>
@@ -169,12 +164,10 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						ref={sectionRefs.lastPartSectionRef}
 					>
 						<p>Do not forget my name!</p>
-						<img className="main-logo" src={ getIcon("logo-small", isDarkMode) } />
+						<img className="main-logo" src={getIcon("logo-small", isDarkMode)} />
 						<p>I am Juan Fernando and Im here to bring your ideas to reality</p>
 						<div className="buttons-container light-color"></div>
-						<Link to="/contact" className="button highlight">
-							Find Me
-						</Link>
+						<TransitionButton to="/contact" label="Find me" extraClass="last-part" />
 						<div className="section-changer section-changer-light home">
 							<div></div>
 							<span>Go back to start</span>
