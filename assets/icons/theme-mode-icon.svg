@@ -1,11 +1,1 @@
-<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_27_53)">
-<path d="M4 5.33335C4.73637 5.33335 5.33333 4.73639 5.33333 4.00002C5.33333 3.26364 4.73637 2.66669 4 2.66669V5.33335Z" fill="#F5F5F0"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.00002 0.666687C2.15907 0.666687 0.666687 2.15907 0.666687 4.00002C0.666687 5.84095 2.15907 7.33335 4.00002 7.33335C5.84095 7.33335 7.33335 5.84095 7.33335 4.00002C7.33335 2.15907 5.84095 0.666687 4.00002 0.666687ZM4.00002 1.33335V2.66669C3.26364 2.66669 2.66669 3.26364 2.66669 4.00002C2.66669 4.73639 3.26364 5.33335 4.00002 5.33335V6.66669C5.47279 6.66669 6.66669 5.47279 6.66669 4.00002C6.66669 2.52726 5.47279 1.33335 4.00002 1.33335Z" fill="#F5F5F0"/>
-</g>
-<defs>
-<clipPath id="clip0_27_53">
-<rect width="8" height="8" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_27_53)"><path d="M4 5.333a1.333 1.333 0 0 0 0-2.666z" fill="#F5F5F0"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4 .667a3.333 3.333 0 1 0 0 6.666A3.333 3.333 0 0 0 4 .667m0 .666v1.334a1.333 1.333 0 1 0 0 2.666v1.334a2.667 2.667 0 1 0 0-5.334" fill="#F5F5F0"/></g><defs><clipPath id="clip0_27_53"><rect width="8" height="8" fill="white"/></clipPath></defs></svg>
