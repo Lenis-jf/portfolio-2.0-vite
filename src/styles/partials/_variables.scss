@@ -1,13 +1,11 @@
-// _variables.scss
-
 // SCSS helper vars (for dev)
 $light-color: #ffffff;
 $light2-color: #f5f5f7;
-$foreground-color: #2c2c2c;
+$foreground-color: #1d1d1f;
 $foreground-color-light: #F5F5F0;
-$blue-logo: #4F75FF;
-$light-gray: #3c3d37;
-$dark-gray: #1e201e;
+$blue-logo: #0171e3;
+$light-gray: #161617;
+$dark-gray: #1d1d1f;
 
 $js-color: #F7DF1E;
 $css-color: #1572B6;
@@ -19,7 +17,12 @@ $neo-morphism-static:
     -3px -3px 7px rgba(255, 255, 255, 0.5);
 
 // Fonts & typography
-$font-primary: "Ubuntu Sans", sans-serif;
+// $font-primary: "Ubuntu Sans", sans-serif;
+$font-primary: "Manrope", sans-serif;
+
+$font-titles: "League Gothic", sans-serif;
+// $font-logo: ;
+// $font-welcome-title: "Outward", sans-serif;
 
 // Sizes
 $bar-width: 30px;
@@ -33,7 +36,7 @@ $transition-fast: 200ms;
 $transition-medium: 350ms;
 
 // Font sizes
-$fs-h1: 2.3rem;
+$fs-h1: 3.8rem;
 $fs-h2: 2rem;
 $fs-h3: 1.6rem;
 $fs-button: 1.4rem;
@@ -58,9 +61,9 @@ $fs-xsmall: 0.75rem;
 
 // dark theme overrides via class on :root
 :root.dark-theme {
-    --light-color: #3c3d37;
+    --light-color: #161617;
     --light-color-rgb: 60, 61, 55;
-    --light2-color: #1e201e;
+    --light2-color: #1d1d1f;
     --light2-color-rgb: 30, 32, 30;
     --foreground-color: #F5F5F0;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const TransitionButton = ({ to, label, color = "#4F75FF", extraClass="" }) => {
+const TransitionButton = ({ to, label, color = "#0171e3", extraClass="" }) => {
     const [isExpanding, setIsExpanding] = useState(false);
     const navigate =  useNavigate();
 

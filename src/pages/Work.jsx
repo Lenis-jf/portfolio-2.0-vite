@@ -50,11 +50,12 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                         <div className="text-mockup-container">
                             <div className="text-button-container">
                                 <p>
-                                    Leonti Aesthetic is a modern beauty studio website showcasing eyelash extensions, lifting, and facial treatments. Built with React and SCSS, it delivers a smooth, elegant, and responsive user experience with subtle animations that highlight the brand’s clean and professional aesthetic.                                </p>
-                                <TransitionButton to="" label="Read more about it" />
+                                    Leonti Aesthetic is a modern beauty studio website showcasing eyelash extensions, lifting, and facial treatments. Built with React and SCSS, it delivers a smooth, elegant, and responsive user experience with subtle animations that highlight the brand’s clean and professional aesthetic.
+                                </p>
                             </div>
                             <img src={getProjectAssetUrl("leonti-assets/leonti-iphone-mockup.webp")} alt="project mockup" className="mockup" />
                         </div>
+                        <TransitionButton to="" label="Read more about it" />
                     </li>
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">

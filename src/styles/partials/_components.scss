@@ -25,6 +25,11 @@ a.button {
         background-color: $blue-logo;
         color: var(--light-color);
     }
+
+    &:hover {
+        opacity: 0.4;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
 }
 
 div.section-changer {

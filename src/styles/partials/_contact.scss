@@ -49,15 +49,15 @@ section#contact {
     }
 
     a.wa {
-        background-image: url("/assets/icons/whatsapp-icon.svg");
+        background-image: url("/assets/icons/whatsapp-icon-dark.svg");
     }
 
     a.mail {
-        background-image: url("/assets/icons/mail-icon.svg");
+        background-image: url("/assets/icons/mail-icon-dark.svg");
     }
 
     a.instagram {
-        background-image: url("/assets/icons/instagram-icon.svg");
+        background-image: url("/assets/icons/instagram-icon-dark.svg");
     }
 
     a.github {
@@ -75,7 +75,7 @@ section#last-part {
         color: $foreground-color;
     }
 
-    div.section-changer.section-changer-light.home {
+    div.section-changer.section-changer-dark.home {
         div {
             transform: rotate(180deg);
         }

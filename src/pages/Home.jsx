@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from "react";
+import React, { useState, useCallback, useEffect, useRef, use } from "react";
 import ProjectCard from "../components/ProjectCard";
 import TransitionButton from "../components/TransitionButton";
 import { Link } from "react-router-dom";
@@ -52,7 +52,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						className="section light-section hidden"
 						ref={sectionRefs.homeSectionRef}
 					>
-						<img className="main-logo" src={getIcon("logo-small", isDarkMode)} ref={mainLogoRef} />
+						<img className="main-logo" src={getIcon("logo", isDarkMode)} ref={mainLogoRef} />
 						<img className="hr-arrow" src={getIcon("arrow-deco", isDarkMode)} ref={arrowDecoRef} />
 						<div className="hr"></div>
 						<h1>
@@ -64,7 +64,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						</h1>
 						<div className="buttons-container">
 							<TransitionButton to="/contact" label="Find me" extraClass="home" />
-							<TransitionButton to="/about" label="Know me" color="#3c3d37" extraClass="home" />
+							<TransitionButton to="/about" label="Know me" color="#1d1d1f" extraClass="home" />
 						</div>
 						<div className="section-changer section-changer-dark projects">
 							<span>See more</span>

@@ -1,7 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-// _reset.scss
 *,
 *::after,
 *::before {
@@ -31,12 +30,16 @@ html {
     background-color: var(--light-color);
     scroll-behavior: smooth;
 
-    &.dark-theme { a.active { color: $light-color; background-color: $blue-logo; }
-}
+    &.dark-theme {
+        a.active {
+            color: $light-color;
+            background-color: $blue-logo;
+        }
+    }
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: $font-primary;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -73,13 +76,27 @@ span.copy-right {
     opacity: 0.6;
 }
 
-section.section { transition: background-color 500ms ease-in-out; }
+section.section {
+    transition: background-color 500ms ease-in-out;
+}
 
 section.light-section {
     color: var(--foreground-color);
 }
 
-a.button { @include button-responsive-font-size; color: $foreground-color-light; }
-p { @include p-responsive-font-size; }
-h1 { @include h1-responsive-font-size; }
-h2 { @include h2-responsive-font-size; }
+a.button {
+    @include button-responsive-font-size;
+    color: $foreground-color-light;
+}
+
+p {
+    @include p-responsive-font-size;
+}
+
+h1 {
+    @include h1-responsive-font-size;
+}
+
+h2 {
+    @include h2-responsive-font-size;
+}

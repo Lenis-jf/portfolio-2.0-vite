@@ -1,8 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-// import ContactCardLight from "../../public/assets/icons/contact-card-lightmode.svg";
-// import ContactCardDark from "../../assets/icons/contact-card-darkmode.svg";
+import { getIcon } from '../utils/assetsUtils.js';
 
 function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
     return (

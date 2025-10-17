@@ -13,6 +13,7 @@
 @use './partials/loader';
 @use './partials/transition-button';
 @use './partials/work';
+@use './partials/fonts';
 
 /* Extra small responsive tweaks that were in media queries */
 @media screen and (min-width: 360px) {
@@ -22,10 +23,6 @@
 
     div.logo-container {
         display: inline-block;
-    }
-
-    section#home {
-        height: 100vh;
     }
 
     div.hr {

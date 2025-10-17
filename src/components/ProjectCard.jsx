@@ -78,7 +78,7 @@ function ProjectCard(props) {
           alt="Github Logo"
         />
         <a href={props.repoURL} className="button card-button">Show Repository</a>
-        <TransitionButton to={`/projects${props.path}`} extraClass="projectCard" label="See more about it" color="#3c3d37" />
+        <TransitionButton to={`/projects${props.path}`} extraClass="projectCard" label="See more about it" color="#1d1d1f" />
       </div>
       <div className="small-info-card" ref={smallCardRef}>
         <h4>{props.projectTitle}</h4>

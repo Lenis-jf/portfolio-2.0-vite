@@ -18,6 +18,7 @@ section.work-section {
         margin-top: 40px;
         list-style-type: none;
         padding: 0;
+        transition: all 600ms ease-in-out;
 
         li.project-item {
             position: relative;
@@ -42,6 +43,10 @@ section.work-section {
                         user-select: none;
                         margin: 0 0 15px 0;
                     }
+
+                    @media screen and (min-width: 560px) {
+                        h2 { max-width: 420px; }
+                    } 
 
                     img {
                         width: 2.2rem;
@@ -89,6 +94,8 @@ section.work-section {
                         opacity: 0;
                     }
                 }
+
+                button.work { opacity: 0; }
             }
 
             p {
@@ -102,6 +109,8 @@ section.work-section {
                 p {
                     text-align: left;
                     transition: all 300ms ease;
+                    padding: 15px 15px 15px 0;
+                    margin: 0;
                 }
             }
 
@@ -112,8 +121,6 @@ section.work-section {
                     div.text-button-container {
                         p {
                             opacity: 1;
-                            padding: 15px 0;
-                            margin: 0;
                         }
                     }
 
@@ -130,6 +137,8 @@ section.work-section {
                         }
                     }
                 }
+
+                button.work{ opacity: 1; } 
             }
 
             div.text-mockup-container {
@@ -140,12 +149,34 @@ section.work-section {
 
                 img.mockup {
                     position: absolute;
-                    bottom: 5px;
-                    right: 30px;
+                    bottom: 50%;
+                    right: 2%;
+                    transform: translateY(65%);
                     width: 40%;
-                    max-width: 180px;
-                    transition: opacity 300ms ease;
+                    max-width: 160px;
+                    transition: opacity 150ms ease;
                 }
+
+                @media screen and (min-width: 430px) {
+                    img.mockup {
+                        transform: translateY(55%);
+                    }
+                }
+            }
+        }
+        
+        button.work {
+            width: 70%;
+            max-width: 165px;
+        }
+
+        @media screen and (min-width: 363px) {
+            li.project-item { max-height: calc(120px + 0.8vw); }
+        }
+        
+        @media screen and (min-width: 570px) {
+            button.work {
+                max-width: 200px;
             }
         }
     }

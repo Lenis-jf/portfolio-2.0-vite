@@ -11,7 +11,9 @@ section.light-section, section.dark-section {
     padding: 40px 20px 80px 20px;
     scroll-snap-align: start;
     transition: background-color 500ms ease-in-out;
+}
 
+section.section {
     h1,
     h2,
     p,
@@ -19,24 +21,13 @@ section.light-section, section.dark-section {
         transition: opacity 600ms ease-in-out;
     }
 
-    &.hidden {
-
-        h1,
-        h2,
-        p,
-        div {
-            opacity: 0;
-        }
+    &.hidden * {
+        opacity: 0;
+        transition: opacity 600ms ease-in-out;
     }
 
-    &.visible {
-
-        h1,
-        h2,
-        p,
-        div {
+    &.visible * {
             opacity: 1;
-        }
     }
 }
 
@@ -48,12 +39,17 @@ section#home {
     }
 
     a.button.highlight { color: $foreground-color-light; @include glass-button(); }
+
+    h1 { 
+        font-family: $font-titles; 
+        @include h1-responsive-font-size;
+    }
 }
 
 img.main-logo {
     display: inline-block;
-    width: 185px;
-    height: 185px;
+    width: 16rem;
+    height: 16rem;
     background-size: cover;
     background-position: center;
     margin: 30px;
