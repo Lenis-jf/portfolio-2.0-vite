@@ -66,7 +66,6 @@ function RouterComponent() {
 
 	const [isDarkMode, toggleDarkMode] = useDarkMode(Object.values(sectionRefsObject), headerRef);
 
-	// const menuColor = useMenuColor(Object.values(sectionRefsObject), isDarkMode);
 
 	function createHomeObserver({ logoContainerRef }) {
 		const observerOptions = { root: null, threshold: 0.2 };

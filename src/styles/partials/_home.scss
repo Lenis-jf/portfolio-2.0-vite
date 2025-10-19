@@ -8,7 +8,7 @@ section.light-section, section.dark-section {
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    padding: 40px 20px 80px 20px;
+    padding: 50px 20px 50px 20px;
     scroll-snap-align: start;
     transition: background-color 500ms ease-in-out;
 }
@@ -18,15 +18,15 @@ section.section {
     h2,
     p,
     div {
-        transition: opacity 600ms ease-in-out;
+        transition: opacity 700ms ease-in-out;
     }
 
     &.hidden * {
         opacity: 0;
-        transition: opacity 600ms ease-in-out;
+        transition: opacity 700ms ease-in-out;
     }
 
-    &.visible * {
+    &.visible *:not(button.radio-button) {
             opacity: 1;
     }
 }
@@ -40,26 +40,74 @@ section#home {
 
     a.button.highlight { color: $foreground-color-light; @include glass-button(); }
 
-    h1 { 
-        font-family: $font-titles; 
-        @include h1-responsive-font-size;
+    div.main-welcome-content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 { 
+            // font-family: $font-titles; 
+            line-height: clamp(2.2rem, 2.5rem + 5.5vw, 6rem);
+            font-weight: 700;
+            margin: 30px 0 30px 0;
+            @include h1-responsive-font-size;
+        }
+
+        div.main-logo-banner-container {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            justify-content: center;
+            gap: 15px;
+    
+            img.main-logo {
+                opacity: 0;
+                z-index: 2;
+                animation: welcomeLogo 0.8s ease-in forwards;
+            }
+
+            div.banner-container {
+                line-height: clamp(1.2rem, 1.6rem + 4vw, 50px);
+
+                h2 {
+                    transform: translateX(100%);
+                    opacity: 0;
+                    text-align: left;
+                    margin: 0;
+                    @include h2-responsive-font-size;
+                    animation: bannerSlideIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+                }
+    
+                h2:first-child {
+                    animation-delay: 300ms;
+                }
+    
+                h2:nth-child(2) {
+                    animation-delay: 450ms;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 560px) {
+        div.main-welcome-content-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 50px;
+
+            h1 { text-align: left; }
+        }
     }
 }
 
 img.main-logo {
     display: inline-block;
-    width: 16rem;
-    height: 16rem;
+    width: clamp(12rem, 1rem + 4vw, 18rem);
+    height: clamp(12rem, 1rem + 4vw, 18rem);
     background-size: cover;
     background-position: center;
-    margin: 30px;
-}
-
-div.hr {
-    width: 90%;
-    height: 2.5px;
-    background-color: var(--foreground-color);
-    animation: hrIn 1s ease forwards running;
+    // margin: 30px;
 }
 
 @keyframes hrIn {
@@ -69,34 +117,6 @@ div.hr {
 
     100% {
         transform: translateX(0px);
-    }
-}
-
-img.hr-arrow {
-    display: inline-block;
-    position: absolute;
-    top: calc(50% - 175px);
-    left: calc(5% + 7.5px);
-    width: 15px;
-    height: 350px;
-    background-size: cover;
-    background-position: center;
-    animation: hrArrowIn 1s ease forwards running;
-}
-
-@keyframes hrArrowIn {
-    0% {
-        transform: translateY(calc(-100% - 350px));
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-section.dark-theme {
-    div.hr-arrow {
-        background-image: url("/assets/icons/arrow-deco-light-color.svg");
     }
 }
 

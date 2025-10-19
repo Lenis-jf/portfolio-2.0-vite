@@ -1,6 +1,7 @@
 // src/pages/About.jsx
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import TransitionButton from "../components/TransitionButton";
 
 export default function About({ aboutPageRef, onAboutReady }) {
   useEffect(() => {
@@ -35,15 +36,13 @@ export default function About({ aboutPageRef, onAboutReady }) {
                 <a className="button highlight" href="/assets/docs/Juan-Lenis-CV.pdf" download>
                   Download CV
                 </a>
-                <Link className="button" to="/contact">
-                  Contact
-                </Link>
+                <TransitionButton to="/contact" label="Contact" extraClass="about" color="#1d1d1f" />
               </div>
             </div>
 
             <figure className="hero-media" aria-hidden="false">
               <img
-                src={`${import.meta.env.BASE_URL}/assets/imgs/profil-foto-2.webp`}
+                src={`${import.meta.env.BASE_URL}/assets/imgs/profil-foto-web-portrait-1600x2000.webp`}
                 alt="Portrait of Juan Lenis"
                 width="220"
                 height="220"
@@ -122,7 +121,7 @@ export default function About({ aboutPageRef, onAboutReady }) {
           <p>If you'd like to collaborate or hire me, please get in touch.</p>
 
           <div className="buttons-container">
-            <Link className="button highlight" to="/contact">Get in touch</Link>
+            <TransitionButton to="/contact" label="Get in touch" extraClass="about long" />
             <a className="button" href={`${import.meta.env.BASE_URL}/assets/docs/Juan-Lenis-CV.pdf`} download>Download resume</a>
           </div>
         </div>

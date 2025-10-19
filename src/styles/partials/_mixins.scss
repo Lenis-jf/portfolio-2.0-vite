@@ -32,23 +32,27 @@
 }
 
 @mixin xs-responsive-font-size {
-    font-size: clamp($fs-xsmall, 1rem + 1.2vw, 1.3rem);
+    font-size: clamp($fs-xsmall, 0.7rem + 1vw, 1.2rem);
 }
 
 @mixin p-responsive-font-size {
-    font-size: clamp($fs-base, 1rem + 0.8vw, 1.6rem);
+    font-size: clamp($fs-base, 1.2rem + 1vw, 1.6rem);
 }
 
 @mixin h1-responsive-font-size {
-    font-size: clamp($fs-h1, 1rem + 1.2vw, 4rem);
+    font-size: clamp($fs-h1, 1rem + 4vw, 6rem);
 }
 
 @mixin h2-responsive-font-size {
-    font-size: clamp($fs-h2, 1rem + 0.8vw, 3rem);
+    font-size: clamp($fs-h2, 1rem + 4vw, 5rem);
+}
+
+@mixin smaller-h2-responsive-font-size {
+    font-size: clamp($fs-h2, 1rem + 4vw, 3.8rem);
 }
 
 @mixin h3-responsive-font-size {
-    font-size: clamp($fs-h3, 1rem + 0.8vw, 2.5rem);
+    font-size: clamp($fs-h3, 1rem + 2.5vw, 3.4rem);
 }
 
 @mixin button-responsive-font-size {

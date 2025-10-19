@@ -1,7 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-button.transition-button.work {
+button.transition-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,15 +11,23 @@ button.transition-button.work {
     border-radius: 5px;
     padding: 10px 20px;
     color: $foreground-color-light;
+    background-color: var(--button-bg, $blue-logo);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transform-origin: center center;
     @include button-responsive-font-size;
     @include glass-button();
-    transition: opacity 0.3s ease;
+    transition: all 0.25s ease-in-out;
     user-select: none;
 
+    // hover effect unificado
     &:hover {
-        opacity: 0.4;
+        background-color: rgba(255, 255, 255, 0.15);
+        transform: scale(1.05);
         border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:active {
+        transform: scale(0.97);
     }
 
     &.home {
@@ -34,15 +42,15 @@ button.transition-button.work {
 
     &.projectCard {
         padding: 10px 0px;
-    }    
-}
+    }
 
-button.transition-button.expand {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    border-radius: 0;
-    color: transparent;
-    animation: fadeOut 0.8s ease-in-out forwards;
-    z-index: 9999;
+    &.expand {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 0;
+        color: transparent;
+        animation: fadeOut 0.8s ease-in-out forwards;
+        z-index: 9999;
+    }
 }

@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { getIcon } from '../utils/assetsUtils.js';
 
 function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
+    const [rotation, setRotation] = useState(0);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleLogoRotation = () => {
+            const currentScrollY = window.scrollY;
+            const direction = currentScrollY > lastScrollY ? 1 : -1;
+            const rotationSpeed = 8;
+
+            setRotation(prev => prev + direction * rotationSpeed);
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleLogoRotation);
+
+        return () => { window.removeEventListener('scroll', handleLogoRotation) };
+    }, [lastScrollY]);
+
     return (
         <div>
             <header id="header" className="light-section" ref={headerRef}>
@@ -42,7 +60,12 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                         />
                     </label>
                 </div>
-                <div className="logo-container" ref={logoContainerRef}></div>
+                <div className="logo-container" ref={logoContainerRef}>
+                    <img 
+                        src={getIcon("logo-small", isDarkMode)}
+                        alt="small juanfelenis logo"
+                        style={{transform: `rotate(${rotation}deg)`}} />
+                </div>
             </header>
         </div>
     );

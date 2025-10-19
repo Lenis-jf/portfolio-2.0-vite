@@ -33,7 +33,7 @@ section#projects {
         position: relative;
         aspect-ratio: 16 / 10;
         width: 85%;
-        max-width: 280px;
+        max-width: 340px;
         min-width: 280px;
         min-height: 180px;
         margin-top: 60px;
@@ -180,7 +180,7 @@ section#projects {
                 margin-bottom: 5px;
             }
 
-            .card-button {
+            a.card-button {
                 width: 60%;
                 max-width: 200px;
                 padding: 10px 0;

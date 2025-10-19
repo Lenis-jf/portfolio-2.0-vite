@@ -12,10 +12,9 @@ section#about-page {
     h3 { @include h3-responsive-font-size; }
 
     a.button {
-        width: 35vw;
-        height: 10vw;
-        max-width: 120px;
-        max-height: 35px;
+        padding: 10px;
+        width: 50vw;
+        max-width: 160px;
 
         &.highlight { color: $foreground-color-light; }
     }
@@ -50,7 +49,7 @@ section#about-page {
         }
 
         .hero-media {
-            flex: 0 0 220px;
+            flex: 0 0 300px;
             margin: 0 auto;
 
             img {
@@ -85,6 +84,8 @@ section#about-page {
                     margin: 0;
                     opacity: 0.9;
                 }
+
+                dt, dd { @include xs-responsive-font-size; }
             }
         }
     }
@@ -153,7 +154,11 @@ section#about-page {
             gap: 12px;
             margin-top: 12px;
 
-            a { max-width: 180px; }
+            button.transition-button.about.long {
+                padding: 10px;
+                width: 50vw;
+                max-width: 160px;
+            }
         }
     }
 

@@ -11,6 +11,24 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 	const mainLogoRef = useRef(null);
 	const arrowDecoRef = useRef(null);
 
+	const [rotation, setRotation] = useState(0);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	useEffect(() => {
+		const handleLogoRotation = () => {
+			const currentScrollY = window.scrollY;
+			const direction = currentScrollY > lastScrollY ? 1 : -1;
+			const rotationSpeed = 4;
+
+			setRotation(prev => prev + direction * rotationSpeed);
+			setLastScrollY(currentScrollY);
+		};
+
+		window.addEventListener('scroll', handleLogoRotation);
+
+		return () => { window.removeEventListener('scroll', handleLogoRotation) };
+	}, [lastScrollY]);
+
 	const handleRefsReady = useCallback((ref) => {
 		setCollectedRefs((prev) => {
 			if (!prev.includes(ref)) {
@@ -52,16 +70,22 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						className="section light-section hidden"
 						ref={sectionRefs.homeSectionRef}
 					>
-						<img className="main-logo" src={getIcon("logo", isDarkMode)} ref={mainLogoRef} />
-						<img className="hr-arrow" src={getIcon("arrow-deco", isDarkMode)} ref={arrowDecoRef} />
-						<div className="hr"></div>
-						<h1>
-							Software Engineer
-							<br />
-							Web Developer
-							<br />
-							UI & UX Designer
-						</h1>
+						<div className="main-welcome-content-container">
+							<div className="main-logo-banner-container">
+								<img className="main-logo" src={getIcon("logo", isDarkMode)} ref={mainLogoRef} />
+								<div className="banner-container">
+									<h2>Juanfelenis</h2>
+									<h2>Developer</h2>
+								</div>
+							</div>
+							<h1>
+								Software Engineer
+								<br />
+								Web Developer
+								<br />
+								UI & UX Designer
+							</h1>
+						</div>
 						<div className="buttons-container">
 							<TransitionButton to="/contact" label="Find me" extraClass="home" />
 							<TransitionButton to="/about" label="Know me" color="#1d1d1f" extraClass="home" />
