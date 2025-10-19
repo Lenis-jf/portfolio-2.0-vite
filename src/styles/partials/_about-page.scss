@@ -7,16 +7,22 @@ section#about-page {
     color: var(--foreground-color);
     // transition: all 300ms ease-in-out;
 
-    h1 { transition: opacity 300ms ease-in-out; }
+    h1 {
+        transition: opacity 300ms ease-in-out;
+    }
 
-    h3 { @include h3-responsive-font-size; }
+    h3 {
+        @include h3-responsive-font-size;
+    }
 
     a.button {
         padding: 10px;
         width: 50vw;
         max-width: 160px;
 
-        &.highlight { color: $foreground-color-light; }
+        &.highlight {
+            color: $foreground-color-light;
+        }
     }
 
     .about-hero {
@@ -41,7 +47,9 @@ section#about-page {
             flex: 1 1 380px;
             min-width: 240px;
 
-            .tagline { padding: 0 clamp(10px, 5vw, 50px); }
+            .tagline {
+                padding: 0 clamp(10px, 5vw, 50px);
+            }
 
             .buttons-container {
                 flex-direction: row;
@@ -59,6 +67,18 @@ section#about-page {
                 aspect-ratio: 3/4;
                 border-radius: 4rem;
                 object-fit: cover;
+                background: #e0e0e0;
+                box-shadow:
+                    15px 15px 30px #bebebe,
+                    -15px -15px 30px #ffffff;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    box-shadow:
+                        10px 10px 20px #bebebe,
+                        -10px -10px 20px #ffffff;
+                    transform: scale(1.02);
+                }
             }
         }
     }
@@ -85,7 +105,10 @@ section#about-page {
                     opacity: 0.9;
                 }
 
-                dt, dd { @include xs-responsive-font-size; }
+                dt,
+                dd {
+                    @include xs-responsive-font-size;
+                }
             }
         }
     }
@@ -136,12 +159,20 @@ section#about-page {
             &:visited {
                 color: #8C7F9B;
 
-                &::before { width: 100%; background-color: #8C7F9B; }
+                &::before {
+                    width: 100%;
+                    background-color: #8C7F9B;
+                }
             }
 
-            &:hover { opacity: 0.6; }
+            &:hover {
+                opacity: 0.6;
+            }
 
-            &:hover::before { width: 100%; opacity: 0.6; }
+            &:hover::before {
+                width: 100%;
+                opacity: 0.6;
+            }
         }
     }
 
@@ -170,6 +201,27 @@ section#about-page {
 
         .hero-media {
             flex: 0 0 160px;
+        }
+    }
+}
+
+html.dark-theme {
+    section#about-page {
+        .hero-media {
+            img {
+                background: #0e0e0e;
+                box-shadow:
+                    inset 8px 8px 16px rgba(0, 0, 0, 0.9),
+                    inset -8px -8px 16px rgba(255, 255, 255, 0.08);
+                transition: all 0.4s ease;
+
+                &:hover {
+                    box-shadow:
+                        inset 4px 4px 8px rgba(0, 0, 0, 0.9),
+                        inset -4px -4px 8px rgba(255, 255, 255, 0.12);
+                    transform: scale(1.01);
+                }
+            }
         }
     }
 }
