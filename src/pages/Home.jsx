@@ -87,8 +87,8 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							</h1>
 						</div>
 						<div className="buttons-container">
-							<TransitionButton to="/contact" label="Find me" extraClass="home" />
-							<TransitionButton to="/about" label="Know me" color="#1d1d1f" extraClass="home" />
+							<TransitionButton to="/contact" label="Contact me" extraClass="home" />
+							<TransitionButton to="/about" label="About me" color="#1d1d1f" extraClass="home" />
 						</div>
 						<div className="section-changer section-changer-dark projects">
 							<span>See more</span>
@@ -101,10 +101,10 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						className="section dark-section hidden"
 						ref={sectionRefs.projectsSectionRef}
 					>
-						<p>Here are some of the projects I have worked on</p>
+						<h2>Projects</h2>
 						<p>
-							Just touch or put your mouse on the cards to turn them and go see
-							the GitHub repository of the project
+							A few of my favorite builds. I picked three snapshots that show how I design, code and ship.
+							Hover or tap a card to flip it and go see the GitHub repo or a live demo.
 						</p>
 
 						<div className="project-cards-container">
@@ -151,8 +151,8 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						className="section light-section hidden"
 						ref={sectionRefs.abilitiesSectionRef}
 					>
-						<h2>Development Abilities</h2>
-						<p>These are the programming languages I master until now</p>
+						<h2>Core Skills & Tools</h2>
+						<p>technologies I work with most</p>
 						<div className="icons-container">
 							<div className="icon js"></div>
 							<div className="icon react"></div>
@@ -162,14 +162,14 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							<div className="icon cpp"></div>
 							<div className="icon java"></div>
 						</div>
-						<p>Design and styling tools I dominate</p>
+						<p>Design and styling tools proficient in</p>
 						<div className="icons-container">
 							<div className="icon scss"></div>
 							<div className="icon css"></div>
 							<div className="icon html"></div>
 							<div className="icon figma"></div>
 						</div>
-						<h5>Strengths:</h5>
+						<h3>Strengths:</h3>
 						<p>
 							The programming languages I have worked most with are Java,
 							JavaScript and C++. In addition to the programming languages I
@@ -187,8 +187,14 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						className="section dark-section hidden"
 						ref={sectionRefs.lastPartSectionRef}
 					>
-						<p>Do not forget my name!</p>
-						<img className="main-logo" src={getIcon("logo-small", isDarkMode)} />
+						<h3>Do not forget my name!</h3>
+						<div className="main-logo-banner-container">
+							<img className="main-logo" src={getIcon("logo", isDarkMode)} ref={mainLogoRef} />
+							<div className="banner-container">
+								<h2>Juanfelenis</h2>
+								<h2>Developer</h2>
+							</div>
+						</div>
 						<p>I am Juan Fernando and Im here to bring your ideas to reality</p>
 						<div className="buttons-container light-color"></div>
 						<TransitionButton to="/contact" label="Find me" extraClass="last-part" />

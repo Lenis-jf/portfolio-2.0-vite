@@ -154,9 +154,6 @@ function RouterComponent() {
 				};
 			}
 		}
-
-		// const lastSection = localStorage.getItem('lastSection');
-		// const initialSection = lastSection || 'home';
 	}, [location.pathname, homeReady]);
 
 	useEffect(() => {

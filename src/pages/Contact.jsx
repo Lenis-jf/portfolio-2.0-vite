@@ -20,9 +20,7 @@ function Contact({ contactRef, onContactReady }) {
       <section id="contact" className="section dark-section hidden" ref={contactRef}>
         <p>Hey!, nice to see you again :)<br />Interested?</p>
         <p>Let’s get in touch</p>
-        <div className="contact card">
-          <img src="assets/icons/contact-card.svg" alt="" />
-        </div>
+        <img className="contact-card-big" src="assets/icons/contact-card-big.svg" alt="contact agenda icon" />
         <p>Here you will find some methods to contact me</p>
         <p>Just click on the icons below</p>
         <div className="icons-container">

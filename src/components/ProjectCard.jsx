@@ -64,6 +64,14 @@ function ProjectCard(props) {
       className={`project-card ${isFlipped ? "flipped" : ""}`}
       tabIndex="0"
       onClick={handleCardClick}
+      role="button"
+      aria-pressed={isFlipped}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleCardClick(e);
+        }
+      }}
       ref={cardRef}
     >
       <div className="face front">

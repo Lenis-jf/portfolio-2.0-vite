@@ -14,7 +14,9 @@ section.work-section {
         animation: workTitleFadeIn 1s ease-out forwards;
     }
 
-    p { max-width: 750px; }
+    p {
+        max-width: 750px;
+    }
 
     ul.projects-list {
         display: flex;
@@ -32,9 +34,11 @@ section.work-section {
             border: solid 1px var(--foreground-color);
             border-radius: 8px;
             max-width: 620px;
-            max-height: clamp(150px, 160px + 8vw, 300px);
+            max-height: 0;
+
             overflow: hidden;
             cursor: pointer;
+
             transition: all 300ms ease;
 
             div.main-info {
@@ -44,7 +48,7 @@ section.work-section {
                     justify-content: space-between;
 
                     h2 {
-                        max-width: 320px;
+                        max-width: 360px;
                         text-align: left;
                         user-select: none;
                         margin: 0 0 15px 0;
@@ -52,8 +56,10 @@ section.work-section {
                     }
 
                     @media screen and (min-width: 560px) {
-                        h2 { max-width: 420px; }
-                    } 
+                        h2 {
+                            max-width: 440px;
+                        }
+                    }
 
                     img {
                         width: 2.2rem;
@@ -70,8 +76,7 @@ section.work-section {
 
                     div.tool {
                         display: inline-block;
-                        user-select: none
-
+                        user-select: none;
                     }
 
                     .tool.js-tool {
@@ -85,8 +90,40 @@ section.work-section {
                     .tool.html-tool {
                         @include glass-tool($html-color);
                     }
-                }
 
+                    .tool.react-tool {
+                        @include glass-tool($react-color);
+                    }
+
+                    .tool.swing-tool {
+                        @include glass-tool($swing-color);
+                    }
+
+                    .tool.java-tool {
+                        @include glass-tool($java-color);
+                    }
+
+                    .tool.py-tool {
+                        @include glass-tool($python-color);
+                    }
+
+                    .tool.flet-tool {
+                        @include glass-tool($flet-color);
+                    }
+
+                    .tool.selenium-tool {
+                        @include glass-tool($selenium-color);
+                    }
+
+                    .tool.c-tool {
+                        @include glass-tool($c-color);
+                        width: 50px;
+                    }
+
+                    .tool.css-tool {
+                        @include glass-tool($css-color);
+                    }
+                }
             }
 
             &.closed {
@@ -102,7 +139,9 @@ section.work-section {
                     }
                 }
 
-                button.work { opacity: 0; }
+                button.work {
+                    opacity: 0;
+                }
             }
 
             p {
@@ -116,14 +155,12 @@ section.work-section {
                 p {
                     text-align: left;
                     transition: all 300ms ease;
-                    padding: 15px 15px 20px 0;
+                    padding: 15px 15px 25px 0;
                     margin: 0;
                 }
             }
 
             &.open {
-                max-height: clamp(480px, 500px + 25vw, 600px);
-
                 div.text-mockup-container {
                     div.text-button-container {
                         p {
@@ -138,14 +175,16 @@ section.work-section {
 
                 div.main-info {
                     div.title-icon-container {
-                        img { 
-                            transform: rotate(0deg); 
+                        img {
+                            transform: rotate(0deg);
                             opacity: 0.25;
                         }
                     }
                 }
 
-                button.work{ opacity: 1; } 
+                button.work {
+                    opacity: 1;
+                }
             }
 
             div.text-mockup-container {
@@ -157,10 +196,8 @@ section.work-section {
                 img.mockup {
                     position: absolute;
                     bottom: 50%;
-                    right: 2%;
-                    transform: translateY(65%);
-                    width: 35%;
-                    max-width: 200px;
+                    right: 0;
+                    transform: translate(50%);
                     transition: opacity 300ms ease;
                 }
 
@@ -169,18 +206,118 @@ section.work-section {
                         transform: translateY(55%);
                     }
                 }
+
+                img.mockup.dronesim.mac {
+                    width: 65vw;
+                    max-width: 300px;
+                    right: -26%;
+                    transform: translateY(50%) rotate(-10deg);
+                }
+
+                @media screen and (min-width: 520px) {
+                    img.mockup.dronesim.mac {
+                        right: -100px;
+                        width: 60vw;
+                    }
+                }
+
+                img.mockup.leonti.iphone {
+                    width: 35vw;
+                    max-width: 215px;
+                    right: 1%;
+                    transform: translateY(55%) rotate(-5deg);
+                }
+
+                img.mockup.cultural.iphone {
+                    width: 35vw;
+                    max-width: 120px;
+                    right: 5px;
+                    transform: translateY(58%);
+                }
+
+                @media screen and (min-width: 365px) {
+                    img.mockup.cultural.iphone {
+                        width: 30vw;
+                        max-width: 160px;
+                    }
+                }
+
+                img.mockup.scraper.mac {
+                    right: -18%;
+                    width: 50vw;
+                    max-width: 220px;
+                    transform: translateY(70%);
+                }
+
+                @media screen and (min-width: 465px) {
+                    img.mockup.scraper.mac {
+                        right: -16%;
+                        max-width: 240px;
+                    }
+                }
+
+                @media screen and (min-width: 650px) {
+                    img.mockup.scraper.mac {
+                        right: 10px;
+                        max-width: 210px;
+                    }
+                }
+
+                img.mockup.roomman.mac {
+                    width: 55vw;
+                    right: -25%;
+                    max-width: 220px;
+                    transform: translateY(65%);
+                }
+
+                @media screen and (min-width: 550px) {
+                    img.mockup.roomman.mac {
+                        right: -15%;
+                        max-width: 250px;
+                    }
+                }
+
+                img.mockup.iphone.batatabit {
+                    width: 25vw;
+                    max-width: 120px;
+                    right: 2%;
+                    transform: translateY(60%);
+                }
+
+                img.mockup.mac.oceano-rosa {
+                    width: 20vw;
+                    min-width: 220px;
+                    max-width: 320px;
+                    transform: translateY(60%);
+                    right: -95px;
+                }
+
+                @media screen and (min-width: 500px) {
+                    img.mockup.mac.oceano-rosa {
+                        right: -50px;
+                    }
+                }
+
+                img.mockup.iphone.tyc {
+                    width: 35vw;
+                    transform: translateY(60%);
+                    max-width: 145px;
+                    right: 1%;
+                }
+
+                @media screen and (min-width: 500px) {
+                    img.mockup.iphone.tyc {
+                        right: 3%;
+                    }
+                }
             }
         }
-        
+
         button.work {
-            width: 70%;
+            width: 55vw;
             max-width: 165px;
         }
 
-        @media screen and (min-width: 660px) {
-            li.project-item { max-height: clamp(145px, 160px + 5.2vw, 500px); }
-        }
-        
         @media screen and (min-width: 570px) {
             button.work {
                 max-width: 200px;

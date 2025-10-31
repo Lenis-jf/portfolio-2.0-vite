@@ -39,7 +39,7 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                         <span>Work</span>
                     </NavLink>
                     <NavLink to="/contact" className={({ isActive }) => {
-                        return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
+                        return `${isDarkMode ? 'menu-button contact dark-theme' : 'menu-button contact'} ${isActive ? "active" : ""}`;
                     }}>
                         <img
                             src={`${import.meta.env.BASE_URL}assets/icons/contact-card-darkmode.svg`}

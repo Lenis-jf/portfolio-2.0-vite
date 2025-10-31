@@ -6,6 +6,10 @@
     -webkit-backdrop-filter: blur(10px);
     border: 0.5px solid rgba(255, 255, 255, 0.35);
     box-shadow:
+        /* Soft outer shadow (based on #161617) */
+        4px 4px 8px rgba(22, 22, 23, 0.35),
+        -4px -4px 8px rgba(255, 255, 255, 0.08),
+        /* Original 3D depth shadows */
         0 10px 25px rgba(0, 0, 0, 0.25),
         inset 0 1px 1px rgba(255, 255, 255, 0.7),
         inset 0 -2px 6px rgba(255, 255, 255, 0.4);
@@ -25,18 +29,23 @@
     -webkit-backdrop-filter: blur(10px);
     border: 0.5px solid rgba(255, 255, 255, 0.35);
     box-shadow:
+        /* Soft outer shadow (based on #161617) */
+        4px 4px 8px rgba(22, 22, 23, 0.35),
+        -4px -4px 8px rgba(255, 255, 255, 0.08),
+        /* Original 3D depth shadows */
         0 10px 25px rgba(0, 0, 0, 0.25),
         inset 0 1px 1px rgba(255, 255, 255, 0.7),
         inset 0 -2px 6px rgba(255, 255, 255, 0.4);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+
 @mixin xs-responsive-font-size {
-    font-size: clamp($fs-xsmall, 0.7rem + 1vw, 1.2rem);
+    font-size: clamp($fs-xsmall, 1rem + 1vw, 1.4rem);
 }
 
 @mixin p-responsive-font-size {
-    font-size: clamp($fs-base, 1.2rem + 1vw, 1.6rem);
+    font-size: clamp($fs-base, 1.2rem + 1.1vw, 1.8rem);
 }
 
 @mixin h1-responsive-font-size {
@@ -47,12 +56,16 @@
     font-size: clamp($fs-h2, 1rem + 4vw, 5rem);
 }
 
-@mixin smaller-h2-responsive-font-size {
-    font-size: clamp($fs-h2, 1rem + 4vw, 3.8rem);
+@mixin h3-responsive-font-size {
+    font-size: clamp($fs-h3, 1rem + 1vw, 1.5rem);
 }
 
-@mixin h3-responsive-font-size {
-    font-size: clamp($fs-h3, 1rem + 2.5vw, 3.4rem);
+@mixin h4-responsive-font-size {
+    font-size: clamp($fs-h4, 1rem + 0.8vw, 1.3rem);
+}
+
+@mixin smaller-h2-responsive-font-size {
+    font-size: clamp($fs-h2, 1rem + 4vw, 3.8rem);
 }
 
 @mixin button-responsive-font-size {

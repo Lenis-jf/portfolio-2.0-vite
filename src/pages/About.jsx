@@ -13,7 +13,7 @@ export default function About({ aboutPageRef, onAboutReady }) {
       behavior: "instant"
     });
 
-    if(typeof onAboutReady === "function")
+    if (typeof onAboutReady === "function")
       onAboutReady(true);
 
     return () => (document.title = prevTitle);
@@ -30,6 +30,11 @@ export default function About({ aboutPageRef, onAboutReady }) {
                 Colombian Computer Science student at Frankfurt University of Applied Sciences.
                 I build intuitive, resilient web apps with an emphasis on UX, accessibility, and
                 attention to detail.
+              </p>
+
+              <p className="tagline">
+                Beyond the web, I enjoy exploring new technologies and ideas — from small automations to creative tools.
+                I love learning, experimenting, and finding elegant ways to make things work better.
               </p>
 
               <div className="buttons-container">
@@ -56,19 +61,19 @@ export default function About({ aboutPageRef, onAboutReady }) {
           <dl className="snapshot">
             <div className="snap-item">
               <dt><strong>Location</strong></dt>
-              <dd>Frankfurt, Germany</dd>
+              <dd>Frankfurt am Main, Germany</dd>
             </div>
             <div className="snap-item">
-              <dt><strong>Studies</strong></dt>
-              <dd>Frankfurt University of Applied Sciences — B.Sc. Computer Science</dd>
+              <dt><strong>Education</strong></dt>
+              <dd>B.Sc. Computer Science — Frankfurt UAS</dd>
             </div>
             <div className="snap-item">
               <dt><strong>Languages</strong></dt>
-              <dd>Spanish (native) · German (C1 Level) · English (fluent)</dd>
+              <dd>Spanish · English · German (C1)</dd>
             </div>
             <div className="snap-item">
               <dt><strong>Focus</strong></dt>
-              <dd>Frontend, UX, accessibility, performance</dd>
+              <dd>Frontend · UX · accessibility · performance</dd>
             </div>
           </dl>
         </div>
@@ -76,23 +81,24 @@ export default function About({ aboutPageRef, onAboutReady }) {
         <div className="about-story">
           <h3>About me</h3>
           <p>
-            I’m a developer originally from Colombia and currently studying Computer Science in Frankfurt.
-            I enjoy turning ideas into polished, dependable products. I combine a designer’s eye for detail
-            with engineering rigor to create interfaces that are pleasant and robust.
+            I’m a developer from Colombia, currently studying Computer Science in Frankfurt.
+            I love turning ideas into polished, reliable products — blending a designer’s eye for detail
+            with the discipline of engineering.
           </p>
           <p>
-            I pay strong attention to edge cases and usability — my goal is that software behaves well even
-            under unexpected interactions. I enjoy collaborating in teams and learning from peers.
+            I care deeply about usability and edge cases; I like when software behaves gracefully even
+            under the unexpected. Collaboration keeps me inspired — I enjoy learning from others and
+            building things that feel right to use.
           </p>
         </div>
 
         <div className="process">
           <h3>How I work</h3>
           <ul>
-            <li><strong>Understand</strong> — user needs & constraints.</li>
-            <li><strong>Prototype</strong> — wireframes & quick interactive demos.</li>
-            <li><strong>Build</strong> — component-driven development, tests & a11y checks.</li>
-            <li><strong>Iterate</strong> — feedback-driven improvements and performance tuning.</li>
+            <li><strong>Discover</strong> — understand users and their needs.</li>
+            <li><strong>Design</strong> — structure ideas through clear interfaces.</li>
+            <li><strong>Develop</strong> — code clean, accessible, and testable components.</li>
+            <li><strong>Refine</strong> — improve with feedback and performance insights.</li>
           </ul>
         </div>
 
@@ -100,18 +106,25 @@ export default function About({ aboutPageRef, onAboutReady }) {
           <h3>Selected highlights</h3>
 
           <article className="case">
-            <h4>Portfolio — CRA → Vite migration</h4>
+            <h4>Leonti Aesthetic — Studio Website</h4>
             <p>
-              Rewrote the portfolio using Vite: resolved asset routing, improved dev/build times and
-              strengthened asset handling. <Link to="/work">See projects</Link>
+              Fast, maintainable React landing page highlighting services, pricing and partner products. Implemented image optimization, Google Maps, Search Console tracking and automated asset tasks; deployed via SFTP.              <Link to="/projects/leonti">Read more</Link>
             </p>
           </article>
 
           <article className="case">
-            <h4>Drone Monitoring UI</h4>
+            <h4>Drones Simulation — Java GUI</h4>
             <p>
-              University project focused on clear telemetry panels and graceful error handling.
-              <Link to="/dronesim"> Read more</Link>
+              Desktop Java application demonstrating API integration and real-time data visualization. Features searchable views, computed metrics and robust pagination — developed as an OOP university class team project.
+              <Link to="/projects/dronesim"> Read more</Link>
+            </p>
+          </article>
+
+          <article className="case">
+            <h4>Roomman — Distributed Room Manager</h4>
+            <p>
+              Modular client-server system implementing sockets and RPC (SunRPC in later stages) for synchronized room management. Focus on concurrency, payload encoding, fault handling and scalable communication; top-scored across iterative submissions.
+              <Link to="/projects/roomman"> Read more</Link>
             </p>
           </article>
         </div>

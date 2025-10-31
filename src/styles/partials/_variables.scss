@@ -11,6 +11,14 @@ $js-color: #F7DF1E;
 $css-color: #1572B6;
 $html-color: #E34F26;
 $scss-color: #CC6699;
+$react-color: #61DAFB;
+$swing-color: #A9B0BE;
+$java-color: #F8981D;
+$python-color: #3776AB;
+$flet-color: #ee3167;
+$selenium-color: #43B02A;
+$c-color: #A8B9CC;
+$css-color: #264DE4;
 
 $neo-morphism-static:
     4px 6px 6px rgba(0, 0, 0, 0.07),     
@@ -39,10 +47,11 @@ $transition-medium: 350ms;
 $fs-h1: 3.8rem;
 $fs-h2: 2.5rem;
 $fs-h3: 2rem;
+$fs-h4: 1.6rem;
 $fs-button: 1.4rem;
 $fs-base: 1rem;
 $fs-small: 0.8rem;
-$fs-xsmall: 0.75rem;
+$fs-xsmall: 0.5rem;
 
 // Export as CSS custom properties so JS (runtime) can toggle :root.dark-theme easily
 :root {

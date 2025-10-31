@@ -16,12 +16,12 @@ button.transition-button {
     transform-origin: center center;
     @include button-responsive-font-size;
     @include glass-button();
+
     transition: all 0.25s ease-in-out;
     user-select: none;
 
     // hover effect unificado
     &:hover {
-        background-color: rgba(255, 255, 255, 0.15);
         transform: scale(1.05);
         border-color: rgba(255, 255, 255, 0.5);
     }

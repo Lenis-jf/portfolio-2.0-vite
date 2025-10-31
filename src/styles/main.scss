@@ -15,10 +15,26 @@
 @use './partials/work';
 @use './partials/fonts';
 
+@use './partials/mixins' as *;
+
 /* Extra small responsive tweaks that were in media queries */
 @media screen and (min-width: 360px) {
     header {
         justify-content: space-between;
+
+        // div.menu-buttons-container {
+        //     position: absolute;
+        //     left: calc(var(--bar-width) + 30px);
+
+        //     a.menu-button {
+        //         width: 8vw;
+        //         max-width: 70px;
+        //         min-width: 40px;
+        //         min-height: 30px;
+        //         padding: 5px 10px;
+        //         @include xs-responsive-font-size;
+        //     }
+        // }
     }
 
     div.logo-container {

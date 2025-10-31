@@ -17,6 +17,7 @@ a.button {
     border-radius: 5px;
     cursor: pointer;
     outline: none;
+    @include button-responsive-font-size;
     @include glass-button($light-gray);
     transition: all $transition-medium ease-in-out;
 
@@ -27,9 +28,8 @@ a.button {
     }
 
     &:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: scale(1.05);
-    border-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(22, 22, 23, 0.4);
+        border: 0.5px solid rgba(255, 255, 255, 0.35);
     }
 }
 
@@ -44,6 +44,9 @@ div.section-changer {
     cursor: pointer;
     margin-top: 50px;
     -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
     
     div {
         width: 31px;
@@ -57,6 +60,10 @@ div.section-changer {
     &.section-changer-dark {
         span { color: var(--foreground-color); }
         div { background-image: url("/assets/icons/keyboard-arrow-down-dark.svg"); }
+    }
+
+    &:hover {
+        opacity: 0.7;
     }
 }
 

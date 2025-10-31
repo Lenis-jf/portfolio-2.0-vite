@@ -4,14 +4,25 @@
 section#projects {
     height: auto;
     text-align: center;
-    padding: 90px 20px 100px 20px;
+    padding: 90px 40px 100px 40px;
     background-color: var(--light2-color);
     color: $foreground-color;
 
-    p { @include p-responsive-font-size; }
+    p { 
+        @include p-responsive-font-size; 
+    }
 
-    p:nth-child(2) {
-        margin-top: 30px;
+    @media screen and (min-width: 768px) {
+        p { 
+            text-align: center;
+            padding: 0 clamp(50px, 50px + 25vw, 150px); 
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        p { 
+            text-align: justify;
+        } 
     }
 
     .section-changer {
@@ -114,6 +125,7 @@ section#projects {
                 margin: 0;
                 padding: 0;
                 width: 100%;
+                text-align: center;
                 height: fit-content;
             }
 

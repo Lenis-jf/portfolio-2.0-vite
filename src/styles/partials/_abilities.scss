@@ -1,8 +1,14 @@
-// _abilities.scss
+@use "./variables" as *;
+@use "./mixins" as *;
+
 section#abilities {
     color: var(--foreground-color);
     text-align: center;
     padding: 80px 20px 80px 20px;
+
+    h3 {
+        @include h3-responsive-font-size;
+    }  
 
     span {
         color: var(--foreground-color);
