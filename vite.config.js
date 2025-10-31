@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react({
       jsxRuntime: 'automatic',
-      fastRefresh: false, // 👈 desactiva inyección doble de @react-refresh
+      fastRefresh: false,
     }),
   ],
   optimizeDeps: {

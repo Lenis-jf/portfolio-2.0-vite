@@ -22,7 +22,7 @@ function Contact({ contactRef, onContactReady }) {
         <p>Let’s get in touch</p>
         <img className="contact-card-big" src="assets/icons/contact-card-big.svg" alt="contact agenda icon" />
         <p>Here you will find some methods to contact me</p>
-        <p>Just click on the icons below</p>
+        <p>Just click or tap on the icons below</p>
         <div className="icons-container">
           <a href="whatsapp://send/?text=Hey%20Juan%20Fernando%20mensaje&phone=+491783176979&abid=+491783176979" className="icon wa"></a>
           <a href="mailto:lenisserna2001@gmail.com" className="icon mail"></a>

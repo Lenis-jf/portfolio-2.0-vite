@@ -249,51 +249,6 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                             <img alt="project mockup" className="mockup iphone tyc" src={getProjectAssetUrl("tyc-assets/tyc-iphone-mockup.webp")} />
                         </div>
                     </li>
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
-                            <div className="title-icon-container">
-                                {/* --- ESTA LÍNEA ESTABA ERRADA (H2>) --- */}
-                                <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</h2>
-                                <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
-                            </div>
-                            <div className="tools">
-                                <div className="tool js-tool"><strong>JavaScript</strong></div>
-                                <div className="tool scss-tool"><strong>SCSS</strong></div>
-                                <div className="tool html-tool"><strong>HTML</strong></div>
-                            </div>
-                        </div>
-                        <div className="text-mockup-container">
-                            <div className="text-button-container">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                </p>
-                                <TransitionButton to="" label="Read more about it" />
-                            </div>
-                            <img alt="project mockup" className="mockup" />
-                        </div>
-                    </li>
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
-                            <div className="title-icon-container">
-                                <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</h2>
-                                <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
-                            </div>
-                            <div className="tools">
-                                <div className="tool js-tool"><strong>JavaScript</strong></div>
-                                <div className="tool scss-tool"><strong>SCSS</strong></div>
-                                <div className="tool html-tool"><strong>HTML</strong></div>
-                            </div>
-                        </div>
-                        <div className="text-mockup-container">
-                            <div className="text-button-container">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                </p>
-                                <TransitionButton to="" label="Read more about it" />
-                            </div>
-                            <img alt="project mockup" className="mockup" />
-                        </div>
-                    </li>
                 </ul>
                 <span className="copy-right">©juanfelenis 2025</span>
             </section>

@@ -104,7 +104,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						<h2>Projects</h2>
 						<p>
 							A few of my favorite builds. I picked three snapshots that show how I design, code and ship.
-							Hover or tap a card to flip it and go see the GitHub repo or a live demo.
+							Click or tap a card to flip it and go see the GitHub repo or a live demo.
 						</p>
 
 						<div className="project-cards-container">
@@ -196,7 +196,6 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							</div>
 						</div>
 						<p>I am Juan Fernando and Im here to bring your ideas to reality</p>
-						<div className="buttons-container light-color"></div>
 						<TransitionButton to="/contact" label="Find me" extraClass="last-part" />
 						<div className="section-changer section-changer-dark home">
 							<div></div>
