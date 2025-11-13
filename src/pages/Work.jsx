@@ -102,6 +102,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                         </div>
                         <TransitionButton to="projects/leonti" label="Read more about it" />
                     </li>
+
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">
@@ -123,6 +124,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                             <img src={getProjectAssetUrl("dronesim-assets/dronesim-mac-mockup.webp")} alt="project mockup" className="mockup dronesim mac" />
                         </div>
                     </li>
+
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">
@@ -144,6 +146,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                             <img src={getProjectAssetUrl("cultural-fitness-assets/cultural-fitness-iphone-mockup.webp")} alt="project mockup" className="mockup iphone cultural" />
                         </div>
                     </li>
+
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">
@@ -166,6 +169,29 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                             <img alt="project mockup" src={getProjectAssetUrl("scraper-assets/scraper-mac-mockup.webp")} className="mockup scraper mac" />
                         </div>
                     </li>
+
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
+                            <div className="title-icon-container">
+                                <h2>Voice Maze — Multimodal HMI Project</h2>
+                                <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
+                            </div>
+                            <div className="tools">
+                                <div className="tool react-tool"><strong>React</strong></div>
+                                <div className="tool scss-tool"><strong>SCSS</strong></div>
+                            </div>
+                        </div>
+                        <div className="text-mockup-container">
+                            <div className="text-button-container">
+                                <p>
+                                    A web-based maze game built with React for my Human–Machine Interaction class. It supports voice, keyboard, and touch controls, featuring multilingual speech recognition, real-time feedback, and procedural maze generation powered by Backtracking and BFS algorithms.
+                                </p>
+                                <TransitionButton to="projects/voice-maze" label="Read more about it" />
+                            </div>
+                            <img alt="project mockup" className="mockup iphone voice-maze" src={getProjectAssetUrl("voice-maze-assets/voice-maze-iphone-mockup.webp")} />
+                        </div>
+                    </li>
+
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">
@@ -185,6 +211,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                             <img alt="project mockup" className="mockup mac roomman" src={getProjectAssetUrl("roomman-assets/roomman-mac-mockup.webp")} />
                         </div>
                     </li>
+
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">
@@ -207,6 +234,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                             <img alt="project mockup" className="mockup iphone batatabit" src={getProjectAssetUrl("batatabit-assets/batatabit-iphone-mockup.webp")} />
                         </div>
                     </li>
+
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">
@@ -228,6 +256,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
                             <img alt="project mockup" className="mockup mac oceano-rosa" src={getProjectAssetUrl("oceano-rosa-assets/oceano-rosa-mac-mockup.webp")} />
                         </div>
                     </li>
+
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">

@@ -365,8 +365,68 @@ const projectsData = [
                 text: "Although this project isn’t publicly hosted, it stands as a personal milestone — a small, stylish reboot that reconnected me with one of my favorite parts of programming: the blend of logic, structure, and aesthetic expression."
             }
         ]
+    },
+    {
+        id: "voice-maze",
+        title: "Voice Maze — Multimodal HMI Project",
+        sectionClass: "light-section",
+        content: [
+            {
+                type: "image",
+                src: [
+                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-1.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-2.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-3.webp`
+                ]
+            },
+            {
+                type: "paragraph",
+                text: "Voice Maze is an interactive web application I developed for my Human–Machine Interaction (HMI) course. It explores multimodal control systems — combining voice, keyboard, and touch inputs to create a dynamic, accessible gameplay experience across desktop and mobile devices."
+            },
+            {
+                type: "paragraph",
+                text: "The project was built entirely with React, leveraging the Web Speech API for voice recognition. Players can choose to control the maze by speaking commands, pressing keys, or using on-screen floating buttons on mobile. The system provides instant visual and textual feedback for every user action."
+            },
+            {
+                type: "paragraph",
+                text: "The voice commands are parsed and interpreted using regular expressions, allowing the app to understand complex instructions such as 'five times right' or sequences like 'up, down, right'. These commands are converted into an ordered list of moves that the player executes sequentially."
+            },
+            {
+                type: "video",
+                video: "voice-maze-project.mp4",
+                poster: "voice-maze-assets/voice-maze-img-2.webp"
+            },
+            {
+                type: "paragraph",
+                text: "For performance, the maze is drawn on a Canvas element using an off-screen rendering technique. Only the player’s movement is redrawn in real time, while the maze layout remains static. The structure is dynamically recalculated when the window is resized, maintaining full responsiveness."
+            },
+            {
+                type: "paragraph",
+                text: "The maze generation itself is implemented with a custom Backtracking algorithm, while pathfinding — specifically the detection of the farthest exit cell — is achieved through a Breadth-First Search (BFS) algorithm. Both algorithms were implemented from scratch."
+            },
+            {
+                type: "image",
+                src: [
+                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-4.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-5.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-6.webp`,
+                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-7.webp`,
+                ]
+            },
+            {
+                type: "paragraph",
+                text: "To enhance accessibility, the project includes a language switcher that not only translates all on-screen text but also updates the language of the speech recognition engine. Currently, English, Spanish, and German are supported, each adapting the recognition patterns accordingly."
+            },
+            {
+                type: "paragraph",
+                text: "The interface provides continuous feedback through pop-ups and UI animations — notifying players when the system is listening, showing recognized commands, and celebrating victories or defeats. The maze runs against a timer, displaying remaining time and end results."
+            },
+            {
+                type: "paragraph",
+                text: "Future updates will include difficulty levels and adjustable maze sizes. For now, Voice Maze stands as a robust demonstration of multimodal interaction, where human input and machine interpretation merge to create a responsive and immersive HMI experience."
+            }
+        ]
     }
-
 ];
 
 export default projectsData;

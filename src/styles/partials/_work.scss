@@ -263,6 +263,13 @@ section.work-section {
                     }
                 }
 
+                img.mockup.voice-maze.iphone {
+                    width: 30vw;
+                    max-width: 145px;
+                    transform: translateY(55%);
+                    right: 2%;
+                }
+
                 img.mockup.roomman.mac {
                     width: 55vw;
                     right: -25%;
@@ -294,7 +301,13 @@ section.work-section {
 
                 @media screen and (min-width: 500px) {
                     img.mockup.mac.oceano-rosa {
-                        right: -50px;
+                        right: -60px;
+                    }
+                }
+
+                @media screen and (min-width: 800px) {
+                    img.mockup.mac.oceano-rosa {
+                        right: -100px;
                     }
                 }
 
