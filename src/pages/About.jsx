@@ -24,8 +24,8 @@ export default function About({ aboutPageRef, onAboutReady }) {
       <section id="about-page" className="section light-section hidden" ref={aboutPageRef}>
         <div className="about-hero">
           <div className="hero-inner">
+            <h2>Hi — I’m Juan Fernando Lenis Serna</h2>
             <div className="hero-text">
-              <h2>Hi — I’m Juan Fernando Lenis Serna</h2>
               <p className="tagline">
                 Colombian Computer Science student at Frankfurt University of Applied Sciences.
                 I build intuitive, resilient web apps with an emphasis on UX, accessibility, and
