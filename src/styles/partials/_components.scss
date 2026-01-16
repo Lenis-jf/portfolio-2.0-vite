@@ -4,7 +4,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-section, button, a.button { transition: all $transition-medium ease-in-out; }
+section, button, a.button { transition: all $transition-medium; }
 
 a.button {
     display: flex;
@@ -19,7 +19,7 @@ a.button {
     outline: none;
     @include button-responsive-font-size;
     @include glass-button($light-gray);
-    transition: all $transition-medium ease-in-out;
+    transition: all $transition-medium;
 
     &.highlight {
         border-color: $blue-logo;

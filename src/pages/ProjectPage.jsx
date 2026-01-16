@@ -153,7 +153,7 @@ function ProjectPage({ projectPageRef, headerRef, isDarkMode, onProjectPageReady
                         }
 
                         if (item.type === "paragraph") {
-                            return <p key={index}>{item.text}</p>;
+                            return <p key={index}>{ item.text }</p>;
                         }
 
                         if (item.type === "button") {

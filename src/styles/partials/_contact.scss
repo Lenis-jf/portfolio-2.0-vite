@@ -38,7 +38,7 @@ section#contact {
         min-width: 100px;
         max-width: 160px;
         margin: 20px 0;
-        transition: opacity 500ms ease-in-out;
+        transition: opacity $transition-fade-in;
     }
 
     &.dark-section {
@@ -50,6 +50,15 @@ section#contact {
 
     .icons-container {
         gap: 20px;
+
+        a.icon {
+            transition: transform $transition-fast, filter $transition-fast;
+
+            &:hover {
+                transform: scale(1.15) translateY(-3px);
+                filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+            }
+        }
     }
 
     p:first-child {
@@ -82,7 +91,7 @@ section#last-part {
 
     h3 { 
         @include h3-responsive-font-size;
-        transition: opacity 700ms ease-in-out;
+        transition: opacity $transition-fade-in;
     }
 
     div.main-logo-banner-container {
@@ -105,12 +114,8 @@ section#last-part {
 
         img.main-logo {
             width: clamp(80px, 60px + 5vw, 180px);
-            transition: opacity 500ms ease-in-out;
+            transition: opacity $transition-fade-in;
         }
-    }
-
-    button.work.transition-button.last-part {
-        transition: opacity 700ms ease-in-out;
     }
 
     span {

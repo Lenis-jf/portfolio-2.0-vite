@@ -41,7 +41,7 @@ header {
     align-items: center;
     padding: 10px 20px;
     opacity: 1;
-    transition: opacity 350ms ease-out, background-color 350ms ease-in-out;
+    transition: opacity $transition-medium, background-color $transition-medium;
 
     &::before {
         content: '';

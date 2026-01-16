@@ -28,7 +28,9 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
     background-color: var(--light-color);
+    color: var(--foreground-color);
     scroll-behavior: smooth;
+    transition: background-color $transition-slow, color $transition-slow;
 
     &.dark-theme {
         a.active {
@@ -44,7 +46,8 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    transition: background-color 500ms ease-in-out;
+    background-color: transparent;
+    transition: background-color $transition-slow, color $transition-slow;
 }
 
 body.no-vertical-scroll {

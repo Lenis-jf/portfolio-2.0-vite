@@ -29,6 +29,7 @@ $neo-morphism-static:
 $font-primary: "Manrope", sans-serif;
 
 $font-titles: "League Gothic", sans-serif;
+
 // $font-logo: ;
 // $font-welcome-title: "Outward", sans-serif;
 
@@ -39,9 +40,12 @@ $bars-gap: 5px;
 $menu-height: calc(#{$bar-height} * 3 + #{$bars-gap} * 2);
 
 // Transitions
-$transition-timing: 200ms ease-in-out;
-$transition-fast: 200ms;
-$transition-medium: 350ms;
+$cubic: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-timing: 300ms $cubic;
+$transition-fast: 200ms $cubic;
+$transition-medium: 350ms $cubic;
+$transition-slow: 500ms $cubic; // For background colors etc.
+$transition-fade-in: 1000ms $cubic; // Fade-in for sections content
 
 // Font sizes
 $fs-h1: 3.8rem;

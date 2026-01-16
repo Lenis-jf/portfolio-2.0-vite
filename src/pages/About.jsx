@@ -24,7 +24,7 @@ export default function About({ aboutPageRef, onAboutReady }) {
       <section id="about-page" className="section light-section hidden" ref={aboutPageRef}>
         <div className="about-hero">
           <div className="hero-inner">
-            <h2>Hi — I’m Juan Fernando Lenis Serna</h2>
+            <h1>Hi — I’m Juan Fernando Lenis Serna</h1>
             <div className="hero-text">
               <p className="tagline">
                 Colombian Computer Science student at Frankfurt University of Applied Sciences.
@@ -38,7 +38,7 @@ export default function About({ aboutPageRef, onAboutReady }) {
               </p>
 
               <div className="buttons-container">
-                <a className="button highlight" href="/assets/docs/Juan-Lenis-CV.pdf" download>
+                <a className="button" href="/assets/docs/Juan-Lenis-CV.pdf" download>
                   Download CV
                 </a>
                 <TransitionButton to="/contact" label="Contact" extraClass="about" color="#1d1d1f" />
@@ -108,24 +108,25 @@ export default function About({ aboutPageRef, onAboutReady }) {
           <article className="case">
             <h4>Leonti Aesthetic — Studio Website</h4>
             <p>
-              Fast, maintainable React landing page highlighting services, pricing and partner products. Implemented image optimization, Google Maps, Search Console tracking and automated asset tasks; deployed via SFTP.              <Link to="/projects/leonti">Read more</Link>
+              Fast, maintainable React landing page highlighting services, pricing and partner products. Implemented image optimization, Google Maps, Search Console tracking and automated asset tasks; deployed via SFTP.
             </p>
+            <Link to="/projects/leonti">Read more</Link>
           </article>
 
           <article className="case">
             <h4>Drones Simulation — Java GUI</h4>
             <p>
               Desktop Java application demonstrating API integration and real-time data visualization. Features searchable views, computed metrics and robust pagination — developed as an OOP university class team project.
-              <Link to="/projects/dronesim"> Read more</Link>
             </p>
+            <Link to="/projects/dronesim">Read more</Link>
           </article>
 
           <article className="case">
             <h4>Roomman — Distributed Room Manager</h4>
             <p>
               Modular client-server system implementing sockets and RPC (SunRPC in later stages) for synchronized room management. Focus on concurrency, payload encoding, fault handling and scalable communication; top-scored across iterative submissions.
-              <Link to="/projects/roomman"> Read more</Link>
             </p>
+            <Link to="/projects/roomman">Read more</Link>
           </article>
         </div>
 

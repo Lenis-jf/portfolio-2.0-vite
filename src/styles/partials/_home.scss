@@ -14,16 +14,16 @@ section.light-section, section.dark-section {
 }
 
 section.section {
-    h1,
-    h2,
-    p,
-    div {
-        transition: opacity 700ms ease-in-out;
+    h1, h2, h3, h4, h5, h6,
+    p, span,
+    div, img,
+    li, ul, dl, dt, dd {
+        transition: opacity $transition-fade-in;
     }
 
     &.hidden * {
         opacity: 0;
-        transition: opacity 700ms ease-in-out;
+        transition: opacity $transition-fade-in;
     }
 
     &.visible *:not(button.radio-button) {

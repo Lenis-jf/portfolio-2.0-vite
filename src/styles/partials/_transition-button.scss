@@ -17,7 +17,7 @@ button.transition-button {
     @include button-responsive-font-size;
     @include glass-button();
 
-    transition: all 0.25s ease-in-out;
+    transition: all $transition-timing;
     user-select: none;
 
     // hover effect unificado
