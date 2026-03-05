@@ -73,7 +73,7 @@ section.project-info {
         background-position: center;
         background-size: contain;
         -webkit-tap-highlight-color: transparent;
-        background-image: url("/assets/icons/keyboard-arrow-down-brown.svg");
+        background-image: url("#{$public-base}assets/icons/keyboard-arrow-down-brown.svg");
     }
 
     button.left-arrow {
@@ -175,7 +175,7 @@ section.project-info {
             left: calc(50% - 32px);
             width: 64px;
             height: 64px;
-            background-image: url("/assets/icons/play-circle-icon.svg");
+            background-image: url("#{$public-base}assets/icons/play-circle-icon.svg");
             background-size: cover;
             opacity: 0.5;
             cursor: pointer;
@@ -184,12 +184,12 @@ section.project-info {
         }
 
         .controls.playing {
-            background-image: url("/assets/icons/pause-circle-icon.svg");
+            background-image: url("#{$public-base}assets/icons/pause-circle-icon.svg");
             opacity: 0;
         }
 
         .controls.paused {
-            background-image: url("/assets/icons/play-circle-icon.svg");
+            background-image: url("#{$public-base}assets/icons/play-circle-icon.svg");
             opacity: 0.5;
         }
 
@@ -231,7 +231,7 @@ section.project-info {
 
         /* maximize / max-width / min-width variants */
         .screen-control-container.maximize .screen-control {
-            background-image: url("/assets/icons/maximize-icon.svg");
+            background-image: url("#{$public-base}assets/icons/maximize-icon.svg");
         }
 
         .screen-control-container.maximize {
@@ -239,7 +239,7 @@ section.project-info {
         }
 
         .screen-control-container.max-width .screen-control {
-            background-image: url("/assets/icons/max-width-icon.svg");
+            background-image: url("#{$public-base}assets/icons/max-width-icon.svg");
         }
 
         .screen-control-container.max-width {
@@ -247,7 +247,7 @@ section.project-info {
         }
 
         .screen-control-container.min-width .screen-control {
-            background-image: url("/assets/icons/less-width.svg");
+            background-image: url("#{$public-base}assets/icons/less-width.svg");
         }
 
         .screen-control-container.min-width {
@@ -286,18 +286,18 @@ section.project-info {
     .smallerControls {
         width: 16px;
         height: 16px;
-        background-image: url("/assets/icons/play-icon.svg");
+        background-image: url("#{$public-base}assets/icons/play-icon.svg");
         background-size: cover;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
     }
 
     .smallerControls.playing {
-        background-image: url("/assets/icons/pause-icon.svg");
+        background-image: url("#{$public-base}assets/icons/pause-icon.svg");
     }
 
     .smallerControls.paused {
-        background-image: url("/assets/icons/play-icon.svg");
+        background-image: url("#{$public-base}assets/icons/play-icon.svg");
     }
 
     .time {
@@ -307,7 +307,7 @@ section.project-info {
     /* DARK THEME OVERRIDES (when section has dark-theme class) */
     &.dark-theme {
         button.arrow {
-            background-image: url("/assets/icons/keyboard-arrow-down-light-color.svg");
+            background-image: url("#{$public-base}assets/icons/keyboard-arrow-down-light-color.svg");
         }
 
         .video-container {
@@ -321,11 +321,11 @@ section.project-info {
                 }
 
                 .smallerControls.playing {
-                    background-image: url("/assets/icons/pause-icon-gray.svg");
+                    background-image: url("#{$public-base}assets/icons/pause-icon-gray.svg");
                 }
 
                 .smallerControls.paused {
-                    background-image: url("/assets/icons/play-icon-gray.svg");
+                    background-image: url("#{$public-base}assets/icons/play-icon-gray.svg");
                 }
             }
         }

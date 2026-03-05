@@ -1,73 +1,38 @@
-import React, { useState, useCallback, useEffect, useRef, use } from "react";
+import React, { useEffect, useRef } from "react";
 import ProjectCard from "../components/ProjectCard";
 import TransitionButton from "../components/TransitionButton";
-import { Link } from "react-router-dom";
-import { useAssetsLoader } from "../hooks/useAssetsLoader";
-import Loader from "../components/Loader";
 import { getIcon } from '../utils/assetsUtils.js';
 
-function Home({ sectionRefs, isDarkMode, onHomeReady }) {
-	const [collectedRefs, setCollectedRefs] = useState([]);
-	const mainLogoRef = useRef(null);
-	const arrowDecoRef = useRef(null);
 
-	const [rotation, setRotation] = useState(0);
-	const [lastScrollY, setLastScrollY] = useState(0);
+function Home({ sectionRefs, isDarkMode }) {
+	const mainLogoRef = useRef(null);
+	const rotationRef = useRef(0);
+	const lastScrollYRef = useRef(0);
 
 	useEffect(() => {
 		const handleLogoRotation = () => {
 			const currentScrollY = window.scrollY;
-			const direction = currentScrollY > lastScrollY ? 1 : -1;
+			const direction = currentScrollY > lastScrollYRef.current ? 1 : -1;
 			const rotationSpeed = 4;
+			rotationRef.current = rotationRef.current + direction * rotationSpeed;
+			lastScrollYRef.current = currentScrollY;
 
-			setRotation(prev => prev + direction * rotationSpeed);
-			setLastScrollY(currentScrollY);
+			if (mainLogoRef.current) {
+				mainLogoRef.current.style.transform = `rotate(${rotationRef.current}deg)`;
+			}
 		};
 
 		window.addEventListener('scroll', handleLogoRotation);
 
 		return () => { window.removeEventListener('scroll', handleLogoRotation) };
-	}, [lastScrollY]);
-
-	const handleRefsReady = useCallback((ref) => {
-		setCollectedRefs((prev) => {
-			if (!prev.includes(ref)) {
-				return [...prev, ref];
-			}
-			return prev;
-		});
 	}, []);
-
-	const { isReady } = useAssetsLoader({
-		refsArray: collectedRefs,
-		timeout: 3000,
-	});
-
-	useEffect(() => {
-		if (typeof onHomeReady === "function")
-			onHomeReady(isReady);
-	}, [isReady, onHomeReady]);
-
-	useEffect(() => {
-		setCollectedRefs((prev) => {
-			const newRefs = [mainLogoRef.current, arrowDecoRef.current].filter(
-				(ref) => ref && !prev.includes(ref)
-			);
-
-			if (newRefs.length > 0) return [...prev, ...newRefs];
-			return prev;
-		});
-	}, [mainLogoRef.current, arrowDecoRef.current]);
-
-	if (!isReady) return <Loader />;
 
 	return (
 		<>
-			{isReady && (
 				<>
 					<section
 						id="home"
-						className="section light-section hidden"
+						className="section light-section"
 						ref={sectionRefs.homeSectionRef}
 					>
 						<div className="main-welcome-content-container">
@@ -98,7 +63,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 
 					<section
 						id="projects"
-						className="section dark-section hidden"
+						className="section dark-section"
 						ref={sectionRefs.projectsSectionRef}
 					>
 						<h2>Projects</h2>
@@ -109,7 +74,6 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 
 						<div className="project-cards-container">
 							<ProjectCard
-								onRefsReady={handleRefsReady}
 								frontImage="dronesim-assets/drones-project.png"
 								repoURL="https://github.com/Lenis-jf/Drone-Project"
 								path="/dronesim"
@@ -119,7 +83,6 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							/>
 
 							<ProjectCard
-								onRefsReady={handleRefsReady}
 								frontImage="cultural-fitness-assets/cultural-fitness-img-1.webp"
 								repoURL="https://github.com/Lenis-jf/Cultural-Fitness"
 								path="/cultural-fitness"
@@ -129,7 +92,6 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 							/>
 
 							<ProjectCard
-								onRefsReady={handleRefsReady}
 								frontImage="leonti-assets/leonti-project.png"
 								repoURL="https://github.com/Lenis-jf/leonti-aesthetic"
 								path="/leonti"
@@ -148,7 +110,7 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 
 					<section
 						id="abilities"
-						className="section light-section hidden"
+						className="section light-section"
 						ref={sectionRefs.abilitiesSectionRef}
 					>
 						<h2>Core Skills & Tools</h2>
@@ -184,12 +146,12 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 
 					<section
 						id="last-part"
-						className="section dark-section hidden"
+						className="section dark-section"
 						ref={sectionRefs.lastPartSectionRef}
 					>
 						<h3>Do not forget my name!</h3>
 						<div className="main-logo-banner-container">
-							<img className="main-logo" src={getIcon("logo", isDarkMode)} ref={mainLogoRef} />
+							<img className="main-logo" src={getIcon("logo", isDarkMode)} />
 							<div className="banner-container">
 								<h2>Juanfelenis</h2>
 								<h2>Developer</h2>
@@ -204,7 +166,6 @@ function Home({ sectionRefs, isDarkMode, onHomeReady }) {
 						<span className="copy-right">©juanfelenis 2025</span>
 					</section>
 				</>
-			)}
 		</>
 	);
 }

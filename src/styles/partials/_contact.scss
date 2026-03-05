@@ -9,19 +9,19 @@ html.dark-theme {
         }
 
         a.wa {
-            background-image: url("/assets/icons/whatsapp-icon-light.svg");
+            background-image: url("#{$public-base}assets/icons/whatsapp-icon-light.svg");
         }
 
         a.mail {
-            background-image: url("/assets/icons/mail-icon-light.svg");
+            background-image: url("#{$public-base}assets/icons/mail-icon-light.svg");
         }
 
         a.instagram {
-            background-image: url("/assets/icons/instagram-icon-light.svg");
+            background-image: url("#{$public-base}assets/icons/instagram-icon-light.svg");
         }
 
         a.github {
-            background-image: url("/assets/icons/github-icon-light.svg");
+            background-image: url("#{$public-base}assets/icons/github-icon-light.svg");
         }
     }
 }
@@ -66,19 +66,19 @@ section#contact {
     }
 
     a.wa {
-        background-image: url("/assets/icons/whatsapp-icon-dark.svg");
+        background-image: url("#{$public-base}assets/icons/whatsapp-icon-dark.svg");
     }
 
     a.mail {
-        background-image: url("/assets/icons/mail-icon-dark.svg");
+        background-image: url("#{$public-base}assets/icons/mail-icon-dark.svg");
     }
 
     a.instagram {
-        background-image: url("/assets/icons/instagram-icon-dark.svg");
+        background-image: url("#{$public-base}assets/icons/instagram-icon-dark.svg");
     }
 
     a.github {
-        background-image: url("/assets/icons/github-icon.svg");
+        background-image: url("#{$public-base}assets/icons/github-icon.svg");
     }
 }
 

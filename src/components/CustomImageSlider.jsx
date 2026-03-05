@@ -106,9 +106,7 @@ function CustomImageSlider(props) {
         const nodes = imgRefs.current.filter(Boolean);
         // Defer un tick para asegurarnos que el DOM haya pintado
         const t = setTimeout(() => {
-            if (typeof onRefsReady === "function") {
-                props.onRefsReady(nodes);
-            }
+            if (typeof props.onRefsReady === "function") props.onRefsReady(nodes);
         }, 0);
 
         return () => clearTimeout(t);

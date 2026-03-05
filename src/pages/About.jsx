@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import TransitionButton from "../components/TransitionButton";
 
-export default function About({ aboutPageRef, onAboutReady }) {
+export default function About({ aboutPageRef }) {
   useEffect(() => {
     const prevTitle = document.title;
     document.title = "About | Juanfelenis-dev";
@@ -13,15 +13,12 @@ export default function About({ aboutPageRef, onAboutReady }) {
       behavior: "instant"
     });
 
-    if (typeof onAboutReady === "function")
-      onAboutReady(true);
-
     return () => (document.title = prevTitle);
   }, []);
 
   return (
     <main>
-      <section id="about-page" className="section light-section hidden" ref={aboutPageRef}>
+      <section id="about-page" className="section light-section" ref={aboutPageRef}>
         <div className="about-hero">
           <div className="hero-inner">
             <h1>Hi — I’m Juan Fernando Lenis Serna</h1>

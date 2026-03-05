@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import React, { useEffect, useRef, useMemo, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useRef, useMemo, useLayoutEffect } from 'react';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import About from './pages/About';
@@ -12,6 +12,7 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import { useDarkMode } from './hooks/useDarkMode';
 import { useMenuColor } from './hooks/useMenuColor';
+import { useAssetsLoader } from './hooks/useAssetsLoader';
 
 function App() {
 	return (
@@ -25,11 +26,7 @@ function App() {
 
 function RouterComponent() {
 	const location = useLocation();
-	const [homeReady, setHomeReady] = useState(false);
-	const [workReady, setWorkReady] = useState(false);
-	const [contactReady, setContactReady] = useState(false);
-	const [aboutReady, setAboutReady] = useState(false);
-	const [projectPageReady, setProjectPageReady] = useState(false);
+	const appShellRef = useRef(null);
 
 	const headerRef = useRef(null);
 	const logoContainerRef = useRef(null);
@@ -65,6 +62,12 @@ function RouterComponent() {
 	]);
 
 	const [isDarkMode, toggleDarkMode] = useDarkMode(Object.values(sectionRefsObject), headerRef);
+	const { isReady: shellReady } = useAssetsLoader({
+		root: appShellRef,
+		includeBackgroundImages: true,
+		timeout: 12000,
+		watch: [location.pathname],
+	});
 
 
 	function createHomeObserver({ logoContainerRef }) {
@@ -108,7 +111,13 @@ function RouterComponent() {
 
 	function initializeObserver(observer, refsArray) {
 		const sections = refsArray.map(ref => ref.current).filter(Boolean);
-		sections.forEach(section => observer.observe(section));
+		sections.forEach(section => {
+			// IMPORTANT: don't let React own the hidden/visible classes.
+			// We set initial state here so rerenders (e.g. darkmode) won't re-add `hidden`.
+			section.classList.add("hidden");
+			section.classList.remove("visible");
+			observer.observe(section);
+		});
 	}
 
 	function disconnectObserver(observer) {
@@ -116,9 +125,9 @@ function RouterComponent() {
 			observer.disconnect();		
 	}
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if(location.pathname === "/") {
-			if(homeReady) {	
+			if(shellReady) {	
 				disconnectObserver(homeObserverRef.current);
 
 				const sectionChangers = document.querySelectorAll('div.section-changer');
@@ -154,13 +163,11 @@ function RouterComponent() {
 				};
 			}
 		}
-	}, [location.pathname, homeReady]);
+	}, [location.pathname, shellReady]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if(location.pathname !== "/") {
-			const pageIsReady = workReady || contactReady || aboutReady || projectPageReady;
-
-			if(pageIsReady) {
+			if(shellReady) {
 				disconnectObserver(genericObserverRef.current);
 
 				const observer = createGenericObserver();
@@ -173,10 +180,7 @@ function RouterComponent() {
 			}
 		}
 	}, [location.pathname, 
-		workReady, 
-		contactReady, 
-		aboutReady, 
-		projectPageReady]);
+		shellReady]);
 
 	useEffect(() => {
 		if (location.pathname.startsWith("/loader") && headerRef.current)
@@ -185,6 +189,8 @@ function RouterComponent() {
 
 	return (
 		<>
+			{!shellReady && <Loader />}
+			<div ref={appShellRef} aria-busy={!shellReady}>
 			<Header
 				isDarkMode={isDarkMode}
 				toggleDarkMode={toggleDarkMode}
@@ -197,38 +203,33 @@ function RouterComponent() {
 					<Home
 						sectionRefs={sectionRefsObject}
 						isDarkMode={isDarkMode}
-						onHomeReady={setHomeReady}
 					/>
 				} />
 				<Route path="/work" element={
 					<Work
 						workRef={workRef}
-						onWorkReady={setWorkReady}
 						isDarkMode={isDarkMode}
 					/>
 				} />
 				<Route path="/contact" element={
 					<Contact
 						contactRef={contactRef}
-						onContactReady={setContactReady}
 					/>
 				} />
 				<Route path="/about" element={
 					<About
 						aboutPageRef={aboutPageRef}
-						onAboutReady={setAboutReady}
 					/>
 				} />
 				<Route path="/projects/:projectId" element={
 					<ProjectPage
 						projectPageRef={projectPageRef}
-						headerRef={headerRef}
 						isDarkMode={isDarkMode}
-						onProjectPageReady={setProjectPageReady}
 					/>
 				} />
 				<Route path="/loader" element={<Loader />} />
 			</Routes>
+			</div>
 		</>
 	);
 }

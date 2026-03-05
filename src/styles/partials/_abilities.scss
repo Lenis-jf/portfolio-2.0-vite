@@ -41,45 +41,45 @@ a.icon {
 
 /* icon classes - kept as separate classes */
 div.js {
-    background-image: url("/assets/icons/js-icon.svg");
+    background-image: url("#{$public-base}assets/icons/js-icon.svg");
 }
 
 div.react {
-    background-image: url("/assets/icons/react-icon.svg");
+    background-image: url("#{$public-base}assets/icons/react-icon.svg");
 }
 
 div.r {
-    background-image: url("/assets/icons/r-icon.svg");
+    background-image: url("#{$public-base}assets/icons/r-icon.svg");
 }
 
 div.c {
-    background-image: url("/assets/icons/c-icon.svg");
+    background-image: url("#{$public-base}assets/icons/c-icon.svg");
 }
 
 div.python {
-    background-image: url("/assets/icons/python-icon.svg");
+    background-image: url("#{$public-base}assets/icons/python-icon.svg");
 }
 
 div.cpp {
-    background-image: url("/assets/icons/cpp-icon.svg");
+    background-image: url("#{$public-base}assets/icons/cpp-icon.svg");
 }
 
 div.java {
-    background-image: url("/assets/icons/java-icon.svg");
+    background-image: url("#{$public-base}assets/icons/java-icon.svg");
 }
 
 div.scss {
-    background-image: url("/assets/icons/scss-icon.svg");
+    background-image: url("#{$public-base}assets/icons/scss-icon.svg");
 }
 
 div.css {
-    background-image: url("/assets/icons/css-icon.svg");
+    background-image: url("#{$public-base}assets/icons/css-icon.svg");
 }
 
 div.html {
-    background-image: url("/assets/icons/html-icon.svg");
+    background-image: url("#{$public-base}assets/icons/html-icon.svg");
 }
 
 div.figma {
-    background-image: url("/assets/icons/figma-icon.svg");
+    background-image: url("#{$public-base}assets/icons/figma-icon.svg");
 }

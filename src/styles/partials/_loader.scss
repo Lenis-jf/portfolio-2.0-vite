@@ -1,8 +1,12 @@
 div.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    background-color: var(--light-color);
+    pointer-events: all;
 
     img {
         width: 25vw;       

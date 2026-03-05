@@ -328,7 +328,7 @@ function CustomVideoPlayer(props) {
 	// cuando esté montado notificamos al padre
 	useEffect(() => {
 		const t = setTimeout(() => {
-			if (typeof onRefsReady === "function") {
+			if (typeof props.onRefsReady === "function") {
 				// enviamos un array con el elemento video (si existe)
 				props.onRefsReady(videoRef.current ? [videoRef.current] : []);
 			}

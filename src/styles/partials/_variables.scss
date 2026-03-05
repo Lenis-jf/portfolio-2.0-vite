@@ -7,6 +7,9 @@ $blue-logo: #0171e3;
 $light-gray: #161617;
 $dark-gray: #1d1d1f;
 
+// Public base path (must match Vite `base` when using assets from /public)
+$public-base: "/portfolio-2.0-vite/";
+
 $js-color: #F7DF1E;
 $css-color: #1572B6;
 $html-color: #E34F26;

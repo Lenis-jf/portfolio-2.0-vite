@@ -1,26 +1,21 @@
 import React, { useEffect } from "react";
 
-function Contact({ contactRef, onContactReady }) {
+function Contact({ contactRef }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
 
     const prevTitle = document.title;
     document.title = "Contact | Juanfelenis-dev";
 
-    if(typeof onContactReady === "function") {
-    	onContactReady(true);
-		console.log("Component ready in Component.jsx");
-    }
-
     return () => (document.title = prevTitle);
   }, []);
 
   return (
     <div>
-      <section id="contact" className="section dark-section hidden" ref={contactRef}>
+	  <section id="contact" className="section dark-section" ref={contactRef}>
         <p>Hey!, nice to see you again :)<br />Interested?</p>
         <p>Let’s get in touch</p>
-        <img className="contact-card-big" src="assets/icons/contact-card-big.svg" alt="contact agenda icon" />
+        <img className="contact-card-big" src={`${import.meta.env.BASE_URL}assets/icons/contact-card-big.svg`} alt="contact agenda icon" />
         <p>Here you will find some methods to contact me</p>
         <p>Just click or tap on the icons below</p>
         <div className="icons-container">

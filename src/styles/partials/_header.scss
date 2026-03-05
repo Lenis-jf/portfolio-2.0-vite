@@ -213,7 +213,7 @@ header {
                 width: 13px;
                 height: 13px;
                 position: absolute;
-                background-image: url("/assets/icons/theme-mode-icon.svg");
+                background-image: url("#{$public-base}assets/icons/theme-mode-icon.svg");
                 background-size: cover;
                 background-position: center;
                 z-index: 1;

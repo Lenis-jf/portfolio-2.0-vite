@@ -2,15 +2,12 @@ import React, { useEffect } from "react";
 import TransitionButton from "../components/TransitionButton";
 import { getIcon, getProjectAssetUrl } from '../utils/assetsUtils.js';
 
-const Work = ({ workRef, onWorkReady, isDarkMode }) => {
+const Work = ({ workRef, isDarkMode }) => {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
 
         const prevTitle = document.title;
         document.title = "Work | Juanfelenis-dev";
-
-        if (typeof onWorkReady === "function")
-            onWorkReady(true);
 
         function setClosedHeights() {
             const allCards = document.querySelectorAll(".project-item");
@@ -48,7 +45,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
             document.title = prevTitle;
             window.removeEventListener('resize', setClosedHeights);
         };
-    }, [onWorkReady]);
+    }, []);
 
     function openItem(e) {
         const li = e.currentTarget;
@@ -73,7 +70,7 @@ const Work = ({ workRef, onWorkReady, isDarkMode }) => {
 
     return (
         <>
-            <section className="section work-section light-section hidden" ref={workRef}>
+            <section className="section work-section light-section" ref={workRef}>
                 <h1><strong>Ready to dive into my world?</strong></h1>
                 <p>
                     Each project I’ve worked on tells a story — a mix of curiosity, design, and a touch of obsession with detail.
