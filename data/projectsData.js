@@ -1,5 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
-
 const projectsData = [
     {
         id: "dronesim",
@@ -8,9 +6,9 @@ const projectsData = [
         content: [
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/dronesim-assets/dronesim-img-1.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/dronesim-assets/dronesim-img-2.png`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/dronesim-assets/dronesim-img-3.png`
+                    `${import.meta.env.BASE_URL}assets/imgs/dronesim-assets/dronesim-img-1.png`,
+                    `${import.meta.env.BASE_URL}assets/imgs/dronesim-assets/dronesim-img-2.png`,
+                    `${import.meta.env.BASE_URL}assets/imgs/dronesim-assets/dronesim-img-3.png`
                 ]
             },
             { type: "paragraph", text: "My first big Java project! 🚀 Developed for our OOP class, this GUI app taught me the magic of APIs and teamwork. We created different sections to display live drone data from a website provided by our university with search filters and calculated metrics like current battery consumption (yes, we did math for fun!)." },
@@ -27,13 +25,13 @@ const projectsData = [
         content: [
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-3.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-4.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-5.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-6.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cultural-fitness-img-7.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cultural-fitness-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cultural-fitness-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cultural-fitness-img-3.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cultural-fitness-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cultural-fitness-img-5.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cultural-fitness-img-6.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cultural-fitness-img-7.webp`,
                 ]
             },
             {
@@ -46,7 +44,7 @@ const projectsData = [
                 type: "paragraph", text: "Learned to work with designers’ mockups (turns out \"pixel perfect\" is harder than it sounds!). It is pretty easy to navigate through the different sections and im still proud of the design and amount of usefull information the website has"
             },
             {
-                type: "video", video: "cultural-fitness-project.mp4", poster: "/cultural-fitness-assets/cultural-fitness-project.webp"
+                type: "video", video: "cultural-fitness-project.mp4", poster: "cultural-fitness-assets/cultural-fitness-project.webp"
             },
             {
                 type: "button", text: "Visit Website", url: "https://lenis-jf.github.io/Cultural-Fitness/"
@@ -56,8 +54,8 @@ const projectsData = [
             },
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/cultural-fitness-assets/cf-figma-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cf-figma-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/cultural-fitness-assets/cf-figma-img-2.webp`,
                 ]
             },
             {
@@ -72,17 +70,17 @@ const projectsData = [
         content: [
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-4.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-5.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-6.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-9.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-10.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-11.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-12.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-13.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-15.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-5.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-6.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-9.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-10.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-11.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-12.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-13.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-15.webp`
                 ]
             },
             { type: "paragraph", text: "A compact, conversion-focused landing page I built for a professional cosmetician who opened a studio and needed a polished online presence to showcase services, products, pricing and a gallery of real work — all inside this portfolio case." },
@@ -95,9 +93,9 @@ const projectsData = [
             { type: "paragraph", text: "Working hand-in-hand with a designer in Figma was rewarding: we iterated on layouts and translated the mockups into reusable components. The collaboration sharpened my design sensibilities and improved Figma-to-React handoffs." },
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-16.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-17.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/leonti-assets/leonti-img-18.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-16.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-17.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/leonti-assets/leonti-img-18.webp`
                 ]
             },
             { type: "paragraph", text: "The project taught me a lot about image optimization, automation, and splitting UI into clean components. My client was happy with the result, and I left the project more curious and ready to keep improving performance and UX." }
@@ -110,12 +108,12 @@ const projectsData = [
         content: [
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-3.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-4.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-9.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-5.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-3.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-9.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-5.webp`
                 ]
             },
             {
@@ -149,9 +147,9 @@ const projectsData = [
             },
             {
                 type: "image", src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-6.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-7.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/scraper-assets/scraper-img-8.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-6.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-7.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/scraper-assets/scraper-img-8.webp`,
                 ]
             },
             {
@@ -172,10 +170,10 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/roomman-assets/roomman-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/roomman-assets/roomman-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/roomman-assets/roomman-img-3.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/roomman-assets/roomman-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/roomman-assets/roomman-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/roomman-assets/roomman-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/roomman-assets/roomman-img-3.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/roomman-assets/roomman-img-4.webp`,
                 ]
             },
             {
@@ -226,9 +224,9 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-3.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/oceano-rosa-assets/oceano-rosa-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/oceano-rosa-assets/oceano-rosa-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/oceano-rosa-assets/oceano-rosa-img-3.webp`
                 ]
             },
             {
@@ -242,8 +240,8 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-4.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/oceano-rosa-assets/oceano-rosa-img-5.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/oceano-rosa-assets/oceano-rosa-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/oceano-rosa-assets/oceano-rosa-img-5.webp`
                 ]
             },
             { type: "button", text: "Show Repository", url: "https://github.com/Lenis-jf/Oceano-Rosa.github.io" },
@@ -283,9 +281,9 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-3.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/batatabit-assets/batatabit-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/batatabit-assets/batatabit-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/batatabit-assets/batatabit-img-3.webp`
                 ]
             },
             {
@@ -300,8 +298,8 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-4.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/batatabit-assets/batatabit-img-5.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/batatabit-assets/batatabit-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/batatabit-assets/batatabit-img-5.webp`
                 ]
             },
             { type: "button", text: "Visit Website", url: "https://lenis-jf.github.io/batatabit/" },
@@ -332,10 +330,10 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-3.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/tyc-assets/tyc-img-4.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/tyc-assets/tyc-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/tyc-assets/tyc-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/tyc-assets/tyc-img-3.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/tyc-assets/tyc-img-4.webp`
                 ]
             },
             {
@@ -377,9 +375,9 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-1.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-2.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-3.webp`
+                    `${import.meta.env.BASE_URL}assets/imgs/voice-maze-assets/voice-maze-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/voice-maze-assets/voice-maze-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/voice-maze-assets/voice-maze-img-3.webp`
                 ]
             },
             {
@@ -412,10 +410,10 @@ const projectsData = [
             {
                 type: "image",
                 src: [
-                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-4.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-5.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-6.webp`,
-                    `${import.meta.env.BASE_URL}/assets/imgs/voice-maze-assets/voice-maze-img-7.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/voice-maze-assets/voice-maze-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/voice-maze-assets/voice-maze-img-5.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/voice-maze-assets/voice-maze-img-6.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/voice-maze-assets/voice-maze-img-7.webp`,
                 ]
             },
             {

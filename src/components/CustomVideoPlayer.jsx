@@ -341,6 +341,10 @@ function CustomVideoPlayer(props) {
 		<div id="fullscreen" className={`video-container ${screenMode}`}
 			ref={videoContainerRef}>
 			<div className="controls paused" ref={videoPlayControlRef}></div>
+			{(() => {
+				const base = import.meta.env.BASE_URL;
+				const posterPath = String(props.poster || "").replace(/^\/+/g, "");
+				return (
 			<video
 				ref={videoRef}
 				autoPlay
@@ -348,10 +352,12 @@ function CustomVideoPlayer(props) {
 				playsInline
 				webkit-playsinline="true"
 				className={`video-container ${screenMode}-video`}
-				src={`${import.meta.env.BASE_URL}/assets/videos/${props.video}`}
+				src={`${base}assets/videos/${props.video}`}
 				preload="metadata"
-				poster={`${import.meta.env.BASE_URL}/assets/imgs/${props.poster}`}
+				poster={`${base}assets/imgs/${posterPath}`}
 			/>
+				);
+			})()}
 			<div
 				className="screen-control-container maximize paused"
 				ref={el => (videoScreenControlContainersRef.current[0] = el)}
