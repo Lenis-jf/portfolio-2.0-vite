@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import ProjectPage from './pages/ProjectPage';
 import Header from './components/Header';
 import Loader from './components/Loader';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import { useDarkMode } from './hooks/useDarkMode';
 import { useMenuColor } from './hooks/useMenuColor';
@@ -17,9 +17,9 @@ import { useAssetsLoader } from './hooks/useAssetsLoader';
 function App() {
 	return (
 		<div>
-			<HashRouter>
+			<BrowserRouter>
 				<RouterComponent />
-			</HashRouter>
+			</BrowserRouter>
 		</div>
 	);
 }
