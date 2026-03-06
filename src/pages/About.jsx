@@ -44,7 +44,7 @@ export default function About({ aboutPageRef }) {
 
             <figure className="hero-media" aria-hidden="false">
               <img
-                src={`${import.meta.env.BASE_URL}/assets/imgs/profil-foto-web-portrait-1600x2000.webp`}
+                src={`${import.meta.env.BASE_URL}assets/imgs/profil-foto-web-portrait-1600x2000.webp`}
                 alt="Portrait of Juan Lenis"
                 width="220"
                 height="220"
@@ -133,7 +133,7 @@ export default function About({ aboutPageRef }) {
 
           <div className="buttons-container">
             <TransitionButton to="/contact" label="Get in touch" extraClass="about long" />
-            <a className="button" href={`${import.meta.env.BASE_URL}/assets/docs/Juan-Lenis-CV.pdf`} download>Download resume</a>
+            <a className="button" href={`${import.meta.env.BASE_URL}assets/docs/Juan-Lenis-CV.pdf`} download>Download resume</a>
           </div>
         </div>
         <span className="copy-right">©juanfelenis 2025</span>

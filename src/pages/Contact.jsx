@@ -19,7 +19,7 @@ function Contact({ contactRef }) {
         <p>Here you will find some methods to contact me</p>
         <p>Just click or tap on the icons below</p>
         <div className="icons-container">
-          <a href="whatsapp://send/?text=Hey%20Juan%20Fernando%20mensaje&phone=+491783176979&abid=+491783176979" className="icon wa"></a>
+          <a href="whatsapp://send/?text=Hey%20Juan%20Fernando&phone=+491783176979&abid=+491783176979" className="icon wa"></a>
           <a href="mailto:lenisserna2001@gmail.com" className="icon mail"></a>
           <a href="https://www.instagram.com/juanfelenis/" className="icon instagram"></a>
           <a href="https://github.com/Lenis-jf" className="icon github"></a>
