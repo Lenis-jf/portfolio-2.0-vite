@@ -110,7 +110,7 @@ header {
             width: var(--new-bars-width);
         }
 
-        &:has(input:checked)~div.menu-buttons-container {
+        &:has(input:checked)~nav.menu-buttons-container {
             opacity: 1;
 
             a.menu-button {

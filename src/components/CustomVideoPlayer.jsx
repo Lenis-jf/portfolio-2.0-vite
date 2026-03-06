@@ -355,6 +355,7 @@ function CustomVideoPlayer(props) {
 				src={`${base}assets/videos/${props.video}`}
 				preload="metadata"
 				poster={`${base}assets/imgs/${posterPath}`}
+				aria-label={props.projectTitle ? `${props.projectTitle} demo video` : 'Project demo video'}
 			/>
 				);
 			})()}

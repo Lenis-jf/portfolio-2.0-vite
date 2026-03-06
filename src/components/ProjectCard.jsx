@@ -76,7 +76,7 @@ function ProjectCard(props) {
     >
       <div className="face front">
         <img
-          src={getProjectAssetUrl(props.frontImage)} alt="Project interactive preview card"
+          src={getProjectAssetUrl(props.frontImage)} alt={`${props.projectTitle} project preview`}
           ref={imageRef}
         />
       </div>

@@ -28,7 +28,7 @@ function Home({ sectionRefs, isDarkMode }) {
 	}, []);
 
 	return (
-		<>
+		<main id="main-content">
 				<>
 					<section
 						id="home"
@@ -37,7 +37,7 @@ function Home({ sectionRefs, isDarkMode }) {
 					>
 						<div className="main-welcome-content-container">
 							<div className="main-logo-banner-container">
-								<img className="main-logo" src={getIcon("logo", isDarkMode)} ref={mainLogoRef} />
+								<img className="main-logo" src={getIcon("logo", isDarkMode)} alt="Juanfelenis developer logo" ref={mainLogoRef} />
 								<div className="banner-container">
 									<h2>Juanfelenis</h2>
 									<h2>Developer</h2>
@@ -115,21 +115,21 @@ function Home({ sectionRefs, isDarkMode }) {
 					>
 						<h2>Core Skills & Tools</h2>
 						<p>technologies I work with most</p>
-						<div className="icons-container">
-							<div className="icon js"></div>
-							<div className="icon react"></div>
-							<div className="icon r"></div>
-							<div className="icon c"></div>
-							<div className="icon python"></div>
-							<div className="icon cpp"></div>
-							<div className="icon java"></div>
+						<div className="icons-container" role="list" aria-label="Programming languages">
+							<div className="icon js" role="listitem" aria-label="JavaScript"></div>
+							<div className="icon react" role="listitem" aria-label="React"></div>
+							<div className="icon r" role="listitem" aria-label="R"></div>
+							<div className="icon c" role="listitem" aria-label="C"></div>
+							<div className="icon python" role="listitem" aria-label="Python"></div>
+							<div className="icon cpp" role="listitem" aria-label="C++"></div>
+							<div className="icon java" role="listitem" aria-label="Java"></div>
 						</div>
 						<p>Design and styling tools proficient in</p>
-						<div className="icons-container">
-							<div className="icon scss"></div>
-							<div className="icon css"></div>
-							<div className="icon html"></div>
-							<div className="icon figma"></div>
+						<div className="icons-container" role="list" aria-label="Design and styling tools">
+							<div className="icon scss" role="listitem" aria-label="SCSS"></div>
+							<div className="icon css" role="listitem" aria-label="CSS"></div>
+							<div className="icon html" role="listitem" aria-label="HTML"></div>
+							<div className="icon figma" role="listitem" aria-label="Figma"></div>
 						</div>
 						<h3>Strengths:</h3>
 						<p>
@@ -151,7 +151,7 @@ function Home({ sectionRefs, isDarkMode }) {
 					>
 						<h3>Do not forget my name!</h3>
 						<div className="main-logo-banner-container">
-							<img className="main-logo" src={getIcon("logo", isDarkMode)} />
+							<img className="main-logo" src={getIcon("logo", isDarkMode)} alt="Juanfelenis developer logo" />
 							<div className="banner-container">
 								<h2>Juanfelenis</h2>
 								<h2>Developer</h2>
@@ -166,7 +166,7 @@ function Home({ sectionRefs, isDarkMode }) {
 						<span className="copy-right">©juanfelenis 2025</span>
 					</section>
 				</>
-		</>
+		</main>
 	);
 }
 

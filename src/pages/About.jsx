@@ -6,7 +6,7 @@ import TransitionButton from "../components/TransitionButton";
 export default function About({ aboutPageRef }) {
   useEffect(() => {
     const prevTitle = document.title;
-    document.title = "About | Juanfelenis-dev";
+    document.title = "About Juanfelenis — Software Engineer & Web Developer";
 
     window.scrollTo({
       top: 0,
@@ -45,7 +45,7 @@ export default function About({ aboutPageRef }) {
             <figure className="hero-media" aria-hidden="false">
               <img
                 src={`${import.meta.env.BASE_URL}assets/imgs/profil-foto-web-portrait-1600x2000.webp`}
-                alt="Portrait of Juan Lenis"
+                alt="Portrait of Juanfelenis"
                 width="220"
                 height="220"
                 loading="lazy"

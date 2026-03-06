@@ -7,7 +7,7 @@ const Work = ({ workRef, isDarkMode }) => {
         window.scrollTo({ top: 0, behavior: "instant" });
 
         const prevTitle = document.title;
-        document.title = "Work | Juanfelenis-dev";
+        document.title = "Projects & Work — Juanfelenis | Web Developer Portfolio";
 
         function setClosedHeights() {
             const allCards = document.querySelectorAll(".project-item");
@@ -69,7 +69,7 @@ const Work = ({ workRef, isDarkMode }) => {
     }
 
     return (
-        <>
+        <main id="main-content">
             <section className="section work-section light-section" ref={workRef}>
                 <h1><strong>Ready to dive into my world?</strong></h1>
                 <p>
@@ -278,7 +278,7 @@ const Work = ({ workRef, isDarkMode }) => {
                 </ul>
                 <span className="copy-right">©juanfelenis 2025</span>
             </section>
-        </>
+        </main>
     );
 };
 

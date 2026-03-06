@@ -67,7 +67,7 @@ div.section-changer {
     }
 }
 
-section.dark-theme {
+.dark-theme {
     div.section-changer {
         div { background-image: url("#{$public-base}assets/icons/keyboard-arrow-down-light.svg"); }
     }

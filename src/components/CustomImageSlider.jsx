@@ -127,7 +127,7 @@ function CustomImageSlider(props) {
                             key={img}
                             ref={el => setImageRef(el, index)}
                             src={img}
-                            alt={`Slide ${index + 1}`}
+                            alt={props.projectTitle ? `${props.projectTitle} — screenshot ${index + 1} of ${props.images.length}` : `Screenshot ${index + 1}`}
                             className="img"
                             loading="lazy"
                         />

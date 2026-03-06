@@ -24,10 +24,10 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
     return (
         <div>
             <header id="header" className="light-section" ref={headerRef}>
-                <label className={`menu ${menuColor}`}>
-                    <input type="checkbox" />
+                <label className={`menu ${menuColor}`} aria-label="Toggle navigation menu">
+                    <input type="checkbox" aria-label="Open menu" />
                 </label>
-                <div className={`menu-buttons-container ${menuColor}`}>
+                <nav className={`menu-buttons-container ${menuColor}`} aria-label="Main navigation">
                     <NavLink to="/" className={({ isActive }) => {
                         return `${isDarkMode ? 'menu-button dark-theme' : 'menu-button'} ${isActive ? "active" : ""}`;
                     }}>
@@ -43,7 +43,7 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                     }}>
                         <img
                             src={`${import.meta.env.BASE_URL}assets/icons/contact-card-darkmode.svg`}
-                            alt="contact-card icon"
+                            alt="Contact page"
                         />
                     </NavLink>
                     <NavLink to="/about" className={({ isActive }) => {
@@ -52,18 +52,19 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                         <span>About</span>
                     </NavLink>
 
-                    <label className="darkmode-button-container brown-color light-theme">
+                    <label className="darkmode-button-container brown-color light-theme" aria-label="Toggle dark mode">
                         <input
                             type="checkbox"
                             checked={isDarkMode}
                             onChange={toggleDarkMode}
+                            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
                         />
                     </label>
-                </div>
+                </nav>
                 <div className="logo-container" ref={logoContainerRef}>
                     <img 
                         src={getIcon("logo-small", isDarkMode)}
-                        alt="small juanfelenis logo"
+                        alt="Juanfelenis logo"
                         style={{transform: `rotate(${rotation}deg)`}} />
                 </div>
             </header>

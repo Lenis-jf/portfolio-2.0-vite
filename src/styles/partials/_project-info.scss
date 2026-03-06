@@ -1,10 +1,9 @@
-// _project-info.scss
 @use "./variables" as *;
 @use "./mixins" as *;
 
-section.project-info {
+article.project-info, section.project-info {
     position: relative;
-    padding-bottom: 180px;
+    padding: 120px 20px 100px 20px;
     transition: background-color 500ms ease-in-out;
 
     p {
@@ -15,9 +14,11 @@ section.project-info {
         padding-bottom: 120px;
     }
 
-    h2 {
-        margin-top: 60px;
+    h1 {
+        margin-top: 0;
+        margin-bottom: 40px;
         color: var(--foreground-color);
+        line-height: clamp(30px, 1.2rem + 9vw, 50px);
     }
 
     span.copy-right {
@@ -334,7 +335,7 @@ section.project-info {
 
 /* media queries preserved from original */
 @media screen and (min-width: 440px) {
-    section.project-info {
+    article.project-info, section.project-info {
         button.arrow {
             display: inline-block;
         }

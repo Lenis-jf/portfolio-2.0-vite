@@ -16,6 +16,7 @@ function Svq() {
             <section id="svq" className="section light-section project-info">
                 <h2>SVQ</h2>
                 <CustomImageSlider
+                    projectTitle="SVQ Cleaning Service"
                     images={[
                             `${import.meta.env.BASE_URL}assets/imgs/svq-assets/svq-img-1.png`,
                             `${import.meta.env.BASE_URL}assets/imgs/svq-assets/svq-img-2.png`
@@ -24,7 +25,7 @@ function Svq() {
                 <p>My "almost-real-client" experience! Partnered with a designer friend to create a cleaning service site based in New York City. Learned to make disinfection look chic!</p>
                 <a href="https://github.com/Lenis-jf/Drone-Project" className="button">Show Repository</a>
                 <p>We had big plans—animation mops that danced on scroll! But life happened, and the project cleaned up early. Still, wanting to create crazy animations for the project with the new things i have learned until know :(.</p>
-                <CustomVideoPlayer video="svq-project.mp4" poster="svq-assets/svq-img-1.png" />
+                <CustomVideoPlayer video="svq-project.mp4" poster="svq-assets/svq-img-1.png" projectTitle="SVQ Cleaning Service" />
                 <p>Silver lining? Discovered I love making mundane services look extraordinary!</p>
                 <span className="copy-right">©juanfelenis 2025</span>
             </section>

@@ -80,11 +80,13 @@ span.copy-right {
     opacity: 0.6;
 }
 
-section.section {
+section.section,
+article.section {
     transition: background-color 500ms ease-in-out;
 }
 
-section.light-section {
+section.light-section,
+article.light-section {
     color: var(--foreground-color);
 }
 
@@ -103,4 +105,17 @@ h1 {
 
 h2 {
     @include h2-responsive-font-size;
+}
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

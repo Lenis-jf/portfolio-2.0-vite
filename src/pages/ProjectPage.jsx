@@ -19,6 +19,10 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
             return;
         }
 
+        const prevTitle = document.title;
+        document.title = `${project.title} — Juanfelenis Portfolio`;
+
+        return () => { document.title = prevTitle; };
     }, [projectId, project, navigate]);
 
     if (!project) {
@@ -30,13 +34,13 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
     }
 
     return (
-        <div className="main-content">
-			<section
+        <main id="main-content" className="main-content">
+			<article
 				id={project.id}
 				className={`section ${project.sectionClass} project-info ${isDarkMode ? "dark-theme" : ""}`}
 				ref={projectPageRef}
 			>
-				<h2>{project.title}</h2>
+				<h1><strong>{project.title}</strong></h1>
 
 				{project.content.map((item, index) => {
 					if (item.type === "image") {
@@ -44,22 +48,24 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
 							<CustomImageSlider
 								key={index}
 								images={item.src}
-							/>
-						);
-					}
+									projectTitle={project.title}
+								/>
+							);
+						}
 
-					if (item.type === "video") {
-						return (
-							<CustomVideoPlayer
-								key={index}
-								video={item.video}
-								poster={item.poster}
-							/>
-						);
-					}
+						if (item.type === "video") {
+							return (
+								<CustomVideoPlayer
+									key={index}
+									video={item.video}
+									poster={item.poster}
+									projectTitle={project.title}
+								/>
+							);
+						}
 
-					if (item.type === "paragraph") {
-						return <p key={index}>{item.text}</p>;
+						if (item.type === "paragraph") {
+							return <p key={index}>{item.text}</p>;
 					}
 
 					if (item.type === "button") {
@@ -73,8 +79,8 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
 					return null;
 				})}
 				<span className="copy-right">©juanfelenis 2025</span>
-			</section>
-        </div>
+			</article>
+        </main>
     );
 }
 
