@@ -65,7 +65,7 @@ function RouterComponent() {
 	const { isReady: shellReady } = useAssetsLoader({
 		root: appShellRef,
 		includeBackgroundImages: true,
-		timeout: 12000,
+		timeout: 5000,
 		watch: [location.pathname],
 	});
 

@@ -1,5 +1,9 @@
 // src/hooks/useAssetsLoader.js
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+
+// Global cache of URLs that have already been verified as loaded.
+// Persists across navigations so revisited pages resolve instantly.
+const _loadedUrlCache = new Set();
 
 function resolveDomNode(maybeRefOrNode) {
     if (!maybeRefOrNode) return null;
@@ -34,14 +38,14 @@ export function useAssetsLoader({
     refsArray = null,
     root = null,
     includeBackgroundImages = true,
-    timeout = 8000,
+    timeout = 5000,
     watch = [],
 } = {}) {
     const [isReady, setReady] = useState(false);
     const timerRef = useRef(null);
     const watchKey = stableWatchKey(watch);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         let pending = 0;
         const cleanUps = [];
 
@@ -76,10 +80,15 @@ export function useAssetsLoader({
 
         function trackImageUrl(url) {
             if (!url) return;
+            // Skip URLs that have already been loaded in a previous navigation
+            if (_loadedUrlCache.has(url)) return;
 
             pending++;
             const img = new Image();
-            const onDone = () => markLoaded();
+            const onDone = () => {
+                _loadedUrlCache.add(url);
+                markLoaded();
+            };
 
             img.onload = onDone;
             img.onerror = onDone;
@@ -98,20 +107,26 @@ export function useAssetsLoader({
             const tag = (el.tagName || "").toLowerCase();
 
             if (tag === "img") {
-                // Lazy images can delay loading; we proactively preload their URL.
+                const imgUrl = el.currentSrc || el.src;
                 const isLazy = (el.getAttribute?.("loading") || "").toLowerCase() === "lazy";
                 const alreadyLoaded = el.complete && el.naturalWidth !== 0;
 
-                if (alreadyLoaded) return;
+                // Skip if already loaded natively or cached from a previous navigation
+                if (alreadyLoaded || _loadedUrlCache.has(imgUrl)) {
+                    if (imgUrl) _loadedUrlCache.add(imgUrl);
+                    return;
+                }
 
                 if (isLazy) {
-                    const preloadUrl = el.currentSrc || el.src;
-                    trackImageUrl(preloadUrl);
+                    trackImageUrl(imgUrl);
                     return;
                 }
 
                 pending++;
-                const onLoad = () => markLoaded();
+                const onLoad = () => {
+                    if (imgUrl) _loadedUrlCache.add(imgUrl);
+                    markLoaded();
+                };
                 const onError = () => markLoaded();
 
                 el.addEventListener("load", onLoad, { once: true });
@@ -152,9 +167,28 @@ export function useAssetsLoader({
         });
 
         // 2) Track background-image URLs (CSS icons, etc.)
+        // Only inspect elements likely to have CSS background-images
+        // (icon links, buttons with bg, specific class patterns) instead of every DOM node.
         if (includeBackgroundImages && rootEl && typeof rootEl.querySelectorAll === "function") {
             const bgUrls = new Set();
-            const nodes = [rootEl, ...Array.from(rootEl.querySelectorAll("*"))];
+            const bgSelectors = [
+                "a.icon",                    // Contact page icons
+                ".icon",                     // Generic icon elements
+                ".darkmode-button-container",// Theme toggle
+                ".section-changer div",      // Arrow indicators
+                ".arrow",                    // Slider arrows
+                "[class*='play']",           // Video play controls
+                "[class*='pause']",          // Video pause controls
+                "[class*='fullscreen']",     // Fullscreen controls
+                "[class*='maximize']",       // Maximize controls
+                ".ability-icon",             // Ability icons
+                "[style*='background-image']", // Inline bg images
+            ];
+            const selector = bgSelectors.join(", ");
+            const nodes = Array.from(rootEl.querySelectorAll(selector));
+            // Also check the root itself
+            nodes.unshift(rootEl);
+
             nodes.forEach(node => {
                 try {
                     const style = window.getComputedStyle(node);

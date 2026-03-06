@@ -11,7 +11,7 @@ const TransitionButton = ({ to, label, color = "#0171e3", extraClass="" }) => {
         setTimeout(() => {
             navigate(to.startsWith('/') ? to : `/${to}`);
             setIsExpanding(false);
-        }, 750);
+        }, 450);
     };
 
     return(
