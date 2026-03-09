@@ -136,6 +136,10 @@ section#last-part {
             span {
                 color: var(--foreground-color);
             }
+            
+            div {
+                transform: rotate(180deg);
+            }
         }
 
         span {
