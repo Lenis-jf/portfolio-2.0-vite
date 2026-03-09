@@ -77,8 +77,6 @@ function CustomImageSlider(props) {
                     if (entry.isIntersecting) {
                         const newIndex = imgRefs.current?.findIndex(img => img === entry.target);
 
-                        console.log("new-index: ", newIndex);
-
                         updateVisibleIndex(newIndex);
                     }
                 });
@@ -94,10 +92,7 @@ function CustomImageSlider(props) {
         });
 
         return () => {
-            imgRefs.current.forEach(img => {
-                if (img) observer.unobserve(img);
-            });
-
+            observer.disconnect();
             imgRefs.current = [];
         };
     }, []);

@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { getIcon } from '../utils/assetsUtils.js';
 
 function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
     const [rotation, setRotation] = useState(0);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const lastScrollYRef = useRef(0);
 
     useEffect(() => {
         const handleLogoRotation = () => {
             const currentScrollY = window.scrollY;
-            const direction = currentScrollY > lastScrollY ? 1 : -1;
+            const direction = currentScrollY > lastScrollYRef.current ? 1 : -1;
             const rotationSpeed = 8;
 
             setRotation(prev => prev + direction * rotationSpeed);
-            setLastScrollY(currentScrollY);
+            lastScrollYRef.current = currentScrollY;
         };
 
         window.addEventListener('scroll', handleLogoRotation);
 
         return () => { window.removeEventListener('scroll', handleLogoRotation) };
-    }, [lastScrollY]);
+    }, []);
 
     return (
         <div>

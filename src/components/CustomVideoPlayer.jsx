@@ -184,7 +184,13 @@ function CustomVideoPlayer(props) {
 			video.addEventListener("click", showControls);
 		}
 
+		let showControlsTimerId = null;
+
 		function showControls() {
+			if (showControlsTimerId !== null) {
+				clearTimeout(showControlsTimerId);
+			}
+
 			videoPlayControl.classList.add('show');
 
 			videoScreenControlContainers.forEach(
@@ -193,7 +199,8 @@ function CustomVideoPlayer(props) {
 				}
 			);
 
-			setTimeout(() => {
+			showControlsTimerId = setTimeout(() => {
+				showControlsTimerId = null;
 				videoPlayControl.classList.remove('show')
 
 				videoScreenControlContainers.forEach(
@@ -241,8 +248,13 @@ function CustomVideoPlayer(props) {
 		video.addEventListener('ended', updateControlsToPaused);
 
 		return () => {
-			if (video)
+			if (showControlsTimerId !== null) clearTimeout(showControlsTimerId);
+			if (video) {
 				video.removeEventListener('click', showControls);
+				video.removeEventListener('play', updateControlsToPlaying);
+				video.removeEventListener('pause', updateControlsToPaused);
+				video.removeEventListener('ended', updateControlsToPaused);
+			}
 			if (videoPlayControl)
 				videoPlayControl.removeEventListener('click', playManager)
 			if (videoPlayControlSmall)
@@ -322,6 +334,9 @@ function CustomVideoPlayer(props) {
 				progressBar.removeEventListener("mousedown", startSeek);
 				progressBar.removeEventListener("touchstart", startSeek);
 			}
+			// Clean up any document-level listeners that may still be active
+			// if the component unmounts while a seek is in progress
+			stopSeek();
 		};
 	}, []);
 
