@@ -62,6 +62,12 @@ div.section-changer {
         div { background-image: url("#{$public-base}assets/icons/keyboard-arrow-down-dark.svg"); }
     }
 
+    &.home {
+        div {
+            transform: rotate(180deg);
+        }
+    }
+
     &:hover {
         opacity: 0.7;
     }

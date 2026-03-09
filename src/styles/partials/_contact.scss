@@ -123,7 +123,7 @@ section#last-part {
         color: $foreground-color;
     }
 
-    div.section-changer.section-changer-dark.home {
+    div.section-changer.home {
         div {
             transform: rotate(180deg);
         }
@@ -132,7 +132,7 @@ section#last-part {
     &.dark-theme {
         color: var(--foreground-color);
 
-        div.section-changer.section-changer-dark.home {
+        div.section-changer.home {
             span {
                 color: var(--foreground-color);
             }
