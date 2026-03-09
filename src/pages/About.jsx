@@ -35,7 +35,7 @@ export default function About({ aboutPageRef }) {
               </p>
 
               <div className="buttons-container">
-                <a className="button" href="/assets/docs/Juan-Lenis-CV.pdf" download>
+                <a className="button" href="/assets/docs/Lebenslauf-2026.pdf" download>
                   Download CV
                 </a>
                 <TransitionButton to="/contact" label="Contact" extraClass="about" color="#1d1d1f" />
@@ -133,7 +133,7 @@ export default function About({ aboutPageRef }) {
 
           <div className="buttons-container">
             <TransitionButton to="/contact" label="Get in touch" extraClass="about long" />
-            <a className="button" href={`${import.meta.env.BASE_URL}assets/docs/Juan-Lenis-CV.pdf`} download>Download resume</a>
+            <a className="button" href={`${import.meta.env.BASE_URL}assets/docs/Lebenslauf-2026.pdf`} download>Download resume</a>
           </div>
         </div>
         <span className="copy-right">©juanfelenis 2025</span>
