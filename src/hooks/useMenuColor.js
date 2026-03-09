@@ -5,12 +5,12 @@ export function useMenuColor(sectionRefs, isDarkMode) {
     const location = useLocation();
     const [menuColor, setMenuColor] = useState('brown-color');
     
-    const padStart = location.pathname.padStart();
+    const pathname = location.pathname;
 
     useEffect(() => {
-        if(isDarkMode) { setMenuColor("brown-color"); return;x }
+        if(isDarkMode) { setMenuColor("brown-color"); return; }
         
-        if (padStart.match('/projects/') || padStart.match("/about") || padStart.match('/work')) {
+        if (pathname.includes('/projects/') || pathname.includes("/about") || pathname.includes('/work')) {
             setMenuColor('brown-color');
         } else {
             setMenuColor('light-color');
