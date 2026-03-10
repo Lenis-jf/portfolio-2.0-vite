@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ContactCardIcon from "../components/ContactCardIcon";
 
 function Contact({ contactRef }) {
   useEffect(() => {
@@ -16,7 +17,7 @@ function Contact({ contactRef }) {
         <h1 className="visually-hidden">Contact Juanfelenis</h1>
         <p>Hey!, nice to see you again :)<br />Interested?</p>
         <p>Let's get in touch</p>
-        <img className="contact-card-big" src={`${import.meta.env.BASE_URL}assets/icons/contact-card-big.svg`} alt="Contact card illustration" />
+        <ContactCardIcon className="contact-card-big" />
         <p>Here you will find some methods to contact me</p>
         <p>Just click or tap on the icons below</p>
         <div className="icons-container" role="list" aria-label="Contact channels">
