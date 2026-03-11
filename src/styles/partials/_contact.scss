@@ -57,6 +57,10 @@ html.dark-theme {
         a.github {
             background-image: url("#{$public-base}assets/icons/github-icon-light.svg");
         }
+
+        a.linkedin {
+            background-image: url("#{$public-base}assets/icons/linkedin-icon-light.svg");
+        }
     }
 }
 
@@ -151,6 +155,11 @@ section#contact {
 
     a.github {
         background-image: url("#{$public-base}assets/icons/github-icon.svg");
+    }
+
+    a.linkedin {
+        background-image: url("#{$public-base}assets/icons/linkedin-icon-dark.svg");
+        
     }
 }
 
