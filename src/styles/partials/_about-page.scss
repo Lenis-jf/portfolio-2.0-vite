@@ -11,10 +11,14 @@ section#about-page {
     }
 
     a.button {
-        padding: 10px;
-        width: 50vw;
-        max-width: 160px;
+        padding: 10px 18px;
+        width: fit-content;
+        max-width: 100%;
         background-color: $blue-logo;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.1;
+        flex: 0 0 auto;
 
         &:hover {
             transform: scale(1.05);
@@ -34,14 +38,14 @@ section#about-page {
             align-items: center;
 
             grid-template-columns: 1fr;
-            grid-template-areas: 
+            grid-template-areas:
                 "title"
                 "image"
                 "text";
 
             @media screen and (min-width: 768px) {
                 grid-template-columns: 1fr auto;
-                grid-template-areas: 
+                grid-template-areas:
                     "title title"
                     "text image";
             }
@@ -54,7 +58,7 @@ section#about-page {
                 transform: translateY(-30%);
                 animation: workTitleFadeIn 1s ease-out forwards;
                 font-weight: bold;
-            } 
+            }
         }
 
         .hero-text {
@@ -74,10 +78,17 @@ section#about-page {
             .buttons-container {
                 flex-direction: row;
                 margin: 15px 0;
+                width: 100%;
+                max-width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
             }
 
             @media screen and (min-width: 768px) {
-                p { text-align: justify; }
+                p {
+                    text-align: justify;
+                }
             }
         }
 
@@ -121,7 +132,6 @@ section#about-page {
             gap: clamp(10px, 2.5vw, 15px);
             align-items: start;
             justify-items: stretch;
-
             grid-auto-rows: 1fr;
 
             .snap-item {
@@ -132,15 +142,11 @@ section#about-page {
                 gap: 8px;
                 padding: 10px;
                 color: var(--foreground-color);
-
                 border-radius: 10px;
-
                 @include glass-button(var(--light2-color));
-
                 box-shadow:
                     4px 4px 10px rgba(22, 22, 23, 0.15),
                     -4px -4px 8px rgba(255, 255, 255, 0.08);
-
 
                 dt {
                     font-weight: 600;
@@ -170,9 +176,7 @@ section#about-page {
                 grid-template-columns: repeat(2, minmax(240px, 1fr));
             }
         }
-
     }
-
 
     .about-story,
     .process,
@@ -204,8 +208,8 @@ section#about-page {
         margin: 12px 0;
         text-align: left;
 
-        h4 { 
-            @include h4-responsive-font-size; 
+        h4 {
+            @include h4-responsive-font-size;
             margin-bottom: 6px;
         }
 
@@ -258,18 +262,19 @@ section#about-page {
             width: auto;
             gap: 12px;
             margin-top: 12px;
+            flex-wrap: wrap;
 
             button.transition-button.about.long {
-                width: 100%;
+                width: fit-content;
+                max-width: 100%;
             }
 
             a.button {
-                max-width: 200px;
+                max-width: 100%;
             }
         }
     }
 
-    /* small responsive tweaks */
     @media screen and (max-width: 600px) {
         .about-hero .hero-inner {
             gap: 18px;

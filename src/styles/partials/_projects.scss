@@ -8,21 +8,21 @@ section#projects {
     background-color: var(--light2-color);
     color: $foreground-color;
 
-    p { 
-        @include p-responsive-font-size; 
+    p {
+        @include p-responsive-font-size;
     }
 
     @media screen and (min-width: 768px) {
-        p { 
+        p {
             text-align: center;
-            padding: 0 clamp(50px, 50px + 25vw, 150px); 
+            padding: 0 clamp(50px, 50px + 25vw, 150px);
         }
     }
 
     @media screen and (max-width: 480px) {
-        p { 
+        p {
             text-align: justify;
-        } 
+        }
     }
 
     .section-changer {
@@ -64,18 +64,15 @@ section#projects {
             height: 80px;
             flex-direction: column;
             color: $foreground-color-light;
-
             background: rgba(20, 30, 25, 0.55);
             border-radius: 10px;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-
             border: 0.5px solid rgba(255, 255, 255, 0.35);
             box-shadow:
                 0 10px 25px rgba(0, 0, 0, 0.25),
                 inset 0 1px 1px rgba(255, 255, 255, 0.7),
                 inset 0 -2px 6px rgba(255, 255, 255, 0.4);
-
             transition: opacity 0.3s ease;
             overflow: hidden;
 
@@ -86,12 +83,7 @@ section#projects {
                 left: 10%;
                 right: 10%;
                 height: 2px;
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.9),
-                    transparent
-                );
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
                 border-radius: 50%;
             }
 
@@ -102,10 +94,7 @@ section#projects {
                 left: 0;
                 width: 1px;
                 height: 100%;
-                background: linear-gradient(180deg,
-                        rgba(255, 255, 255, 0.7),
-                        transparent,
-                        rgba(255, 255, 255, 0.4));
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent, rgba(255, 255, 255, 0.4));
             }
 
             animation-duration: 0.5s;
@@ -143,11 +132,10 @@ section#projects {
             p {
                 font-size: 1.2rem;
                 padding: 0 5px;
-                line-height: 10px;
+                line-height: 1.1;
                 opacity: 0.75;
             }
         }
-
 
         .face {
             position: absolute;
@@ -168,7 +156,9 @@ section#projects {
             }
         }
 
-        .front { background-color: var(--light-color); }
+        .front {
+            background-color: var(--light-color);
+        }
 
         .front img {
             width: 100%;
@@ -193,11 +183,15 @@ section#projects {
             }
 
             a.card-button {
-                width: 60%;
-                max-width: 200px;
-                padding: 10px 0;
+                width: fit-content;
+                max-width: 100%;
+                min-width: 0;
+                padding: 10px 18px;
+                margin: 0 0 8px;
+                white-space: nowrap;
                 @include button-responsive-font-size;
                 background-color: #1d1d1f;
+                flex: 0 0 auto;
 
                 &:first-of-type {
                     margin-bottom: 5px;
@@ -207,6 +201,14 @@ section#projects {
                     transform: scale(1.05);
                     border-color: rgba(255, 255, 255, 0.5);
                 }
+            }
+
+            button.transition-button.projectCard {
+                width: fit-content;
+                max-width: 100%;
+                min-width: 0;
+                padding: 10px 18px;
+                margin: 0;
             }
         }
 
@@ -236,6 +238,8 @@ section#projects {
             }
         }
 
-        span { color: var(--foreground-color); }
+        span {
+            color: var(--foreground-color);
+        }
     }
 }

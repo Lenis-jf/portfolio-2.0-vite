@@ -1,15 +1,20 @@
 // src/pages/ProjectPage.jsx
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import CustomImageSlider from "../components/CustomImageSlider";
 import CustomVideoPlayer from "../components/CustomVideoPlayer";
 import projectsData from "../../data/projectsData";
+import { getLocalizedProjectData } from "../i18n/projectTranslations";
 
 function ProjectPage({ projectPageRef, isDarkMode }) {
+	const { t, i18n } = useTranslation();
+	const language = (i18n.resolvedLanguage || "en").slice(0, 2);
     const { projectId } = useParams();
     const navigate = useNavigate();
 
     const project = projectsData.find(p => p.id === projectId);
+	const localizedProject = project ? getLocalizedProjectData(project, language) : null;
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
@@ -20,15 +25,15 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
         }
 
         const prevTitle = document.title;
-        document.title = `${project.title} — Juanfelenis Portfolio`;
+		document.title = `${localizedProject?.title || project?.title || ""} — ${t("projectPage.titleSuffix")}`;
 
         return () => { document.title = prevTitle; };
-    }, [projectId, project, navigate]);
+	}, [projectId, project, localizedProject, navigate, t]);
 
     if (!project) {
         return (
             <div className="loading-container">
-                <p>Project not found. Redirecting...</p>
+				<p>{t("projectPage.notFound")}</p>
             </div>
         );
     }
@@ -40,9 +45,9 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
 				className={`section ${project.sectionClass} project-info ${isDarkMode ? "dark-theme" : ""}`}
 				ref={projectPageRef}
 			>
-				<h1><strong>{project.title}</strong></h1>
+				<h1><strong>{localizedProject?.title || project.title}</strong></h1>
 
-				{project.content.map((item, index) => {
+				{localizedProject.content.map((item, index) => {
 					if (item.type === "image") {
 						return (
 							<CustomImageSlider
@@ -65,13 +70,13 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
 						}
 
 						if (item.type === "paragraph") {
-							return <p key={index}>{item.text}</p>;
+								return <p key={index}>{item.text}</p>;
 					}
 
 					if (item.type === "button") {
 						return (
 							<a key={index} href={item.url} className="button">
-								{item.text}
+									{item.text}
 							</a>
 						);
 					}

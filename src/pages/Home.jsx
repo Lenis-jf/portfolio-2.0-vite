@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import ProjectCard from "../components/ProjectCard";
 import TransitionButton from "../components/TransitionButton";
 import { getIcon } from '../utils/assetsUtils.js';
 
 
 function Home({ sectionRefs, isDarkMode }) {
+	const { t } = useTranslation();
 	const mainLogoRef = useRef(null);
 	const rotationRef = useRef(0);
 	const lastScrollYRef = useRef(0);
@@ -44,19 +46,19 @@ function Home({ sectionRefs, isDarkMode }) {
 								</div>
 							</div>
 							<h1>
-								Software Engineer
+								{t("home.roleLines.0")}
 								<br />
-								Web Developer
+								{t("home.roleLines.1")}
 								<br />
-								UI & UX Designer
+								{t("home.roleLines.2")}
 							</h1>
 						</div>
 						<div className="buttons-container">
-							<TransitionButton to="/contact" label="Contact me" extraClass="home" />
-							<TransitionButton to="/about" label="About me" color="#1d1d1f" extraClass="home" />
+							<TransitionButton to="/contact" label={t("home.ctaContact")} extraClass="home" />
+							<TransitionButton to="/about" label={t("home.ctaAbout")} color="#1d1d1f" extraClass="home" />
 						</div>
 						<div className="section-changer section-changer-dark projects">
-							<span>See more</span>
+							<span>{t("home.seeMore")}</span>
 							<div></div>
 						</div>
 					</section>
@@ -66,10 +68,9 @@ function Home({ sectionRefs, isDarkMode }) {
 						className="section dark-section"
 						ref={sectionRefs.projectsSectionRef}
 					>
-						<h2>Projects</h2>
+						<h2>{t("home.projectsTitle")}</h2>
 						<p>
-							A few of my favorite builds. I picked three snapshots that show how I design, code and ship.
-							Click or tap a card to flip it and go see the GitHub repo or a live demo.
+							{t("home.projectsDescription")}
 						</p>
 
 						<div className="project-cards-container">
@@ -101,9 +102,9 @@ function Home({ sectionRefs, isDarkMode }) {
 							/>
 						</div>
 
-						<TransitionButton to="/work" label="See all projects" />
+						<TransitionButton to="/work" label={t("home.seeAllProjects")} />
 						<div className="section-changer section-changer-dark abilities">
-							<span>Not finished yet :)</span>
+							<span>{t("home.unfinished")}</span>
 							<div></div>
 						</div>
 					</section>
@@ -113,8 +114,8 @@ function Home({ sectionRefs, isDarkMode }) {
 						className="section light-section"
 						ref={sectionRefs.abilitiesSectionRef}
 					>
-						<h2>Core Skills & Tools</h2>
-						<p>technologies I work with most</p>
+						<h2>{t("home.skillsTitle")}</h2>
+						<p>{t("home.skillsSubtitleDev")}</p>
 						<div className="icons-container" role="list" aria-label="Programming languages">
 							<div className="icon js" role="listitem" aria-label="JavaScript"></div>
 							<div className="icon react" role="listitem" aria-label="React"></div>
@@ -124,22 +125,19 @@ function Home({ sectionRefs, isDarkMode }) {
 							<div className="icon cpp" role="listitem" aria-label="C++"></div>
 							<div className="icon java" role="listitem" aria-label="Java"></div>
 						</div>
-						<p>Design and styling tools proficient in</p>
+						<p>{t("home.skillsSubtitleDesign")}</p>
 						<div className="icons-container" role="list" aria-label="Design and styling tools">
 							<div className="icon scss" role="listitem" aria-label="SCSS"></div>
 							<div className="icon css" role="listitem" aria-label="CSS"></div>
 							<div className="icon html" role="listitem" aria-label="HTML"></div>
 							<div className="icon figma" role="listitem" aria-label="Figma"></div>
 						</div>
-						<h3>Strengths:</h3>
+						<h3>{t("home.strengthsTitle")}</h3>
 						<p>
-							The programming languages I have worked most with are Java,
-							JavaScript and C++. In addition to the programming languages I
-							mentioned before, I have also worked with MIPS (assembler) and
-							HSQLDB
+							{t("home.strengthsDescription")}
 						</p>
 						<div className="section-changer section-changer-dark last-part">
-							<span>Do not forget it!</span>
+							<span>{t("home.dontForget")}</span>
 							<div></div>
 						</div>
 					</section>
@@ -149,7 +147,7 @@ function Home({ sectionRefs, isDarkMode }) {
 						className="section dark-section"
 						ref={sectionRefs.lastPartSectionRef}
 					>
-						<h3>Do not forget my name!</h3>
+						<h3>{t("home.finalTitle")}</h3>
 						<div className="main-logo-banner-container">
 							<img className="main-logo" src={getIcon("logo", isDarkMode)} alt="Juanfelenis developer logo" />
 							<div className="banner-container">
@@ -157,11 +155,11 @@ function Home({ sectionRefs, isDarkMode }) {
 								<h2>Developer</h2>
 							</div>
 						</div>
-						<p>I am Juan Fernando and Im here to bring your ideas to reality</p>
-						<TransitionButton to="/contact" label="Find me" extraClass="last-part" />
+						<p>{t("home.finalDescription")}</p>
+						<TransitionButton to="/contact" label={t("home.finalCta")} extraClass="last-part" />
 						<div className="section-changer section-changer-dark home">
 							<div></div>
-							<span>Go back to start</span>
+							<span>{t("home.goBackStart")}</span>
 						</div>
 						<span className="copy-right">©juanfelenis 2025</span>
 					</section>

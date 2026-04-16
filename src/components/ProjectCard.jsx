@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getProjectAssetUrl, getGithubIconUrl } from '../utils/assetsUtils.js';
 import TransitionButton from "./TransitionButton.jsx";
 
 function ProjectCard(props) {
+  const { t } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef(null);
   const smallCardRef = useRef(null);
@@ -83,14 +84,14 @@ function ProjectCard(props) {
       <div className="face back">
         <img
           src={getGithubIconUrl(props.isDarkMode)}
-          alt="Github Logo"
+          alt={t("projectCard.githubAlt")}
         />
-        <a href={props.repoURL} className="button card-button">Show Repository</a>
-        <TransitionButton to={`/projects${props.path}`} extraClass="projectCard" label="See more about it" color="#1d1d1f" />
+        <a href={props.repoURL} className="button card-button">{t("projectCard.showRepository")}</a>
+        <TransitionButton to={`/projects${props.path}`} extraClass="projectCard" label={t("projectCard.seeMore")} color="#1d1d1f" />
       </div>
       <div className="small-info-card" ref={smallCardRef}>
         <h4>{props.projectTitle}</h4>
-        <h6>Built with:</h6>
+        <h6>{t("projectCard.builtWith")}</h6>
         <p>{props.tools}</p>
       </div>
     </div>

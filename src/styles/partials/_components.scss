@@ -8,9 +8,10 @@ section, button, a.button { transition: all $transition-medium; }
 
 a.button {
     display: flex;
-    width: 60%;
-    max-width: 200px;
-    padding: 10px 20px;
+    width: fit-content;
+    max-width: 100%;
+    min-width: 0;
+    padding: 10px 18px;
     color: $foreground-color-light;
     justify-content: center;
     align-items: center;
@@ -20,6 +21,8 @@ a.button {
     @include button-responsive-font-size;
     @include glass-button($light-gray);
     transition: all $transition-medium;
+    white-space: nowrap;
+    flex: 0 0 auto;
 
     &.highlight {
         border-color: $blue-logo;

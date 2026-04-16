@@ -120,6 +120,10 @@ header {
             label.darkmode-button-container {
                 pointer-events: all;
             }
+
+            .language-switcher.desktop {
+                pointer-events: all;
+            }
         }
     }
 
@@ -151,21 +155,74 @@ header {
             align-items: center;
             border-radius: 5px;
             font-size: 1rem;
-            width: 40px;
-            height: 20px;
+            width: fit-content;
+            min-width: 40px;
+            height: 24px;
+            padding: 0 12px;
             pointer-events: none;
             color: $foreground-color-light;
+            white-space: nowrap;
             @include glass-button($light-gray);
 
             img {
                 width: 40px;
-                height: 20px;
+                height: 24px;
             }
         }
 
         a.menu-button.active {
             color: $foreground-color-light;
             @include glass-button();
+        }
+
+        a.menu-button.contact {
+            width: 40px;
+            min-width: 40px;
+            padding: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            a.menu-button {
+                font-size: 0.94rem;
+                height: 23px;
+                padding: 0 11px;
+            }
+
+            .language-switcher {
+                .language-switcher-trigger {
+                    min-width: 60px;
+                    height: 23px;
+                    padding: 0 10px;
+                    font-size: 0.81rem;
+                }
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            a.menu-button {
+                font-size: 0.9rem;
+                height: 22px;
+                padding: 0 10px;
+            }
+
+            a.menu-button.contact {
+                width: 36px;
+                min-width: 36px;
+
+                img {
+                    width: 36px;
+                    height: 22px;
+                }
+            }
+
+            .language-switcher {
+                .language-switcher-trigger {
+                    min-width: 56px;
+                    height: 22px;
+                    padding: 0 9px;
+                    font-size: 0.78rem;
+                }
+            }
         }
 
         /* darkmode-switcher button basics */
@@ -236,6 +293,251 @@ header {
 
             &:has(input:checked) input {
                 transform: translateX(calc(100% + 3.5px));
+                background-color: var(--foreground-color);
+            }
+        }
+
+        .language-switcher {
+            position: relative;
+            pointer-events: none;
+
+            .language-switcher-trigger {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                min-width: 64px;
+                height: 24px;
+                padding: 0 12px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                color: $foreground-color-light;
+                font-family: inherit;
+                font-size: 0.85rem;
+                letter-spacing: 0.08em;
+                white-space: nowrap;
+                @include glass-button($light-gray);
+            }
+
+            .language-switcher-caret {
+                font-size: 0.8rem;
+                line-height: 1;
+                transform: translateY(-1px);
+            }
+
+            .language-switcher-menu {
+                position: absolute;
+                top: calc(100% + 8px);
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                min-width: 140px;
+                padding: 8px;
+                border-radius: 14px;
+                z-index: 20;
+                @include glass-button($light-gray);
+            }
+
+            .language-switcher-option {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 30px;
+                padding: 6px 12px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                color: $foreground-color-light;
+                background: transparent;
+                font-family: inherit;
+                font-size: 0.85rem;
+                letter-spacing: 0.02em;
+                white-space: nowrap;
+
+                &:hover,
+                &:focus-visible,
+                &.active {
+                    background-color: rgba(255, 255, 255, 0.18);
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 534px) {
+        .menu-buttons-container {
+            .language-switcher.desktop {
+                display: none;
+            }
+        }
+    }
+}
+
+.language-switcher.floating {
+    display: none;
+}
+
+.mobile-darkmode-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 534px) {
+    .language-switcher.floating {
+        display: block;
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1400;
+        pointer-events: all;
+
+        .language-switcher-trigger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-width: 80px;
+            height: 36px;
+            padding: 0 14px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            color: $foreground-color-light;
+            font-family: inherit;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+            @include glass-button($light-gray);
+            box-shadow:
+                0 10px 22px rgba(0, 0, 0, 0.25),
+                inset 0 1px 1px rgba(255, 255, 255, 0.55);
+        }
+
+        .language-switcher-caret {
+            font-size: 0.8rem;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+
+        .language-switcher-menu {
+            position: absolute;
+            right: 0;
+            bottom: calc(100% + 10px);
+            top: auto;
+            min-width: 150px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 8px;
+            border-radius: 14px;
+            @include glass-button($light-gray);
+        }
+
+        .language-switcher-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 30px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: $foreground-color-light;
+            background: transparent;
+            font-family: inherit;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+
+            &:hover,
+            &:focus-visible,
+            &.active {
+                background-color: rgba(255, 255, 255, 0.18);
+                outline: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 424px) {
+    header {
+        .menu-buttons-container {
+            label.darkmode-button-container {
+                display: none;
+            }
+        }
+    }
+
+    .mobile-darkmode-toggle {
+        display: block;
+        position: fixed;
+        left: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        z-index: 1400;
+        pointer-events: all;
+
+        .darkmode-button-container {
+            position: relative;
+            display: flex;
+            width: 44px;
+            height: 22px;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 25px;
+            padding: 5px 0;
+            transition: background-color var(--transition-timing);
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            background-color: var(--foreground-color);
+            box-shadow:
+                0 10px 22px rgba(0, 0, 0, 0.25),
+                inset 0 1px 1px rgba(255, 255, 255, 0.55);
+
+            input {
+                position: absolute;
+                left: -1px;
+                top: calc(50% - 10.5px);
+                appearance: none;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                transition: transform var(--transition-timing), background-color var(--transition-timing);
+                z-index: 2;
+                cursor: pointer;
+                outline: none;
+                background-color: var(--light-color);
+            }
+
+            &::after,
+            &::before {
+                content: "";
+                width: 13px;
+                height: 13px;
+                position: absolute;
+                background-image: url("#{$public-base}assets/icons/theme-mode-icon.svg");
+                background-size: cover;
+                background-position: center;
+                z-index: 1;
+                top: calc(50% - 6.5px);
+            }
+
+            &::after {
+                transform: rotate(180deg);
+                right: 2px;
+            }
+
+            &::before {
+                left: 2px;
+            }
+
+            &:has(input:checked) {
+                background-color: var(--light-color);
+                border: solid 1px var(--foreground-color);
+            }
+
+            &:has(input:checked) input {
+                transform: translateX(calc(100% + 5.5px));
                 background-color: var(--foreground-color);
             }
         }
