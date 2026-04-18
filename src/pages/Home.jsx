@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import ProjectCard from "../components/ProjectCard";
 import TransitionButton from "../components/TransitionButton";
 import { getIcon } from '../utils/assetsUtils.js';
+import Iridescence from "../components/Iridescence";
 
 
 function Home({ sectionRefs, isDarkMode }) {
@@ -37,6 +38,14 @@ function Home({ sectionRefs, isDarkMode }) {
 						className="section light-section"
 						ref={sectionRefs.homeSectionRef}
 					>
+						<div className="home-iridescence-bg" aria-hidden="true">
+							<Iridescence
+								color={[0.11764705882352941, 0.5333333333333333, 0.8980392156862745]}
+								mouseReact={false}
+								amplitude={0.1}
+								speed={1.5}
+							/>
+						</div>
 						<div className="main-welcome-content-container">
 							<div className="main-logo-banner-container">
 								<img className="main-logo" src={getIcon("logo", isDarkMode)} alt="Juanfelenis developer logo" ref={mainLogoRef} />
@@ -57,7 +66,7 @@ function Home({ sectionRefs, isDarkMode }) {
 							<TransitionButton to="/contact" label={t("home.ctaContact")} extraClass="home" />
 							<TransitionButton to="/about" label={t("home.ctaAbout")} color="#1d1d1f" extraClass="home" />
 						</div>
-						<div className="section-changer section-changer-dark projects">
+						<div className="section-changer projects">
 							<span>{t("home.seeMore")}</span>
 							<div></div>
 						</div>

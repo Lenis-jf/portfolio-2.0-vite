@@ -39,10 +39,36 @@ article.section {
 }
 
 section#home {
+    position: relative;
+    overflow: hidden;
     justify-content: center;
+    color: $foreground-color-light;
 
-    &.dark-theme {
-        span {color: var(--foreground-color); }
+    .home-iridescence-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.85;
+    }
+
+    > div:not(.home-iridescence-bg) {
+        position: relative;
+        z-index: 1;
+    }
+
+    h1, h2, h3, p, span {
+        color: $foreground-color-light;
+    }
+
+    div.section-changer {
+        div {
+            background-image: url("#{$public-base}assets/icons/keyboard-arrow-down-light.svg");
+        }
+        
+        div.section-changer span {
+            color: $foreground-color-light;
+        }
     }
 
     a.button.highlight { color: $foreground-color-light; }
