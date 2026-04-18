@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getIcon } from '../utils/assetsUtils.js';
+import GlassSurface from './GlassSurface';
 
 function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContainerRef }) {
     const safeMenuColor = menuColor || "";
@@ -117,7 +118,27 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
 
     return (
         <div>
-            <header id="header" className="light-section" ref={headerRef}>
+            <GlassSurface
+                as="header"
+                id="header"
+                className="light-section"
+                ref={headerRef}
+                width="95%"
+                height="auto"
+                borderRadius={15}
+                borderWidth={0.12}
+                brightness={67}
+                opacity={0.96}
+                blur={10}
+                displace={1.8}
+                distortionScale={-200}
+                redOffset={4}
+                greenOffset={16}
+                blueOffset={30}
+                backgroundOpacity={0.14}
+                saturation={1.7}
+                mixBlendMode="screen"
+            >
                 <label className={`menu ${safeMenuColor}`} aria-label={t("header.menuAria")}>
                     <input type="checkbox" aria-label={t("header.menuInputAria")} />
                 </label>
@@ -163,7 +184,7 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                         alt="Juanfelenis logo"
                         style={{transform: `rotate(${rotation}deg)`}} />
                 </div>
-            </header>
+            </GlassSurface>
             <div className="mobile-darkmode-toggle" aria-hidden="false">
                 <label className="darkmode-button-container brown-color light-theme" aria-label={t("header.darkModeToggle")}>
                     <input

@@ -10,11 +10,10 @@ const Work = ({ workRef, isDarkMode }) => {
     function measureMaxOpenHeight(li) {
         li.classList.add("open");
         li.classList.remove("closed");
-        // Permitir que el layout se actualice
+        
         li.style.height = "auto";
         const height = li.scrollHeight;
         li.style.height = "";
-        // Al sumar 40px, damos un poco de margen extra para que el absolute se vea mejor
         li.style.setProperty("--open-height", `${Math.ceil(height) + 40}px`);
         li.classList.remove("open");
         li.classList.add("closed");
@@ -83,9 +82,20 @@ const Work = ({ workRef, isDarkMode }) => {
         };
         window.addEventListener("resize", handleResize);
 
+        const handleOutsideClick = (e) => {
+            if (!e.target.closest(".project-item")) {
+                document.querySelectorAll(".project-item.open").forEach(item => {
+                    item.classList.remove("open");
+                    item.classList.add("closed");
+                });
+            }
+        };
+        document.addEventListener("click", handleOutsideClick);
+
         return () => {
             document.title = prevTitle;
             window.removeEventListener("resize", handleResize);
+            document.removeEventListener("click", handleOutsideClick);
             if (resizeTimeoutRef.current) {
                 window.clearTimeout(resizeTimeoutRef.current);
             }
@@ -93,7 +103,11 @@ const Work = ({ workRef, isDarkMode }) => {
     }, [t]);
 
     function openItem(e) {
-        const li = e.currentTarget;
+        if (e.target.closest("button, a")) {
+            return;
+        }
+
+        const li = e.currentTarget.closest(".project-item");
         const isOpening = !li.classList.contains("open");
 
         document.querySelectorAll(".project-item.open").forEach(item => {
@@ -118,8 +132,8 @@ const Work = ({ workRef, isDarkMode }) => {
                 <h1><strong>{t("work.heading")}</strong></h1>
                 <p>{t("work.intro")}</p>
                 <ul className="projects-list">
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.leonti.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -138,8 +152,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.dronesim.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -158,8 +172,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.culturalFitness.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -179,8 +193,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.scraper.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -200,8 +214,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.voiceMaze.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -220,8 +234,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.roomman.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -239,8 +253,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.batatabit.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -260,8 +274,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.oceanoRosa.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -281,8 +295,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed" onClick={openItem}>
-                        <div className="main-info">
+                    <li className="project-item closed">
+                        <div className="main-info" onClick={openItem}>
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.tyc.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
