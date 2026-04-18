@@ -127,16 +127,16 @@ function Header({ isDarkMode, toggleDarkMode, menuColor, headerRef, logoContaine
                 height="auto"
                 borderRadius={15}
                 borderWidth={0.12}
-                brightness={67}
+                brightness={60}
                 opacity={0.96}
                 blur={10}
                 displace={1.8}
-                distortionScale={-200}
-                redOffset={4}
-                greenOffset={16}
-                blueOffset={30}
+                distortionScale={-150}
+                redOffset={2}
+                greenOffset={10}
+                blueOffset={25}
                 backgroundOpacity={0.14}
-                saturation={1.7}
+                saturation={1.2}
                 mixBlendMode="screen"
             >
                 <label className={`menu ${safeMenuColor}`} aria-label={t("header.menuAria")}>
