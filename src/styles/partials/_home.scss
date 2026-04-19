@@ -85,6 +85,11 @@ section#home {
             font-weight: 700;
             margin: 30px 0 30px 0;
             @include h1-responsive-font-size;
+
+            @media screen and (max-width: 415px) {
+                line-height: clamp(2rem, 2.1rem + 5vw, 5.4rem);
+                text-align: left;
+            }
         }
 
         div.main-logo-banner-container {
