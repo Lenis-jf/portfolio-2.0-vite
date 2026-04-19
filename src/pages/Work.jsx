@@ -132,8 +132,8 @@ const Work = ({ workRef, isDarkMode }) => {
                 <h1><strong>{t("work.heading")}</strong></h1>
                 <p>{t("work.intro")}</p>
                 <ul className="projects-list">
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.leonti.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -152,8 +152,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.dronesim.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -172,8 +172,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.culturalFitness.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -193,8 +193,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.scraper.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -214,8 +214,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.voiceMaze.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -234,8 +234,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.roomman.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -253,8 +253,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.batatabit.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -274,8 +274,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.oceanoRosa.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
@@ -295,8 +295,8 @@ const Work = ({ workRef, isDarkMode }) => {
                         </div>
                     </li>
 
-                    <li className="project-item closed">
-                        <div className="main-info" onClick={openItem}>
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
                             <div className="title-icon-container">
                                 <h2>{t("work.cards.tyc.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
