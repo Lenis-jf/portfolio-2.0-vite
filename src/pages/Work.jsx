@@ -8,6 +8,8 @@ const Work = ({ workRef, isDarkMode }) => {
     const resizeTimeoutRef = useRef(null);
 
     function measureMaxOpenHeight(li) {
+        const wasOpen = li.classList.contains("open");
+
         li.classList.add("open");
         li.classList.remove("closed");
         
@@ -15,8 +17,11 @@ const Work = ({ workRef, isDarkMode }) => {
         const height = li.scrollHeight;
         li.style.height = "";
         li.style.setProperty("--open-height", `${Math.ceil(height) + 40}px`);
-        li.classList.remove("open");
-        li.classList.add("closed");
+        
+        if (!wasOpen) {
+            li.classList.remove("open");
+            li.classList.add("closed");
+        }
     }
 
     function setupCardHeights() {
@@ -71,8 +76,12 @@ const Work = ({ workRef, isDarkMode }) => {
             });
         }
 
-        // Re-medir en resize con delay para evitar múltiples cálculos
+        // Re-medir en resize solo si cambia el ancho (evita bugs en móviles al ocultarse la barra superior)
+        let lastWidth = window.innerWidth;
         const handleResize = () => {
+            if (window.innerWidth === lastWidth) return;
+            lastWidth = window.innerWidth;
+
             if (resizeTimeoutRef.current) {
                 window.clearTimeout(resizeTimeoutRef.current);
             }
