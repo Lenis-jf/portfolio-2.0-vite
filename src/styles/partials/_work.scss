@@ -289,6 +289,37 @@ section.work-section {
                     }
                 }
 
+                img.mockup.edgeml.mac {
+                    width: 82vw;
+                    max-width: 360px;
+                    right: -48%;
+                    transform: translateY(48%) rotate(-2deg);
+                }
+
+                @media screen and (min-width: 430px) {
+                    img.mockup.edgeml.mac {
+                        width: 78vw;
+                        right: -36%;
+                    }
+                }
+
+                @media screen and (min-width: 560px) {
+                    img.mockup.edgeml.mac {
+                        width: 72vw;
+                        max-width: 430px;
+                        right: -26%;
+                        transform: translateY(48%) rotate(-2deg);
+                    }
+                }
+
+                @media screen and (min-width: 800px) {
+                    img.mockup.edgeml.mac {
+                        width: 68vw;
+                        max-width: 470px;
+                        right: -25%;
+                    }
+                }
+
                 img.mockup.iphone.batatabit {
                     width: 25vw;
                     max-width: 120px;

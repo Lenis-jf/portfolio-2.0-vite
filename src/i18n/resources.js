@@ -64,6 +64,10 @@ export const resources = {
             title: "Voice Maze — Multimodal HMI Project",
             description: "A web-based maze game built with React for my Human-Machine Interaction class. It supports voice, keyboard, and touch controls, featuring multilingual speech recognition, real-time feedback, and procedural maze generation powered by Backtracking and BFS algorithms."
           },
+          edgemlFootball: {
+            title: "EdgeML Meets American Football — AI Tactical Analyzer",
+            description: "Ambitious edge AI system for American football analysis on an Nvidia Jetson Orin Nano. Tracks players, reads jersey numbers, recognizes formations, and serves a live React and FastAPI dashboard for tactical playcards and telemetry."
+          },
           roomman: {
             title: "Roomman: Network-Based Classroom Management System",
             description: "Console application developed in C to manage university auditoriums and classrooms. Implements client-server communication through sockets and RPC, with a shared and synchronized database for real-time reservations and updates."
@@ -228,6 +232,10 @@ export const resources = {
             title: "Voice Maze — Proyecto HMI Multimodal",
             description: "Juego de laberinto web hecho con React para mi clase de Interaccion Humano-Maquina. Soporta control por voz, teclado y tactil, con reconocimiento multilenguaje, feedback en tiempo real y generacion procedural con Backtracking y BFS."
           },
+          edgemlFootball: {
+            title: "EdgeML Meets American Football — Analizador Tactico con IA",
+            description: "Sistema ambicioso de IA en el borde para analizar futbol americano en un Nvidia Jetson Orin Nano. Sigue jugadores, lee numeros de camiseta, reconoce formaciones y expone un panel en React y FastAPI con playcards tacticas y telemetria en vivo."
+          },
           roomman: {
             title: "Roomman: Sistema de Gestion de Aulas",
             description: "Aplicacion de consola en C para gestionar auditorios y aulas universitarias. Implementa comunicacion cliente-servidor con sockets y RPC, usando base de datos sincronizada para reservas y actualizaciones en tiempo real."
@@ -391,6 +399,10 @@ export const resources = {
           voiceMaze: {
             title: "Voice Maze — Multimodales HMI-Projekt",
             description: "Webbasiertes Labyrinthspiel mit React für meinen HMI-Kurs. Unterstützt Sprache, Tastatur und Touch mit Echtzeit-Feedback und prozeduraler Labyrinth-Generierung."
+          },
+          edgemlFootball: {
+            title: "EdgeML Meets American Football — Taktischer KI-Analyzer",
+            description: "Ambitioniertes Edge-KI-System zur Analyse von American Football auf einem Nvidia Jetson Orin Nano. Es verfolgt Spieler, liest Trikotnummern, erkennt Formationen und stellt ein Live-Dashboard in React und FastAPI für Taktikkarten und Telemetrie bereit."
           },
           roomman: {
             title: "Roomman: Netzwerkbasiertes Raumverwaltungssystem",

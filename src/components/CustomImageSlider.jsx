@@ -109,7 +109,7 @@ function CustomImageSlider(props) {
 
     return (
         <>
-            <div className="img-presentator-container">
+            <div className={`img-presentator-container ${props.projectId === "edgeml-football" ? "edge-ml-images" : ""}`}>
                 <button
                     className="left-arrow arrow"
                     onClick={goToPrevImage}

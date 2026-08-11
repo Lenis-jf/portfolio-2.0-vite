@@ -246,6 +246,27 @@ const Work = ({ workRef, isDarkMode }) => {
                     <li className="project-item closed" onClick={openItem}>
                         <div className="main-info">
                             <div className="title-icon-container">
+                                <h2>{t("work.cards.edgemlFootball.title")}</h2>
+                                <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
+                            </div>
+                            <div className="tools">
+                                <div className="tool py-tool"><strong>Python</strong></div>
+                                <div className="tool react-tool"><strong>React</strong></div>
+                                <div className="tool flet-tool"><strong>FastAPI</strong></div>
+                            </div>
+                        </div>
+                        <div className="text-mockup-container">
+                            <div className="text-button-container">
+                                <p>{t("work.cards.edgemlFootball.description")}</p>
+                                <TransitionButton to="projects/edgeml-football" label={t("work.readMore")} />
+                            </div>
+                            <img alt="project mockup" className="mockup edgeml mac" src={getProjectAssetUrl("edgeml-football-assets/edgeml-mac-mockup.webp")} />
+                        </div>
+                    </li>
+
+                    <li className="project-item closed" onClick={openItem}>
+                        <div className="main-info">
+                            <div className="title-icon-container">
                                 <h2>{t("work.cards.roomman.title")}</h2>
                                 <img className="icon-dropdown" src={getIcon("keyboard-arrow-down", isDarkMode)} alt="dropdown icon" />
                             </div>

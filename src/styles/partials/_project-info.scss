@@ -117,6 +117,13 @@ article.project-info, section.project-info {
         }
     }
 
+    .edge-ml-images {
+        img.img {
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+
     .radio-buttons-container {
         display: flex;
         justify-content: center;

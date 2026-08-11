@@ -53,7 +53,8 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
 							<CustomImageSlider
 								key={index}
 								images={item.src}
-									projectTitle={project.title}
+								projectTitle={project.title}
+								projectId={project.id}
 								/>
 							);
 						}

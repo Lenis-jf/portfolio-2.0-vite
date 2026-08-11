@@ -84,29 +84,29 @@ function Home({ sectionRefs, isDarkMode }) {
 
 						<div className="project-cards-container">
 							<ProjectCard
-								frontImage="dronesim-assets/drones-project.png"
-								repoURL="https://github.com/Lenis-jf/Drone-Project"
-								path="/dronesim"
-								projectTitle="Drones Simulation"
-								tools="Java, Swing"
-								isDarkMode={isDarkMode}
-							/>
-
-							<ProjectCard
-								frontImage="cultural-fitness-assets/cultural-fitness-img-1.webp"
-								repoURL="https://github.com/Lenis-jf/Cultural-Fitness"
-								path="/cultural-fitness"
-								projectTitle="Cultural Fitness"
-								tools="JavaScript, HTML, SCSS"
-								isDarkMode={isDarkMode}
-							/>
-
-							<ProjectCard
 								frontImage="leonti-assets/leonti-project.png"
 								repoURL="https://github.com/Lenis-jf/leonti-aesthetic"
 								path="/leonti"
-								projectTitle="Leonti Aesthetic"
-								tools="React in Vite, SCSS"
+								projectTitle="Leonti Kosmetikstudio"
+								tools="React, SCSS"
+								isDarkMode={isDarkMode}
+							/>
+
+							<ProjectCard
+								frontImage="edgeml-football-assets/edgeml-img-1.webp"
+								repoURL="https://github.com/Lenis-jf/EdgeML-American-Football"
+								path="/edgeml-football"
+								projectTitle="EdgeML Meets AF"
+								tools="Python, FastAPI, React"
+								isDarkMode={isDarkMode}
+							/>
+
+							<ProjectCard
+								frontImage="roomman-assets/roomman-img-4.webp"
+								repoURL="https://github.com/Lenis-jf/Distributed-Systems-SS25"
+								path="/roomman"
+								projectTitle="roomman"
+								tools="C, SunRPC"
 								isDarkMode={isDarkMode}
 							/>
 						</div>

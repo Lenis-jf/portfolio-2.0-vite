@@ -62,7 +62,7 @@ function ProjectCard(props) {
 
   return (
     <div
-      className={`project-card ${isFlipped ? "flipped" : ""}`}
+      className={`project-card ${props.cardClassName || ""} ${isFlipped ? "flipped" : ""}`}
       tabIndex="0"
       onClick={handleCardClick}
       role="button"
@@ -78,6 +78,7 @@ function ProjectCard(props) {
       <div className="face front">
         <img
           src={getProjectAssetUrl(props.frontImage)} alt={`${props.projectTitle} project preview`}
+          className={props.imageClassName || ""}
           ref={imageRef}
         />
       </div>

@@ -429,6 +429,55 @@ const projectsData = [
                 text: "Future updates will include difficulty levels and adjustable maze sizes. For now, Voice Maze stands as a robust demonstration of multimodal interaction, where human input and machine interpretation merge to create a responsive and immersive HMI experience."
             }
         ]
+    },
+    {
+        id: "edgeml-football",
+        title: "EdgeML Meets American Football — AI Tactical Analyzer",
+        sectionClass: "light-section",
+        content: [
+            {
+                type: "image", src: [
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-1.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-2.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-3.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-4.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-5.webp`
+                ]
+            },
+            {
+                type: "paragraph", text: "My most ambitious university project yet! We built a full Edge AI system to analyze American football plays in real time. Deployed on an Nvidia Jetson Orin Nano, this system tracks players, reads jersey numbers, recognizes offensive formations, and generates tactical playcards—all directly at the edge."
+            },
+            { type: "button", text: "Show Repository", url: "https://github.com/Lenis-jf/EdgeML-American-Football" },
+            {
+                type: "paragraph", text: "I led the core architecture and wore many hats: Scrum Master, Lead Developer for the Video Pipeline, OCR integration, Formation Recognition, and the Web Hub. The biggest technical hurdle? Processing heavy video streams without bottlenecking the CPU. I solved this by designing an asynchronous Producer-Consumer pipeline using threading, which kept the frame rate smooth and the hardware happy."
+            },
+            {
+                type: "paragraph", text: "For jersey recognition, raw OCR wasn't cutting it. I designed a custom 'Legibility Model' using YOLO to filter out blurry or useless crops before they even hit EasyOCR. By offloading this to a separate asynchronous thread with a smart caching strategy, OCR accuracy skyrocketed while saving massive amounts of compute power."
+            },
+            {
+                type: "video", video: "edgeml-project-1.mp4", poster: "edgeml-football-assets/edgeml-img-1.webp"
+            },
+            {
+                type: "paragraph", text: "Formation recognition was another huge milestone. Image classification models kept failing due to occlusions and a lack of perspective. Once we had a Homography engine mapping pixels to a 2D field, I switched the logic to an XGBoost model. By synthetically injecting NaN values during training to simulate missing players, the model reached a staggering 96.45% accuracy!"
+            },
+            {
+                type: "image", src: [
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-6.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-7.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-8.webp`,
+                    `${import.meta.env.BASE_URL}assets/imgs/edgeml-football-assets/edgeml-img-9.webp`
+                ]
+            },
+            {
+                type: "paragraph", text: "To make the tool actually usable for coaches on the field, I built a Web Hub using FastAPI and React. The Jetson Nano broadcasts its own local WiFi hotspot, allowing coaches to connect from their phones and access a live dashboard with telemetry, video streams, and generated playcards without needing an internet connection."
+            },
+            {
+                type: "video", video: "edgeml-project-2.mp4", poster: "edgeml-football-assets/edgeml-img-6.webp"
+            },
+            {
+                type: "paragraph", text: "This project pushed my limits in software architecture, computer vision, and machine learning. From stabilizing tracking paths with temporal pooling to ensuring seamless React-FastAPI communication, it is a testament to how complex systems can be elegantly orchestrated on constrained hardware."
+            }
+        ]
     }
 ];
 

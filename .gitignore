@@ -30,3 +30,6 @@ Thumbs.db
 
 # gh-pages temporary cache
 node_modules/.cache/
+
+fotos-to-compress
+videos-to-compress

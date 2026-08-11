@@ -137,6 +137,22 @@ const projectTranslations = {
         "La interfaz mantiene feedback continuo con popups y animaciones, avisando cuando escucha, mostrando comandos reconocidos y celebrando victorias o derrotas.",
         "En futuras versiones agregare niveles de dificultad y tamanos ajustables. Por ahora, Voice Maze es una demostracion solida de interaccion multimodal y experiencia inmersiva."
       ]
+    },
+    "edgeml-football": {
+      title: "EdgeML Meets American Football — Analizador Tactico con IA",
+      content: [
+        null,
+        "Mi proyecto universitario mas ambicioso hasta ahora. Construimos un sistema completo de IA en el borde para analizar jugadas de futbol americano en tiempo real, desplegado en un Nvidia Jetson Orin Nano.",
+        "Ver repositorio",
+        "Lleve la arquitectura principal y varios roles: Scrum Master, Lead Developer del pipeline de video, integracion OCR, reconocimiento de formaciones y el Web Hub. El mayor reto tecnico fue procesar video pesado sin saturar la CPU, asi que diseñe un pipeline asincrono productor-consumidor con threading para mantener la tasa de cuadros fluida.",
+        "Para reconocer dorsales, el OCR en bruto no era suficiente. Diseñe un modelo de legibilidad con YOLO para filtrar recortes borrosos o inutiles antes de enviarlos a EasyOCR. Al moverlo a un hilo asincrono separado con una estrategia de cache, la precision subio mucho y se ahorro bastante computo.",
+        null,
+        "El reconocimiento de formaciones fue otro gran hito. Los modelos de clasificacion fallaban por oclusion y perspectiva, asi que despues de crear un motor de homografia para mapear los pixeles a un campo 2D, cambie la logica a XGBoost. Entrenando con valores NaN sinteticos para simular jugadores ausentes, el modelo alcanzo una precision impresionante.",
+        null,
+        "Para que la herramienta fuera realmente util en el campo, construi un Web Hub con FastAPI y React. El Jetson emite su propio hotspot local, permitiendo que los coaches se conecten desde sus telefonos y accedan a un panel en vivo con telemetria, video y playcards sin depender de internet.",
+        null,
+        "Este proyecto llevo al limite mis habilidades en arquitectura de software, vision por computador y machine learning. Desde estabilizar trayectorias con pooling temporal hasta asegurar una comunicacion fluida entre React y FastAPI, fue una demostracion de como orquestar sistemas complejos en hardware limitado."
+      ]
     }
   },
   de: {
@@ -274,6 +290,22 @@ const projectTranslations = {
         "Zur besseren Zugänglichkeit gibt es einen Sprachwechsel, der sowohl die Oberfläche übersetzt als auch die Spracherkennung auf Englisch, Spanisch oder Deutsch umstellt.",
         "Die UI liefert fortlaufend Feedback mit Popups und Animationen, sodass Nutzer wissen, wann das System lauscht oder Kommandos erkennt.",
         "Künftige Versionen bekommen Schwierigkeitsgrade und anpassbare Größen. Im Moment ist Voice Maze eine solide Demo für multimodale Interaktion."
+      ]
+    },
+    "edgeml-football": {
+      title: "EdgeML Meets American Football — Taktischer KI-Analyzer",
+      content: [
+        null,
+        "Mein bislang ambitioniertestes Uni-Projekt. Wir haben ein komplettes Edge-KI-System gebaut, das American-Football-Spielzüge in Echtzeit analysiert und auf einem Nvidia Jetson Orin Nano läuft.",
+        "Repository anzeigen",
+        "Ich habe die Kernarchitektur und mehrere Rollen übernommen: Scrum Master, Lead Developer für die Video-Pipeline, OCR-Integration, Formationserkennung und das Web Hub. Die größte technische Hürde war, schwere Videoströme zu verarbeiten, ohne die CPU zu überlasten. Deshalb habe ich eine asynchrone Producer-Consumer-Pipeline mit Threading entworfen, die die Bildrate stabil hielt.",
+        "Für die Erkennung von Trikotnummern reichte rohes OCR nicht aus. Ich habe ein eigenes Legibility Model mit YOLO gebaut, das unscharfe oder unbrauchbare Ausschnitte herausfiltert, bevor sie überhaupt in EasyOCR landen. Durch die Auslagerung in einen separaten asynchronen Thread mit smarter Caching-Strategie stiegen die OCR-Ergebnisse deutlich, während gleichzeitig viel Rechenleistung gespart wurde.",
+        null,
+        "Auch die Formationserkennung war ein großer Meilenstein. Bildklassifikationsmodelle scheiterten wegen Verdeckungen und fehlender Perspektive. Sobald wir eine Homography-Engine hatten, die die Pixel auf ein 2D-Feld abbildet, wechselte ich die Logik auf ein XGBoost-Modell. Mit synthetisch eingefügten NaN-Werten im Training zur Simulation fehlender Spieler erreichte das Modell eine beeindruckende Genauigkeit.",
+        null,
+        "Damit das Tool für Coaches wirklich nutzbar ist, habe ich ein Web Hub mit FastAPI und React gebaut. Der Jetson Nano sendet ein lokales WLAN, sodass sich Coaches mit dem Handy verbinden und ein Live-Dashboard mit Telemetrie, Videostreams und Playcards ohne Internet nutzen können.",
+        null,
+        "Dieses Projekt hat mich in Softwarearchitektur, Computer Vision und Machine Learning stark gefordert. Von der Stabilisierung der Tracking-Pfade mit temporalem Pooling bis zur nahtlosen React-FastAPI-Kommunikation zeigt es, wie sich komplexe Systeme auf begrenzter Hardware elegant orchestrieren lassen."
       ]
     }
   }

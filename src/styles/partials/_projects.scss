@@ -183,12 +183,13 @@ section#projects {
             }
 
             a.card-button {
-                width: fit-content;
+                width: 220px;
                 max-width: 100%;
-                min-width: 0;
+                min-width: 220px;
                 padding: 10px 18px;
                 margin: 0 0 8px;
-                white-space: nowrap;
+                white-space: normal;
+                text-align: center;
                 @include button-responsive-font-size;
                 background-color: #1d1d1f;
                 flex: 0 0 auto;
@@ -204,11 +205,13 @@ section#projects {
             }
 
             button.transition-button.projectCard {
-                width: fit-content;
+                width: 220px;
                 max-width: 100%;
-                min-width: 0;
+                min-width: 220px;
                 padding: 10px 18px;
                 margin: 0;
+                white-space: normal;
+                text-align: center;
             }
         }
 
@@ -224,6 +227,7 @@ section#projects {
             }
         }
     }
+
 
     &.dark-theme {
         color: var(--foreground-color);
