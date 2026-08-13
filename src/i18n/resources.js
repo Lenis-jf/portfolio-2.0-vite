@@ -31,7 +31,7 @@ export const resources = {
         skillsSubtitleDev: "Technologies I work with most",
         skillsSubtitleDesign: "Design and styling tools proficient in",
         strengthsTitle: "Strengths:",
-        strengthsDescription: "The programming languages I have worked most with are Java, JavaScript and C++. In addition to the programming languages I mentioned before, I have also worked with MIPS (assembler) and HSQLDB",
+        strengthsDescription: "The programming languages I have worked most with are Python, Java, JavaScript and C. In addition to the programming languages I mentioned before, I have also worked with MIPS (assembler), SQLlite and MySQLServer",
         dontForget: "Do not forget it!",
         finalTitle: "Do not forget my name!",
         finalDescription: "I am Juan Fernando and I am here to bring your ideas to reality",
@@ -197,9 +197,9 @@ export const resources = {
         unfinished: "Aun no termina :)",
         skillsTitle: "Habilidades y Herramientas",
         skillsSubtitleDev: "Tecnologias con las que mas trabajo",
-        skillsSubtitleDesign: "Herramientas de diseno y estilos",
+        skillsSubtitleDesign: "Herramientas de diseño y estilos",
         strengthsTitle: "Fortalezas:",
-        strengthsDescription: "Los lenguajes con los que mas he trabajado son Java, JavaScript y C++. Ademas de esos lenguajes, tambien he trabajado con MIPS (ensamblador) y HSQLDB.",
+        strengthsDescription: "Los lenguajes con los que mas he trabajado son Python, Java, JavaScript y C. Ademas de esos lenguajes, tambien he trabajado con MIPS (ensamblador), SQLlite y MySQLServer.",
         dontForget: "No lo olvides!",
         finalTitle: "No olvides mi nombre!",
         finalDescription: "Soy Juan Fernando y estoy aqui para convertir tus ideas en realidad",
@@ -234,7 +234,7 @@ export const resources = {
           },
           edgemlFootball: {
             title: "EdgeML Meets American Football — Analizador Tactico con IA",
-            description: "Sistema ambicioso de IA en el borde para analizar futbol americano en un Nvidia Jetson Orin Nano. Sigue jugadores, lee numeros de camiseta, reconoce formaciones y expone un panel en React y FastAPI con playcards tacticas y telemetria en vivo."
+            description: "Sistema ambicioso de IA Dispositivos Edge para analizar futbol americano en un Nvidia Jetson Orin Nano. Sigue jugadores, lee numeros de camiseta, reconoce formaciones y expone un panel en React y FastAPI con playcards tacticas y telemetria en vivo."
           },
           roomman: {
             title: "Roomman: Sistema de Gestion de Aulas",
@@ -367,7 +367,7 @@ export const resources = {
         skillsSubtitleDev: "Technologien, mit denen ich am meisten arbeite",
         skillsSubtitleDesign: "Design- und Styling-Tools",
         strengthsTitle: "Stärken:",
-        strengthsDescription: "Die Programmiersprachen, mit denen ich am meisten gearbeitet habe, sind Java, JavaScript und C++. Außerdem habe ich auch mit MIPS (Assembler) und HSQLDB gearbeitet.",
+        strengthsDescription: "Die Programmiersprachen, mit denen ich am meisten gearbeitet habe, sind Python, Java, JavaScript und C. Außerdem habe ich auch mit MIPS (Assembler), SQLlite und MySQLServer gearbeitet.",
         dontForget: "Vergiss es nicht!",
         finalTitle: "Vergiss meinen Namen nicht!",
         finalDescription: "Ich bin Juan Fernando und ich bin hier, um deine Ideen Wirklichkeit werden zu lassen",
