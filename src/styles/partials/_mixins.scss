@@ -50,6 +50,11 @@
     font-size: clamp($fs-h1, 1rem + 4vw, 6rem);
 }
 
+@mixin h1-responsive-font-size-smaller {
+    font-size: clamp($fs-h1-smaller, 1rem + 4vw, 4rem);
+}
+
+
 @mixin h2-responsive-font-size {
     font-size: clamp($fs-h2, 1rem + 4vw, 5rem);
 }

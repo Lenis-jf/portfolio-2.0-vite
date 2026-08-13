@@ -19,7 +19,7 @@ export const resources = {
         }
       },
       home: {
-        roleLines: ["Software Engineer", "Web Developer", "UI & UX Designer"],
+        roleLines: ["Software Developer", "Computer Science Student", "Passionate about AI & Web Tech"],
         ctaContact: "Contact me",
         ctaAbout: "About me",
         seeMore: "See more",
@@ -187,7 +187,7 @@ export const resources = {
         }
       },
       home: {
-        roleLines: ["Ingeniero de Software", "Desarrollador Web", "Disenador UI y UX"],
+        roleLines: ["Desarrollador de Software", "Estudiante de Informática", "Apasionado por IA y Tecnologías Web"],
         ctaContact: "Contactame",
         ctaAbout: "Sobre mi",
         seeMore: "Ver mas",
@@ -355,7 +355,7 @@ export const resources = {
         }
       },
       home: {
-        roleLines: ["Softwareingenieur", "Webentwickler", "UI- und UX-Designer"],
+        roleLines: ["Softwareentwickler", "Informatikstudent", "Leidenschaft für KI & Web-Technologien"],
         ctaContact: "Kontakt",
         ctaAbout: "Über mich",
         seeMore: "Mehr sehen",
