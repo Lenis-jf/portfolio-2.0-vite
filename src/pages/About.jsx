@@ -85,8 +85,11 @@ export default function About({ aboutPageRef }) {
           <h3>{t("about.processTitle")}</h3>
           <ul>
             <li>{t("about.process.discover")}</li>
+            <br />
             <li>{t("about.process.design")}</li>
+            <br />
             <li>{t("about.process.develop")}</li>
+            <br />
             <li>{t("about.process.refine")}</li>
           </ul>
         </div>

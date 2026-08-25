@@ -73,9 +73,11 @@ section#about-page {
 
             .tagline {
                 padding: 0 clamp(10px, 5vw, 50px);
+                text-align: justify;
             }
 
             .buttons-container {
+                display: flex;
                 flex-direction: row;
                 margin: 15px 0;
                 width: 100%;
@@ -83,12 +85,6 @@ section#about-page {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 12px;
-            }
-
-            @media screen and (min-width: 768px) {
-                p {
-                    text-align: justify;
-                }
             }
         }
 
@@ -195,12 +191,12 @@ section#about-page {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        list-style-type: none;
+        list-style-type: disc;
         padding-left: 0;
 
         li {
             text-align: left;
-            @include xs-responsive-font-size;
+            @include ul-responsive-font-size;
         }
     }
 

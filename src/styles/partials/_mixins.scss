@@ -46,6 +46,10 @@
     font-size: clamp($fs-base, 1.2rem + 1.1vw, 1.8rem);
 }
 
+@mixin ul-responsive-font-size {
+    font-size: clamp($fs-small, 1rem + 1vw, 1.6rem);
+}
+
 @mixin h1-responsive-font-size {
     font-size: clamp($fs-h1, 1rem + 4vw, 6rem);
 }
