@@ -19,24 +19,98 @@ export const resources = {
         }
       },
       home: {
-        roleLines: ["Software Developer", "Computer Science Student", "Passionate about AI & Web Tech"],
+        roleLines: [
+          "Software Developer",
+          "Computer Science Student",
+          "Enthusiastic about AI & Automation"
+        ],
         ctaContact: "Contact me",
         ctaAbout: "About me",
         seeMore: "See more",
         projectsTitle: "Projects",
-        projectsDescription: "A few of my favorite builds. I picked three snapshots that show how I design, code and ship. Click or tap a card to flip it and go see the GitHub repo or a live demo.",
+        projectsDescription: "A few of my favorite projects. There is a bit of everything: automation, artificial intelligence, web development, distributed systems, and more. Each project has something different to discover and, above all, something new that it allowed me to learn. Take a look around, click or tap a card to flip it and discover more about the project, its GitHub repository, or its demo.",
         seeAllProjects: "See all projects",
-        unfinished: "Not finished yet :)",
-        skillsTitle: "Core Skills & Tools",
+        unfinished: "There is more to see :)",
+        skillsTitle: "Technologies & Tools",
         skillsSubtitleDev: "Technologies I work with most",
         skillsSubtitleDesign: "Design and styling tools proficient in",
         strengthsTitle: "Strengths:",
         strengthsDescription: "The programming languages I have worked most with are Python, Java, JavaScript and C. In addition to the programming languages I mentioned before, I have also worked with MIPS (assembler), SQLlite and MySQLServer",
         dontForget: "Do not forget it!",
-        finalTitle: "Do not forget my name!",
-        finalDescription: "I am Juan Fernando and I am here to bring your ideas to reality",
-        finalCta: "Find me",
-        goBackStart: "Go back to start"
+        technologiesSubtitle: "Technologies and tools I have used to turn ideas into real projects, from web applications and automation to artificial intelligence.",
+        skillsCategories: {
+          programmingLanguages: "Programming Languages",
+          webFrontend: "Web & Frontend",
+          aiComputerVisionData: "AI, Computer Vision & Data",
+          automationTesting: "Automation & Testing",
+          developmentDesign: "Development & Design"
+        },
+        skillsData: {
+          programmingLanguages: ["Python", "Java", "JavaScript", "C", "C++", "SQL", "MIPS"],
+          webFrontend: ["React", "Vite", "HTML", "CSS", "SCSS"],
+          aiComputerVisionData: ["PyTorch", "OpenCV", "scikit-learn", "NumPy", "Pandas"],
+          automationTesting: ["Selenium", "Web APIs"],
+          developmentDesign: ["Git", "GitHub", "Figma", "VS Code"]
+        },
+        whatMatters: {
+          title: "What matters to me",
+          items: {
+            problemSolving: {
+              title: "Problem Solving",
+              description: "Understanding problems before looking for solutions."
+            },
+            collaboration: {
+              title: "Collaboration",
+              description: "Sharing ideas, finding solutions together, and learning from others."
+            },
+            curiosity: {
+              title: "Curiosity",
+              description: "Trying new technologies, asking questions, and diving into unfamiliar topics."
+            },
+            quality: {
+              title: "Quality",
+              description: "Building solutions that not only work, but remain understandable, maintainable, and reliable."
+            },
+            accessibility: {
+              title: "Accessibility",
+              description: "Digital solutions should be open to as many people as possible and easy to use."
+            }
+          }
+        },
+        whatIEnjoy: {
+          title: "What I enjoy working on",
+          description: "I'm especially fascinated by projects where technology is not just used, but opens up new possibilities.",
+          items: {
+            automation: {
+              title: "Automation",
+              description: "Making repetitive tasks easier and turning manual workflows into efficient processes."
+            },
+            computerVision: {
+              title: "Computer Vision",
+              description: "Extracting information from images and visual data to build new applications."
+            },
+            aiMachineLearning: {
+              title: "AI & Machine Learning",
+              description: "Experimenting with data, models, and algorithms to discover new ways of solving problems."
+            },
+            web: {
+              title: "Web",
+              description: "Turning technical possibilities into accessible, understandable, and enjoyable user experiences."
+            },
+            distributedSystems: {
+              title: "Distributed Systems",
+              description: "Understanding how multiple components work together to form reliable systems."
+            }
+          }
+        },
+        moreThanCode: {
+          title: "More than code",
+          description: "Technology is more than code to me. I enjoy working with people, exchanging ideas, and bringing different perspectives together. I'm curious, enjoy learning new things, and feel most comfortable in teams where people can experiment, question ideas, and work together towards better solutions."
+        },
+        finalTitle: "What could we build together?",
+        finalDescription: "I'm Juan Fernando, and I'm always open to exciting projects, new ideas, and interesting technical challenges.",
+        finalCta: "Get in touch",
+        goBackStart: "Back to top"
       },
       work: {
         documentTitle: "Projects & Work — Juanfelenis | Web Developer Portfolio",
@@ -130,20 +204,20 @@ export const resources = {
         downloadResume: "Download resume"
       },
       contact: {
-        documentTitle: "Contact Juanfelenis — Get in Touch",
+        documentTitle: "Get in touch",
         titleAria: "Contact Juanfelenis",
-        intro: "Hey, nice to see you again :)\nInterested?",
-        introLine1: "Hey, nice to see you again :)",
-        introLine2: "Interested?",
-        subtitle: "Let's get in touch",
-        methods: "Here you will find some methods to contact me",
-        clickHint: "Just click or tap on the icons below",
+        intro: "Glad to have you here :)\nGot something in mind?",
+        introLine1: "Glad to have you here :)",
+        introLine2: "Got something in mind?",
+        subtitle: "There are several ways to reach me.",
+        methods: "Choose the channel that works best for you.",
+        clickHint: "Click or tap one of the icons below.",
         channelsAria: "Contact channels",
         waAria: "Message on WhatsApp",
         emailAria: "Send an email",
-        igAria: "Follow on Instagram",
-        githubAria: "View GitHub profile",
-        linkedinAria: "View LinkedIn profile"
+        igAria: "Follow me on Instagram",
+        githubAria: "View my GitHub profile",
+        linkedinAria: "View my LinkedIn profile"
       },
       projectPage: {
         notFound: "Project not found. Redirecting...",
@@ -187,23 +261,97 @@ export const resources = {
         }
       },
       home: {
-        roleLines: ["Desarrollador de Software", "Estudiante de Informática", "Apasionado por IA y Tecnologías Web"],
+        roleLines: [
+          "Desarrollador de Software",
+          "Estudiante de Informática",
+          "Apasionado por la IA y la Automatización"
+        ],
         ctaContact: "Contactame",
         ctaAbout: "Sobre mi",
         seeMore: "Ver mas",
         projectsTitle: "Proyectos",
-        projectsDescription: "Algunos de mis desarrollos favoritos. Elegi tres ejemplos que muestran como diseno, programo y publico. Haz clic o toca una tarjeta para girarla y ver el repositorio de GitHub o una demo en vivo.",
+        projectsDescription: "Estos son algunos de mis proyectos favoritos. Hay un poco de todo: automatización, inteligencia artificial, desarrollo web, sistemas distribuidos y más. Cada uno tiene algo diferente por descubrir y, sobre todo, algo nuevo que me permitió aprender. Curiosea un poco, atrévete a entrar y haz clic o toca una de las tarjetas para girarla y descubrir más sobre el proyecto, su repositorio en GitHub o su demo.",
         seeAllProjects: "Ver todos los proyectos",
-        unfinished: "Aun no termina :)",
-        skillsTitle: "Habilidades y Herramientas",
+        unfinished: "Aún hay más por ver :)",
+        skillsTitle: "Tecnologías y herramientas",
         skillsSubtitleDev: "Tecnologias con las que mas trabajo",
         skillsSubtitleDesign: "Herramientas de diseño y estilos",
         strengthsTitle: "Fortalezas:",
         strengthsDescription: "Los lenguajes con los que mas he trabajado son Python, Java, JavaScript y C. Ademas de esos lenguajes, tambien he trabajado con MIPS (ensamblador), SQLlite y MySQLServer.",
         dontForget: "No lo olvides!",
-        finalTitle: "No olvides mi nombre!",
-        finalDescription: "Soy Juan Fernando y estoy aqui para convertir tus ideas en realidad",
-        finalCta: "Encuentrame",
+        technologiesSubtitle: "Tecnologías y herramientas que he utilizado para convertir ideas en proyectos reales, desde aplicaciones web y automatizaciones hasta proyectos de inteligencia artificial.",
+        skillsCategories: {
+          programmingLanguages: "Lenguajes de programación",
+          webFrontend: "Web y Frontend",
+          aiComputerVisionData: "IA, Computer Vision y Datos",
+          automationTesting: "Automatización y Testing",
+          developmentDesign: "Desarrollo y Diseño"
+        },
+        skillsData: {
+          programmingLanguages: ["Python", "Java", "JavaScript", "C", "C++", "SQL", "MIPS"],
+          webFrontend: ["React", "Vite", "HTML", "CSS", "SCSS"],
+          aiComputerVisionData: ["PyTorch", "OpenCV", "scikit-learn", "NumPy", "Pandas"],
+          automationTesting: ["Selenium", "Web APIs"],
+          developmentDesign: ["Git", "GitHub", "Figma", "VS Code"]
+        },
+        whatMatters: {
+          title: "Lo que me importa",
+          items: {
+            problemSolving: {
+              title: "Resolución de problemas",
+              description: "Entender realmente los problemas antes de buscar soluciones."
+            },
+            collaboration: {
+              title: "Colaboración",
+              description: "Compartir ideas, encontrar soluciones en equipo y aprender de los demás."
+            },
+            curiosity: {
+              title: "Curiosidad",
+              description: "Probar nuevas tecnologías, hacer preguntas y adentrarme en temas desconocidos."
+            },
+            quality: {
+              title: "Calidad",
+              description: "Desarrollar soluciones que no solo funcionen, sino que también sean comprensibles, mantenibles y fiables."
+            },
+            accessibility: {
+              title: "Accesibilidad",
+              description: "Las soluciones digitales deberían estar al alcance del mayor número de personas posible y ser fáciles de usar."
+            }
+          }
+        },
+        whatIEnjoy: {
+          title: "En qué me gusta trabajar",
+          description: "Me fascinan especialmente los proyectos en los que la tecnología no solo se utiliza, sino que también abre nuevas posibilidades.",
+          items: {
+            automation: {
+              title: "Automatización",
+              description: "Simplificar tareas repetitivas y convertir procesos manuales en flujos de trabajo más eficientes."
+            },
+            computerVision: {
+              title: "Computer Vision",
+              description: "Extraer información de imágenes y datos visuales para desarrollar nuevas aplicaciones."
+            },
+            aiMachineLearning: {
+              title: "IA y Machine Learning",
+              description: "Experimentar con datos, modelos y algoritmos para descubrir nuevas formas de resolver problemas."
+            },
+            web: {
+              title: "Web",
+              description: "Convertir posibilidades técnicas en experiencias digitales accesibles, comprensibles y agradables."
+            },
+            distributedSystems: {
+              title: "Sistemas Distribuidos",
+              description: "Entender cómo diferentes componentes trabajan juntos para formar sistemas fiables."
+            }
+          }
+        },
+        moreThanCode: {
+          title: "Más allá del código",
+          description: "La tecnología es para mí mucho más que código. Me gusta trabajar con otras personas, intercambiar ideas y reunir diferentes perspectivas. Soy una persona curiosa, disfruto aprendiendo cosas nuevas y me siento especialmente cómodo en equipos donde podemos experimentar, cuestionar ideas y trabajar juntos para encontrar mejores soluciones."
+        },
+        finalTitle: "¿Qué podríamos construir juntos?",
+        finalDescription: "Soy Juan Fernando y siempre estoy abierto a proyectos interesantes, nuevas ideas y desafíos técnicos.",
+        finalCta: "Escríbeme",
         goBackStart: "Volver al inicio"
       },
       work: {
@@ -273,7 +421,7 @@ export const resources = {
           focusValue: "Accesibilidad · Rendimiento · Automatización · Ingeniería de Software"
         },
         aboutMeTitle: "Sobre mi",
-        aboutMeP1: "Soy de Colombia y actualmente vivo y estudio en Frankfurt am Main. Durante estos últimos años no solo he aprendido mucho sobre Informática, sino que también he conocido nuevas perspectivas y he tenido la oportunidad de desenvolverme en diferentes idiomas y culturas. Me gusta aprender cosas nuevas, experimentar con tecnologías y profundizar en temas que todavía no conozco.",
+        aboutMeP1: "Soy de Colombia y actualmente vivo y estudio en Frankfurt am Main. Durante estos últimos años no solo he aprendido mucho sobre Informática, sino que también he conocido nuevas perspectivas y he tenido la oportunidad de desenvolverse en diferentes idiomas y culturas. Me gusta aprender cosas nuevas, experimentar con tecnologías y profundizar en temas que todavía no conozco.",
         aboutMeP2: "Para mí, trabajar en equipo es una parte importante del desarrollo. Disfruto colaborando con otras personas y he tenido buenas experiencias trabajando con metodologías ágiles como Scrum. Creo que un buen desarrollo de software no empieza escribiendo código, sino entendiendo el problema lo mejor posible. A partir de ahí, busco plantear una solución y una arquitectura adecuadas, implementarlas de forma cuidadosa y comprobar continuamente qué tan bien funcionan.\n\nMi objetivo es crear soluciones que no solo funcionen hoy, sino que sigan siendo confiables, mantenibles, escalables, testeables y eficientes a largo plazo. Al mismo tiempo, me importa mucho la experiencia de las personas que las utilizan. Cuando una aplicación está pensada para usuarios finales, debería ser clara, cómoda y fácil de usar, además de accesible para el mayor número de personas posible.",
         processTitle: "Cómo trabajo",
         process: {
@@ -298,20 +446,20 @@ export const resources = {
         downloadResume: "Descargar CV"
       },
       contact: {
-        documentTitle: "Contactar a Juanfelenis — Hablemos",
+        documentTitle: "Contacto",
         titleAria: "Contactar a Juanfelenis",
-        intro: "Hola, que bueno verte otra vez :)\nInteresado?",
-        introLine1: "Hola, que bueno verte otra vez :)",
-        introLine2: "Interesado?",
-        subtitle: "Pongamonos en contacto",
-        methods: "Aqui encontraras algunas formas de contactarme",
-        clickHint: "Solo haz clic o toca los iconos de abajo",
+        intro: "Qué bueno tenerte por aquí :)\n¿Tienes algo en mente?",
+        introLine1: "Qué bueno tenerte por aquí :)",
+        introLine2: "¿Tienes algo en mente?",
+        subtitle: "Hay varias formas de ponernos en contacto.",
+        methods: "Elige el canal que te resulte más cómodo.",
+        clickHint: "Haz clic o toca uno de los iconos de abajo.",
         channelsAria: "Canales de contacto",
-        waAria: "Enviar mensaje por WhatsApp",
-        emailAria: "Enviar un correo",
-        igAria: "Seguir en Instagram",
-        githubAria: "Ver perfil de GitHub",
-        linkedinAria: "Ver perfil de LinkedIn"
+        waAria: "Enviar un mensaje por WhatsApp",
+        emailAria: "Enviar un correo electrónico",
+        igAria: "Seguirme en Instagram",
+        githubAria: "Ver mi perfil de GitHub",
+        linkedinAria: "Ver mi perfil de LinkedIn"
       },
       projectPage: {
         notFound: "Proyecto no encontrado. Redirigiendo...",
@@ -355,23 +503,97 @@ export const resources = {
         }
       },
       home: {
-        roleLines: ["Softwareentwickler", "Informatikstudent", "Leidenschaft für KI & Web-Technologien"],
+        roleLines: [
+          "Softwareentwickler",
+          "Informatikstudent",
+          "Begeistert von KI & Automatisierung"
+        ],
         ctaContact: "Kontakt",
         ctaAbout: "Über mich",
         seeMore: "Mehr sehen",
         projectsTitle: "Projekte",
-        projectsDescription: "Einige meiner Lieblingsprojekte. Ich habe drei Beispiele ausgewählt, die zeigen, wie ich entwerfe, entwickle und veröffentliche. Klicke oder tippe auf eine Karte, um sie umzudrehen und das GitHub-Repo oder eine Live-Demo zu sehen.",
+        projectsDescription: "Einige meiner Lieblingsprojekte. Es gibt ein bisschen von allem: Automatisierung, Künstliche Intelligenz, Webentwicklung, verteilte Systeme und mehr. Jedes Projekt hat etwas Neues zu entdecken und vor allem etwas, aus dem ich lernen konnte. Schau dich gerne um, klicke oder tippe auf eine Karte, um sie umzudrehen und mehr über das Projekt, das GitHub-Repository oder die Demo zu erfahren.",
         seeAllProjects: "Alle Projekte ansehen",
-        unfinished: "Noch nicht fertig :)",
-        skillsTitle: "Kernkompetenzen und Tools",
+        unfinished: "Es gibt noch mehr zu entdecken :)",
+        skillsTitle: "Technologien & Tools",
         skillsSubtitleDev: "Technologien, mit denen ich am meisten arbeite",
         skillsSubtitleDesign: "Design- und Styling-Tools",
         strengthsTitle: "Stärken:",
         strengthsDescription: "Die Programmiersprachen, mit denen ich am meisten gearbeitet habe, sind Python, Java, JavaScript und C. Außerdem habe ich auch mit MIPS (Assembler), SQLlite und MySQLServer gearbeitet.",
         dontForget: "Vergiss es nicht!",
-        finalTitle: "Vergiss meinen Namen nicht!",
-        finalDescription: "Ich bin Juan Fernando und ich bin hier, um deine Ideen Wirklichkeit werden zu lassen",
-        finalCta: "Finde mich",
+        technologiesSubtitle: "Technologien und Tools, mit denen ich Ideen in echte Projekte umgesetzt habe – von Webanwendungen und Automatisierung bis hin zu Projekten im Bereich Künstliche Intelligenz.",
+        skillsCategories: {
+          programmingLanguages: "Programmiersprachen",
+          webFrontend: "Web & Frontend",
+          aiComputerVisionData: "KI, Computer Vision & Data",
+          automationTesting: "Automatisierung & Testing",
+          developmentDesign: "Entwicklung & Design"
+        },
+        skillsData: {
+          programmingLanguages: ["Python", "Java", "JavaScript", "C", "C++", "SQL", "MIPS"],
+          webFrontend: ["React", "Vite", "HTML", "CSS", "SCSS"],
+          aiComputerVisionData: ["PyTorch", "OpenCV", "scikit-learn", "NumPy", "Pandas"],
+          automationTesting: ["Selenium", "Web APIs"],
+          developmentDesign: ["Git", "GitHub", "Figma", "VS Code"]
+        },
+        whatMatters: {
+          title: "Was mir wichtig ist",
+          items: {
+            problemSolving: {
+              title: "Problemlösung",
+              description: "Probleme wirklich verstehen, bevor ich nach einer Lösung suche."
+            },
+            collaboration: {
+              title: "Zusammenarbeit",
+              description: "Ideen teilen, gemeinsam Lösungen finden und voneinander lernen."
+            },
+            curiosity: {
+              title: "Neugier",
+              description: "Neue Technologien ausprobieren, Fragen stellen und mich in unbekannte Themen einarbeiten."
+            },
+            quality: {
+              title: "Qualität",
+              description: "Lösungen entwickeln, die nicht nur funktionieren, sondern auch verständlich, wartbar und zuverlässig bleiben."
+            },
+            accessibility: {
+              title: "Barrierefreiheit",
+              description: "Digitale Lösungen sollten möglichst vielen Menschen offenstehen und einfach zu nutzen sein."
+            }
+          }
+        },
+        whatIEnjoy: {
+          title: "Woran ich gerne arbeite",
+          description: "Mich faszinieren besonders Projekte, bei denen Technologie nicht nur eingesetzt wird, sondern neue Möglichkeiten eröffnet.",
+          items: {
+            automation: {
+              title: "Automatisierung",
+              description: "Wiederkehrende Aufgaben vereinfachen und aus manuellen Abläufen effiziente Prozesse machen."
+            },
+            computerVision: {
+              title: "Computer Vision",
+              description: "Aus Bildern und visuellen Daten Informationen gewinnen und daraus neue Anwendungen entwickeln."
+            },
+            aiMachineLearning: {
+              title: "KI & Machine Learning",
+              description: "Mit Daten, Modellen und Algorithmen experimentieren, um neue Wege zur Problemlösung zu entdecken."
+            },
+            web: {
+              title: "Web",
+              description: "Technische Möglichkeiten in zugängliche, verständliche und angenehme Nutzererlebnisse übersetzen."
+            },
+            distributedSystems: {
+              title: "Verteilte Systeme",
+              description: "Verstehen, wie mehrere Komponenten zusammenspielen und gemeinsam zuverlässige Systeme bilden."
+            }
+          }
+        },
+        moreThanCode: {
+          title: "Mehr als Code",
+          description: "Technologie ist für mich mehr als Code. Ich arbeite gerne mit Menschen, tausche Ideen aus und finde es spannend, unterschiedliche Perspektiven zusammenzubringen. Ich bin neugierig, lerne gerne Neues und fühle mich besonders wohl in Teams, in denen man gemeinsam ausprobieren, hinterfragen und bessere Lösungen finden kann."
+        },
+        finalTitle: "Was könnten wir gemeinsam entwickeln?",
+        finalDescription: "Ich bin Juan Fernando und immer offen für spannende Projekte, neue Ideen und interessante technische Herausforderungen.",
+        finalCta: "Kontakt aufnehmen",
         goBackStart: "Zurück zum Anfang"
       },
       work: {
@@ -435,8 +657,7 @@ export const resources = {
           locationValue: "Frankfurt am Main",
           educationLabel: "Ausbildung",
           educationValue: "Bachelor of Science in Informatik",
-          languagesLabel: "Sprachen",
-          languagesValue: "Deutsch · Englisch · Spanisch",
+          languagesLabel: "Deutsch · Englisch · Spanisch",
           focusLabel: "Fokus",
           focusValue: "Barrierefreiheit · Performance · Automatisierung · Software Engineering"
         },
@@ -466,20 +687,20 @@ export const resources = {
         downloadResume: "Lebenslauf herunterladen"
       },
       contact: {
-        documentTitle: "Kontakt zu Juanfelenis — Lass uns sprechen",
+        documentTitle: "Kontakt",
         titleAria: "Kontakt zu Juanfelenis",
-        intro: "Hey, schön dich wiederzusehen :)\nInteressiert?",
-        introLine1: "Hey, schön dich wiederzusehen :)",
-        introLine2: "Interessiert?",
-        subtitle: "Lass uns in Kontakt treten",
-        methods: "Hier findest du einige Möglichkeiten, mich zu kontaktieren",
-        clickHint: "Klicke oder tippe auf die Icons unten",
+        intro: "Schön, dass du hier bist :)\nHast du etwas im Sinn?",
+        introLine1: "Schön, dass du hier bist :)",
+        introLine2: "Hast du etwas im Sinn?",
+        subtitle: "Hier gibt es verschiedene Möglichkeiten, mich zu erreichen.",
+        methods: "Wähle den Kanal, der für dich am besten passt.",
+        clickHint: "Klicke oder tippe auf eines der Icons unten.",
         channelsAria: "Kontaktkanäle",
         waAria: "Nachricht über WhatsApp senden",
         emailAria: "E-Mail senden",
         igAria: "Auf Instagram folgen",
-        githubAria: "GitHub-Profil anzeigen",
-        linkedinAria: "LinkedIn-Profil anzeigen"
+        githubAria: "Mein GitHub-Profil anzeigen",
+        linkedinAria: "Mein LinkedIn-Profil anzeigen"
       },
       projectPage: {
         notFound: "Projekt nicht gefunden. Weiterleitung...",

@@ -18,7 +18,7 @@ function Contact({ contactRef }) {
     <main id="main-content">
 	  <section id="contact" className="section dark-section" ref={contactRef}>
         <h1 className="visually-hidden">{t("contact.titleAria")}</h1>
-        <p>{t("contact.introLine1")}<br />{t("contact.introLine2")}</p>
+        <p>{t("contact.introLine1")}<br /><br />{t("contact.introLine2")}</p>
         <p>{t("contact.subtitle")}</p>
         <ContactCardIcon className="contact-card-big" />
         <p>{t("contact.methods")}</p>

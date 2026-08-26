@@ -185,7 +185,9 @@ section#about-page {
 
     .about-story h3 {
         @include h3-responsive-font-size;
+
     }
+    .about-story p { text-align: justify; }
 
     .process ul {
         display: flex;
