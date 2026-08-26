@@ -1,6 +1,10 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+// Timing variables for smooth, cinematic fade-in
+$fade-duration: 3500ms;
+$fade-easing: cubic-bezier(0.22, 1, 0.36, 1);
+
 // ==========================================================================
 // 1. BASE SECTION LAYOUT & GLOBAL TRANSITIONS
 // ==========================================================================
@@ -22,36 +26,56 @@ article.dark-section {
 section.section,
 article.section {
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    span,
-    div,
-    img,
-    li,
-    ul,
-    dl,
-    dt,
-    dd {
-        transition: opacity $transition-fade-in;
+    >div,
+    >h2,
+    >h3,
+    >p,
+    .abilities-wrapper,
+    .project-cards-container,
+    .main-welcome-content-container,
+    .buttons-container {
+        transition: opacity $fade-duration $fade-easing, transform $fade-duration $fade-easing;
+        will-change: opacity, transform;
     }
 
-    &.hidden * {
-        opacity: 0;
-        transition: opacity $transition-fade-in;
+    &.hidden {
+
+        >div,
+        >h2,
+        >h3,
+        >p,
+        .abilities-wrapper,
+        .project-cards-container,
+        .main-welcome-content-container,
+        .buttons-container {
+            opacity: 0 !important;
+            transform: translateY(24px);
+            pointer-events: none;
+        }
     }
 
-    &.visible *:not(button.radio-button) {
-        opacity: 1;
+    &.visible {
+
+        >div,
+        >h2,
+        >h3,
+        >p,
+        .abilities-wrapper,
+        .project-cards-container,
+        .main-welcome-content-container,
+        .buttons-container {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     }
 
-    &.visible div.section-changer:hover {
-        opacity: 0.3;
+    div.section-changer {
         transition: opacity $transition-fast ease-in-out;
+
+        &:hover {
+            opacity: 0.3;
+        }
     }
 }
 
@@ -220,7 +244,6 @@ section#projects {
         margin: 0 auto 40px auto;
         @include p-responsive-font-size;
         line-height: 1.6;
-        opacity: 0.9;
     }
 
     .project-cards-container {

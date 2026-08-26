@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import React, { useEffect, useRef, useMemo, useLayoutEffect } from 'react';
 import Home from './pages/Home';
 import Work from './pages/Work';
@@ -71,20 +69,24 @@ function RouterComponent() {
 
 
 	function createHomeObserver({ logoContainerRef }) {
-		const observerOptions = { root: null, threshold: 0.2 };
+		const observerOptions = {
+			root: null,
+			threshold: 0.12,
+			rootMargin: "0px 0px -40px 0px"
+		};
 
 		const sectionObserver = new IntersectionObserver(entries => {
 			entries.forEach(entry => {
-				if(entry.isIntersecting) {
+				if (entry.isIntersecting) {
 					const id = entry.target.id;
 					localStorage.setItem("lastSection", id);
 
 					entry.target.classList.remove("hidden");
 					entry.target.classList.add("visible");
 
-					if((id === "home" || id === "last-part" && logoContainerRef.current)) {
+					if ((id === "home" || id === "last-part") && logoContainerRef.current) {
 						logoContainerRef.current.classList.add("hidden");
-					} else if(logoContainerRef.current) {
+					} else if (logoContainerRef.current) {
 						logoContainerRef.current.classList.remove("hidden");
 					}
 				}
@@ -96,10 +98,10 @@ function RouterComponent() {
 
 	function createGenericObserver() {
 		const observerOptions = { root: null, threshold: 0 };
-		
+
 		const sectionObserver = new IntersectionObserver(entries => {
 			entries.forEach(entry => {
-				if(entry.isIntersecting) {
+				if (entry.isIntersecting) {
 					entry.target.classList.remove("hidden");
 					entry.target.classList.add("visible");
 				}
@@ -121,13 +123,13 @@ function RouterComponent() {
 	}
 
 	function disconnectObserver(observer) {
-		if(observer)
-			observer.disconnect();		
+		if (observer)
+			observer.disconnect();
 	}
 
 	useLayoutEffect(() => {
-		if(location.pathname === "/") {
-			if(shellReady) {	
+		if (location.pathname === "/") {
+			if (shellReady) {
 				disconnectObserver(homeObserverRef.current);
 
 				const sectionChangers = document.querySelectorAll('div.section-changer');
@@ -154,7 +156,7 @@ function RouterComponent() {
 
 				return () => {
 					disconnectObserver(observer);
-		
+
 					if (sectionChangers) {
 						sectionChangers.forEach(sectionChanger => {
 							sectionChanger.removeEventListener('click', goToSection);
@@ -166,8 +168,8 @@ function RouterComponent() {
 	}, [location.pathname, shellReady]);
 
 	useLayoutEffect(() => {
-		if(location.pathname !== "/") {
-			if(shellReady) {
+		if (location.pathname !== "/") {
+			if (shellReady) {
 				disconnectObserver(genericObserverRef.current);
 
 				const observer = createGenericObserver();
@@ -179,7 +181,7 @@ function RouterComponent() {
 				return () => disconnectObserver(observer);
 			}
 		}
-	}, [location.pathname, 
+	}, [location.pathname,
 		shellReady]);
 
 	useEffect(() => {
@@ -191,44 +193,44 @@ function RouterComponent() {
 		<>
 			{!shellReady && <Loader />}
 			<div ref={appShellRef} aria-busy={!shellReady}>
-			<Header
-				isDarkMode={isDarkMode}
-				toggleDarkMode={toggleDarkMode}
-				// menuColor={menuColor}
-				headerRef={headerRef}
-				logoContainerRef={logoContainerRef}
-			/>
-			<Routes>
-				<Route path="/" element={
-					<Home
-						sectionRefs={sectionRefsObject}
-						isDarkMode={isDarkMode}
-					/>
-				} />
-				<Route path="/work" element={
-					<Work
-						workRef={workRef}
-						isDarkMode={isDarkMode}
-					/>
-				} />
-				<Route path="/contact" element={
-					<Contact
-						contactRef={contactRef}
-					/>
-				} />
-				<Route path="/about" element={
-					<About
-						aboutPageRef={aboutPageRef}
-					/>
-				} />
-				<Route path="/projects/:projectId" element={
-					<ProjectPage
-						projectPageRef={projectPageRef}
-						isDarkMode={isDarkMode}
-					/>
-				} />
-				<Route path="/loader" element={<Loader />} />
-			</Routes>
+				<Header
+					isDarkMode={isDarkMode}
+					toggleDarkMode={toggleDarkMode}
+					// menuColor={menuColor}
+					headerRef={headerRef}
+					logoContainerRef={logoContainerRef}
+				/>
+				<Routes>
+					<Route path="/" element={
+						<Home
+							sectionRefs={sectionRefsObject}
+							isDarkMode={isDarkMode}
+						/>
+					} />
+					<Route path="/work" element={
+						<Work
+							workRef={workRef}
+							isDarkMode={isDarkMode}
+						/>
+					} />
+					<Route path="/contact" element={
+						<Contact
+							contactRef={contactRef}
+						/>
+					} />
+					<Route path="/about" element={
+						<About
+							aboutPageRef={aboutPageRef}
+						/>
+					} />
+					<Route path="/projects/:projectId" element={
+						<ProjectPage
+							projectPageRef={projectPageRef}
+							isDarkMode={isDarkMode}
+						/>
+					} />
+					<Route path="/loader" element={<Loader />} />
+				</Routes>
 			</div>
 		</>
 	);
