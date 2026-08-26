@@ -113,50 +113,50 @@ export const resources = {
         goBackStart: "Back to top"
       },
       work: {
-        documentTitle: "Projects & Work — Juanfelenis | Web Developer Portfolio",
+        documentTitle: "Projects & Work — Juanfelenis-dev | Web Portfolio",
         heading: "Ready to dive into my world?",
-        intro: "Each project I have worked on tells a story: a mix of curiosity, design, and a touch of obsession with detail. Here, you will find a collection of ideas turned into code, pixels shaped with purpose, and experiments that grew into full experiences. Take a look around, every piece represents a small step forward in my journey of creating things that feel as good as they look.",
+        intro: "Here you can find what I have built throughout my Computer Science studies and beyond. From university projects and personal experiments to smaller freelance work, every project tells a part of my story, my curiosity, and my passion for technology.",
         readMore: "Read more about it",
         cards: {
           leonti: {
-            title: "Leonti Aesthetic — Cosmetic Studio Website",
-            description: "Leonti Aesthetic is a modern cosmetic studio website showcasing eyelash extensions, lifting, and facial treatments. Built with React and SCSS, it delivers a smooth, elegant, and responsive user experience with subtle animations that highlight the brand's clean and professional aesthetic."
+            title: "Leonti Cosmetic Studio",
+            description: "A modern website for a cosmetic studio where an intuitive user experience was just as important as the brand’s visual identity. The goal was to bring both together in a website that feels clear, refined, and natural."
           },
           dronesim: {
-            title: "Live Drone Monitor — Java Swing Dashboard",
-            description: "Java Swing app for OOP course: threaded API fetching of live global drone telemetry (latitude, longitude, tilt, timestamps). Displays paginated, searchable tables with filtering/sorting and strong input, connection and exception handling."
+            title: "Drone Simulation",
+            description: "A university project built with Java Swing, where we worked with large amounts of simulated drone data provided through an API, continuously retrieving, filtering, paginating, and updating it. I especially enjoyed turning that constant flow of data into a clear desktop interface while working closely as a team."
           },
           culturalFitness: {
-            title: "Cultural Fitness — Clean Health Blog",
-            description: "An informative site built with HTML, SCSS and JavaScript showcasing fitness insights, routines and third-party product picks. Designed with two collaborators to evoke health and reliability, it prioritizes readable layouts, fast loading and easy content discovery."
+            title: "Cultural Fitness",
+            description: "A fitness culture blog I developed together with friends studying graphic design. While they shaped the visual concept, I handled the entire development and learned a lot about UX, Vanilla JavaScript, and bringing an idea to life without frameworks."
           },
           scraper: {
-            title: "Housing Data Automation for Market Research",
-            description: "Automation tool that scrapes German property listings from an aggregator, distinguishing multi-family and single apartments. Uses concurrent browsing (up to 5 pages), exports CSV into a worker's Excel for viability calculations, drastically reducing weeks of manual work to minutes."
+            title: "Real Estate Scraper",
+            description: "A personal project combining web scraping with a custom interface to automatically collect and organize real estate data. What I enjoyed most was turning a repetitive process into a tool that could actually take work off my hands."
           },
           voiceMaze: {
-            title: "Voice Maze — Multimodal HMI Project",
-            description: "A web-based maze game built with React for my Human-Machine Interaction class. It supports voice, keyboard, and touch controls, featuring multilingual speech recognition, real-time feedback, and procedural maze generation powered by Backtracking and BFS algorithms."
+            title: "Voice Maze",
+            description: "A project from the Human-Machine Interaction module exploring how voice, touch, and keyboard input can change the way we interact with a simple maze. I especially enjoyed seeing how different interaction methods can improve both the user experience and accessibility for people with disabilities."
           },
           edgemlFootball: {
-            title: "EdgeML Meets American Football — AI Tactical Analyzer",
-            description: "Ambitious edge AI system for American football analysis on an Nvidia Jetson Orin Nano. Tracks players, reads jersey numbers, recognizes formations, and serves a live React and FastAPI dashboard for tactical playcards and telemetry."
+            title: "EdgeML Meets American Football",
+            description: "My biggest university project so far: combining computer vision and machine learning for American football, with limited-resource Edge devices in mind. I learned a huge amount about computer vision while working on ways to turn complex data into something genuinely useful for coaches."
           },
           roomman: {
-            title: "Roomman: Network-Based Classroom Management System",
-            description: "Console application developed in C to manage university auditoriums and classrooms. Implements client-server communication through sockets and RPC, with a shared and synchronized database for real-time reservations and updates."
+            title: "roomman",
+            description: "A university project in distributed systems that gave me a much deeper understanding of data transmission and the challenges of distributed communication. It also pushed my C skills much further and reminded me that communication is about more than REST APIs, with protocols like RPC playing an important role too."
           },
           batatabit: {
-            title: "BatataBit — Responsive Crypto Broker Landing Page",
-            description: "Landing page crafted during a web-development course on Platzi. Built with mobile-first and responsive design in mind for a fictional cryptocurrency broker. My early lesson in prioritizing device diversity, usability and web standards."
+            title: "BatataBit",
+            description: "One of my first landing pages, created during a web development course. It was an important step for me to gain my first hands-on experience with designing and building modern websites."
           },
           oceanoRosa: {
-            title: "Oceano Rosa — My First Web Design Journey",
-            description: "Oceano Rosa was one of my first self-made websites, built entirely with HTML, CSS, and pure JavaScript. Created to showcase handmade fantasy gold jewelry, it reflects my early passion for web design, experimentation, and learning from scratch."
+            title: "Oceano Rosa",
+            description: "One of my first fully independent web projects, originally created as an attempt to turn a business idea into a landing page. It taught me how challenging it can be to design a website from scratch, but also how much fun that process can be."
           },
           tyc: {
-            title: "SCSS Revival — Web Design Practice",
-            description: "A creative comeback project built with HTML and SCSS to refresh my front-end skills after a long break. Focused on styling precision, responsive layout, and the visual feedback that web development constantly provides. Content details remain private."
+            title: "TYC",
+            description: "A small web project I started with a Mobile First approach to refresh my web development skills. I mainly wanted to get back to working with HTML, CSS, and SCSS, build something visual, and simply get those skills moving again without a specific goal."
           }
         }
       },
@@ -355,50 +355,50 @@ export const resources = {
         goBackStart: "Volver al inicio"
       },
       work: {
-        documentTitle: "Proyectos y Trabajo — Juanfelenis | Portafolio Web",
+        documentTitle: "Proyectos y Trabajo — Juanfelenis-dev | Portafolio Web",
         heading: "Listo para entrar en mi mundo?",
-        intro: "Cada proyecto en el que he trabajado cuenta una historia: una mezcla de curiosidad, diseno y una pizca de obsesion por el detalle. Aqui encontraras ideas convertidas en codigo, pixeles con proposito y experimentos que crecieron hasta convertirse en experiencias completas. Mira alrededor, cada pieza representa un paso mas en mi camino creando cosas que se sienten tan bien como se ven.",
+        intro: "Aquí encontrarás todo lo que he desarrollado durante mis estudios de Informática y también aquello que he creado con mis propias manos más allá de la universidad. Desde proyectos universitarios y experimentos personales hasta pequeños trabajos como freelancer, cada proyecto cuenta una parte de mi historia, mi curiosidad y mi pasión por la tecnología.",
         readMore: "Leer mas",
         cards: {
           leonti: {
-            title: "Leonti Aesthetic — Sitio de Estudio Cosmetico",
-            description: "Leonti Aesthetic es un sitio moderno para un estudio cosmetico que muestra extensiones de pestanas, lifting y tratamientos faciales. Desarrollado con React y SCSS, ofrece una experiencia fluida, elegante y responsive con animaciones sutiles."
+            title: "Leonti Cosmetic Studio",
+            description: "Un sitio web moderno para un estudio de cosmética, donde una experiencia de usuario intuitiva era tan importante como la identidad visual de la marca. La idea fue unir ambas cosas en un sitio que se sintiera claro, elegante y natural."
           },
           dronesim: {
-            title: "Live Drone Monitor — Dashboard en Java Swing",
-            description: "Aplicacion Java Swing para el curso de POO: consumo de API con hilos para telemetria global de drones en tiempo real. Muestra tablas paginadas y buscables con filtros, ordenamiento y manejo robusto de entradas, conexion y excepciones."
+            title: "Drone Simulation",
+            description: "Un proyecto universitario con Java Swing en el que trabajamos con grandes cantidades de datos simulados de drones obtenidos mediante una API, que debíamos consultar, filtrar, paginar y actualizar continuamente. Lo que más disfruté fue convertir todo ese flujo de datos en una interfaz de escritorio clara y trabajar estrechamente en equipo."
           },
           culturalFitness: {
-            title: "Cultural Fitness — Blog de Salud",
-            description: "Sitio informativo construido con HTML, SCSS y JavaScript sobre fitness, rutinas y recomendaciones de productos. Disenado con dos colaboradores para transmitir salud y confianza, priorizando legibilidad, rapidez y descubrimiento de contenido."
+            title: "Cultural Fitness",
+            description: "Un blog sobre cultura fitness que desarrollé junto a amigos que estudiaban diseño gráfico. Mientras ellos se encargaban del concepto visual, yo desarrollé todo el proyecto y aprendí muchísimo sobre UX, JavaScript vanilla y cómo convertir una idea en realidad sin utilizar frameworks."
           },
           scraper: {
-            title: "Automatizacion de Datos Inmobiliarios",
-            description: "Herramienta de automatizacion que extrae listados inmobiliarios en Alemania, diferenciando multifamiliares y apartamentos individuales. Usa navegacion concurrente (hasta 5 paginas) y exporta a CSV para analisis en Excel."
+            title: "Real Estate Scraper",
+            description: "Un proyecto personal que combina web scraping con una interfaz propia para recopilar y organizar automáticamente datos inmobiliarios. Lo que más disfruté fue convertir un proceso repetitivo en una herramienta capaz de ahorrarme trabajo."
           },
           voiceMaze: {
-            title: "Voice Maze — Proyecto HMI Multimodal",
-            description: "Juego de laberinto web hecho con React para mi clase de Interaccion Humano-Maquina. Soporta control por voz, teclado y tactil, con reconocimiento multilenguaje, feedback en tiempo real y generacion procedural con Backtracking y BFS."
+            title: "Voice Maze",
+            description: "Un proyecto del módulo Human-Machine Interaction en el que exploré cómo la voz, el tacto y el teclado pueden cambiar la forma de interactuar con un laberinto. Me gustó especialmente descubrir cómo diferentes formas de interacción pueden mejorar tanto la experiencia de usuario como la accesibilidad para personas con discapacidad."
           },
           edgemlFootball: {
-            title: "EdgeML Meets American Football — Analizador Tactico con IA",
-            description: "Sistema ambicioso de IA Dispositivos Edge para analizar futbol americano en un Nvidia Jetson Orin Nano. Sigue jugadores, lee numeros de camiseta, reconoce formaciones y expone un panel en React y FastAPI con playcards tacticas y telemetria en vivo."
+            title: "EdgeML Meets American Football",
+            description: "Mi proyecto universitario más grande hasta ahora: combinar Computer Vision y Machine Learning para American Football, pensando en dispositivos Edge con recursos limitados. Aprendí muchísimo sobre Computer Vision y sobre cómo convertir datos complejos en información que realmente pueda ser útil para entrenadores."
           },
           roomman: {
-            title: "Roomman: Sistema de Gestion de Aulas",
-            description: "Aplicacion de consola en C para gestionar auditorios y aulas universitarias. Implementa comunicacion cliente-servidor con sockets y RPC, usando base de datos sincronizada para reservas y actualizaciones en tiempo real."
+            title: "roomman",
+            description: "Un proyecto universitario de sistemas distribuidos que me permitió entender mucho mejor los desafíos de la transmisión de datos y la comunicación distribuida. También llevé mis conocimientos de C a otro nivel y descubrí que la comunicación va mucho más allá de las APIs REST, con protocolos como RPC teniendo también un papel importante."
           },
           batatabit: {
-            title: "BatataBit — Landing Page Responsive de Crypto Broker",
-            description: "Landing page creada durante un curso de desarrollo web en Platzi. Construida con enfoque mobile-first y responsive para un broker ficticio de criptomonedas."
+            title: "BatataBit",
+            description: "Una de mis primeras landing pages, creada durante un curso de desarrollo web. Fue un paso importante para mí, porque me permitió adquirir mis primeras experiencias prácticas diseñando y desarrollando sitios web modernos."
           },
           oceanoRosa: {
-            title: "Oceano Rosa — Mi Primer Viaje en Diseno Web",
-            description: "Oceano Rosa fue uno de mis primeros sitios web, construido completamente con HTML, CSS y JavaScript puro para mostrar joyeria artesanal."
+            title: "Oceano Rosa",
+            description: "Uno de mis primeros proyectos web completamente independientes, creado originalmente para intentar convertir una idea de negocio en una landing page. Me enseñó lo difícil que puede ser diseñar un sitio web desde cero, pero también lo divertido que puede llegar a ser todo ese proceso."
           },
           tyc: {
-            title: "SCSS Revival — Practica de Diseno Web",
-            description: "Proyecto de regreso creativo construido con HTML y SCSS para refrescar mis habilidades de front-end tras una pausa larga."
+            title: "TYC",
+            description: "Un pequeño proyecto web que comencé con un enfoque Mobile First para refrescar mis habilidades de desarrollo web. Principalmente quería volver a trabajar con HTML, CSS y SCSS, crear algo visual y recuperar esas habilidades sin tener un objetivo concreto."
           }
         }
       },
@@ -597,50 +597,50 @@ export const resources = {
         goBackStart: "Zurück zum Anfang"
       },
       work: {
-        documentTitle: "Projekte und Arbeit — Juanfelenis | Webentwickler-Portfolio",
-        heading: "Bereit, in meine Welt einzutauchen?",
-        intro: "Jedes Projekt, an dem ich gearbeitet habe, erzählt eine Geschichte: eine Mischung aus Neugier, Design und einem Hauch Detailbesessenheit. Hier findest du Ideen, die zu Code wurden, Pixel mit Zweck und Experimente, die zu vollständigen Erlebnissen wurden. Schau dich um, jedes Projekt ist ein weiterer Schritt auf meinem Weg.",
+        documentTitle: "Projekte und Arbeit — Juanfelenis-dev | Webportfolio",
+        heading: "Bereit, einen Blick in meine Welt zu werfen?",
+        intro: "Hier findest du, was ich während meines Informatikstudiums entwickelt und darüber hinaus mit meinen eigenen Händen gebaut habe. Von Universitätsprojekten über persönliche Experimente bis hin zu kleineren Freelance-Arbeiten: Jedes Projekt erzählt einen Teil meiner Geschichte, meiner Neugier und meiner Leidenschaft für Technologie.",
         readMore: "Mehr dazu",
         cards: {
           leonti: {
-            title: "Leonti Aesthetic — Website für Kosmetikstudio",
-            description: "Leonti Aesthetic ist eine moderne Website für ein Kosmetikstudio mit Wimpernverlängerung, Lifting und Gesichtsbehandlungen. Mit React und SCSS entwickelt, bietet sie eine elegante und responsive Nutzererfahrung."
+            title: "Leonti Kosmetikstudio",
+            description: "Eine moderne Website für ein Kosmetikstudio, bei der ein intuitives Nutzererlebnis genauso wichtig war wie die visuelle Identität der Marke. Ziel war es, beides zu verbinden und eine Website zu schaffen, die sich klar, hochwertig und natürlich anfühlt."
           },
           dronesim: {
-            title: "Live Drone Monitor — Java Swing Dashboard",
-            description: "Java-Swing-App für den OOP-Kurs: API-Abruf von globaler Drohnentelemetrie in Echtzeit. Zeigt paginierte und durchsuchbare Tabellen mit Filtern, Sortierung und robustem Fehlerhandling."
+            title: "Drone Simulation",
+            description: "Ein Universitätsprojekt mit Java Swing, bei dem wir große Mengen simuliert erzeugter Drohnendaten über eine API abrufen, filtern, paginieren und laufend aktualisieren mussten. Besonders spannend war für mich, die Datenflut in einer übersichtlichen Desktop-Oberfläche sinnvoll darzustellen und dabei viel im Team zu arbeiten."
           },
           culturalFitness: {
-            title: "Cultural Fitness — Gesundheitsblog",
-            description: "Informationsseite mit HTML, SCSS und JavaScript über Fitness, Routinen und Produktempfehlungen. Schwerpunkt auf Lesbarkeit, Performance und einfacher Inhaltsfindung."
+            title: "Cultural Fitness",
+            description: "Ein Fitness-Kultur-Blog, den ich gemeinsam mit Freunden aus dem Grafikdesign entwickelt habe. Während sie das visuelle Konzept gestalteten, übernahm ich die gesamte Entwicklung und konnte dabei früh viel über UX, Vanilla JavaScript und die Umsetzung einer Idee ohne Frameworks lernen."
           },
           scraper: {
-            title: "Immobiliendaten-Automatisierung",
-            description: "Automatisierungstool zum Scrapen deutscher Immobilienanzeigen mit Unterscheidung zwischen Mehrfamilienhäusern und Einzelwohnungen."
+            title: "Real Estate Scraper",
+            description: "Ein persönliches Projekt, das Web Scraping mit einer eigenen Oberfläche verbindet, um Immobiliendaten automatisch zu sammeln und übersichtlich aufzubereiten. Besonders spannend war für mich, aus einem repetitiven Prozess ein Werkzeug zu machen, das mir Arbeit abnimmt."
           },
           voiceMaze: {
-            title: "Voice Maze — Multimodales HMI-Projekt",
-            description: "Webbasiertes Labyrinthspiel mit React für meinen HMI-Kurs. Unterstützt Sprache, Tastatur und Touch mit Echtzeit-Feedback und prozeduraler Labyrinth-Generierung."
+            title: "Voice Maze",
+            description: "Ein Projekt aus dem Modul Human-Machine Interaction, bei dem ich untersucht habe, wie Sprache, Touch und Tastatur die Interaktion mit einem einfachen Labyrinth verändern können. Besonders spannend war für mich zu sehen, wie unterschiedliche Eingabemöglichkeiten nicht nur die User Experience, sondern auch die Zugänglichkeit für Menschen mit Einschränkungen verbessern können."
           },
           edgemlFootball: {
-            title: "EdgeML Meets American Football — Taktischer KI-Analyzer",
-            description: "Ambitioniertes Edge-KI-System zur Analyse von American Football auf einem Nvidia Jetson Orin Nano. Es verfolgt Spieler, liest Trikotnummern, erkennt Formationen und stellt ein Live-Dashboard in React und FastAPI für Taktikkarten und Telemetrie bereit."
+            title: "EdgeML Meets American Football",
+            description: "Mein bisher größtes Universitätsprojekt: Computer Vision und Machine Learning für American Football, entwickelt mit Blick auf Edge-Geräte mit begrenzten Ressourcen. Dabei habe ich viel über Computer Vision gelernt und daran gearbeitet, komplexe Daten so aufzubereiten, dass sie für Coaches wirklich nutzbar werden."
           },
           roomman: {
-            title: "Roomman: Netzwerkbasiertes Raumverwaltungssystem",
-            description: "Konsolenanwendung in C zur Verwaltung von Hör- und Klassenräumen. Implementiert Client-Server-Kommunikation über Sockets und RPC."
+            title: "roomman",
+            description: "Ein Universitätsprojekt im Bereich Verteilte Systeme, das mir einen tiefen Einblick in die Herausforderungen der Datenübertragung und verteilter Kommunikation gegeben hat. Gleichzeitig konnte ich meine C-Kenntnisse deutlich weiterentwickeln und lernen, dass neben REST auch Protokolle wie RPC eine wichtige Rolle spielen können."
           },
           batatabit: {
-            title: "BatataBit — Responsive Landingpage für Krypto-Broker",
-            description: "Landingpage aus einem Webentwicklungs-Kurs auf Platzi, gebaut nach Mobile-First-Prinzipien."
+            title: "BatataBit",
+            description: "Eine meiner ersten Landingpages, entstanden während eines Webentwicklungskurses. Das Projekt war für mich ein wichtiger Schritt, um erste praktische Erfahrungen mit der Gestaltung und Entwicklung moderner Websites zu sammeln."
           },
           oceanoRosa: {
-            title: "Oceano Rosa — Meine erste Webdesign-Reise",
-            description: "Eine meiner ersten selbstgebauten Websites mit HTML, CSS und reinem JavaScript."
+            title: "Oceano Rosa",
+            description: "Eines meiner ersten komplett eigenständigen Webprojekte, das ursprünglich als Versuch entstand, eine eigene Geschäftsidee mit einer Landingpage umzusetzen. Dabei habe ich gelernt, wie herausfordernd es sein kann, eine Website von Grund auf zu gestalten und wie viel Spaß genau dieser Prozess machen kann."
           },
           tyc: {
-            title: "SCSS Revival — Webdesign-Praxis",
-            description: "Kreatives Comeback-Projekt mit HTML und SCSS zur Auffrischung meiner Frontend-Skills."
+            title: "TYC",
+            description: "Ein kleines Webprojekt, das ich mit Mobile First begonnen habe, um meine Webentwicklung wieder aufzufrischen. Dabei wollte ich vor allem wieder mit HTML, CSS und SCSS arbeiten, etwas Visuelles bauen und meine Fähigkeiten ohne ein konkretes Ziel einfach wieder in Bewegung bringen."
           }
         }
       },
@@ -657,7 +657,8 @@ export const resources = {
           locationValue: "Frankfurt am Main",
           educationLabel: "Ausbildung",
           educationValue: "Bachelor of Science in Informatik",
-          languagesLabel: "Deutsch · Englisch · Spanisch",
+          languagesLabel: "Sprachen",
+          languagesValue: "Deutsch · Englisch · Spanisch",
           focusLabel: "Fokus",
           focusValue: "Barrierefreiheit · Performance · Automatisierung · Software Engineering"
         },

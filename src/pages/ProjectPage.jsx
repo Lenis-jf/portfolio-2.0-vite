@@ -118,7 +118,7 @@ function ProjectPage({ projectPageRef, isDarkMode }) {
 
 					return null;
 				})}
-				<span className="copy-right">©juanfelenis 2025</span>
+				<span className="copy-right">©juanfelenis 2026</span>
 			</article>
 		</main>
 	);

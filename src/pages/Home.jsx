@@ -256,7 +256,7 @@ function Home({ sectionRefs, isDarkMode }) {
 						<div></div>
 						<span>{t("home.goBackStart")}</span>
 					</div>
-					<span className="copy-right">©juanfelenis 2025</span>
+					<span className="copy-right">©juanfelenis 2026</span>
 				</section>
 			</>
 		</main>

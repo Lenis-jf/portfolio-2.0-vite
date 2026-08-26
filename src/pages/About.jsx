@@ -125,7 +125,7 @@ export default function About({ aboutPageRef }) {
             <a className="button" href={`${import.meta.env.BASE_URL}assets/docs/Lebenslauf-2026-compressed.pdf`} download>{t("about.downloadResume")}</a>
           </div>
         </div>
-        <span className="copy-right">©juanfelenis 2025</span>
+        <span className="copy-right">©juanfelenis 2026</span>
       </section>
     </main>
   );

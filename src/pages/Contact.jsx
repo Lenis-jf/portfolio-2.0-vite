@@ -30,7 +30,7 @@ function Contact({ contactRef }) {
           <a href="https://github.com/Lenis-jf" className="icon github" aria-label={t("contact.githubAria")} role="listitem" target="_blank" rel="noopener noreferrer"></a>
           <a href="https://www.linkedin.com/in/juanfelenis-dev/" className="icon linkedin" aria-label={t("contact.linkedinAria")} role="listitem" target="_blank" rel="noopener noreferrer"></a>
         </div>
-        <span className="copy-right">©juanfelenis 2025</span>
+        <span className="copy-right">©juanfelenis 2026</span>
       </section>
     </main>
   );
